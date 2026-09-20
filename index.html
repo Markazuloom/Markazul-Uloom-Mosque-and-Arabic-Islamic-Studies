@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Markaz-ul-Uloom School of Arabic & Islamic Studies - Premier Islamic education institution in Lagos, Nigeria. Offering comprehensive Quran, Hadith, Fiqh, and Arabic language courses since 1985. Join our community for authentic Islamic learning and personal growth.">
+    <meta name="keywords" content="Islamic education, Arabic studies, Quran, Hadith, Fiqh, Islamic school Lagos, Arabic language, Islamic institute Nigeria, Markaz-ul-Uloom, Alagbado, religious education">
+    <meta name="author" content="Markaz-ul-Uloom School of Arabic & Islamic Studies">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://m-uloom.org/">
+    <meta property="og:title" content="Markaz-ul-Uloom School of Arabic & Islamic Studies">
+    <meta property="og:description" content="Premier Islamic education institution in Lagos, Nigeria. Offering comprehensive Quran, Hadith, Fiqh, and Arabic language courses since 1985.">
+    <meta property="og:image" content="https://m-uloom.org/images/logo.jpg">
+    <meta property="og:site_name" content="Markaz-ul-Uloom">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://m-uloom.org/">
+    <meta property="twitter:title" content="Markaz-ul-Uloom School of Arabic & Islamic Studies">
+    <meta property="twitter:description" content="Premier Islamic education institution in Lagos, Nigeria. Offering comprehensive Quran, Hadith, Fiqh, and Arabic language courses since 1985.">
+    <meta property="twitter:image" content="https://m-uloom.org/images/logo.jpg">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0056b3">
+    <meta name="msapplication-navbutton-color" content="#0056b3">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0056b3">
+    <link rel="canonical" href="https://m-uloom.org/">
+    
+    <title>Markaz-ul-Uloom School of Arabic & Islamic Studies</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#0056b3">
+    
+    <link rel="preload" href="css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"></noscript>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="showPage('home')" style="cursor: pointer;">
+                    <picture>
+                        <source srcset="images/optimized/logo.webp" type="image/webp">
+                        <img src="images/logo.jpg" alt="Markazul-Uloom Logo" class="logo-img" loading="lazy" width="107" height="110">
+                    </picture>
+                    <div class="logo-text">
+                        <div class="arabic-text header-arabic-text">مركز العلوم للدراسات العربية والإسلامية</div>
+                        <h1>Markaz-ul-Uloom</h1>
+                        <p class="logo-subtitle">School of Arabic & Islamic Studies</p>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <button onclick="showPage('home')" class="nav-btn active" id="home-btn">Home</button>
+                    <button onclick="showPage('about')" class="nav-btn" id="about-btn">About Us</button>
+                    
+                    <!-- Admissions dropdown menu -->
+                    <div class="dropdown nav-dropdown">
+                        <button onclick="showPage('services')" class="nav-btn dropdown-btn" id="services-btn">
+                            Admissions
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <button onclick="showPage('programmes')" class="dropdown-item" id="programmes-btn">Programmes</button>
+                            <button onclick="showPage('staff')" class="dropdown-item" id="staff-btn">Staff</button>
+                            <button onclick="showPage('students')" class="dropdown-item" id="students-btn">Students</button>
+                            <button onclick="showPage('alumni')" class="dropdown-item" id="alumni-btn">Alumni</button>
+                        </div>
+                    </div>
+                    
+                    <button onclick="showPage('administration')" class="nav-btn" id="administration-btn">Administration</button>
+                    
+                    <button onclick="showPage('events')" class="nav-btn" id="events-btn">Events</button>
+                    <button onclick="showPage('anniversary')" class="nav-btn" id="anniversary-btn">40th Anniversary</button>
+                    <button onclick="showPage('masjid-project')" class="nav-btn" id="masjid-project-btn">Al-Uloom Central Mosque</button>
+                    <button onclick="showPage('donate')" class="nav-btn" id="donate-btn">Donate</button>
+                    <button onclick="showPage('contact')" class="nav-btn" id="contact-btn">Contact</button>
+                    
+                    <!-- Social media icons moved to same line as navigation -->
+                    <div class="nav-social">
+                        <a href="https://www.facebook.com/marcazululoomalagbado" target="_blank" class="social-link facebook-link" title="Follow us on Facebook">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/official_markazululoom?igsh=MTN6bmgwYWxiM2pkdg==" target="_blank" class="social-link instagram-link" title="Follow us on Instagram">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCIZq5gFRgrDHzE89J8yH6ag" target="_blank" class="social-link youtube-link" title="Subscribe to our YouTube">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/2348145318366" target="_blank" class="social-link whatsapp-link" title="Message us on WhatsApp">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:markazululoomalagbado40@gmail.com" class="social-link email-link" title="Send us an email">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.91L12 10.09l9.455-6.269h.909c.904 0 1.636.732 1.636 1.636 Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </nav>            </div>
+        </div>
+    </header>
+
+    <!-- Page Content Containers -->
+    <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="bismillah arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+                        <h1 class="hero-title">Welcome to Markaz-ul-Uloom</h1>
+                        <h2 class="hero-subtitle">School of Arabic & Islamic Studies</h2>
+                        <div class="arabic-text hero-arabic">نرحب بكم إلى صفحة مركز العلوم للدراسات العربية والإسلامية</div>
+                        <p class="hero-description">Serving the Muslim community in Otubu/Alagbado, Lagos, Nigeria since 1985</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="showPage('about')">Learn More</button>
+                            <button class="btn btn-secondary" onclick="showPage('anniversary')">40th Anniversary</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">About Our Institution</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Our Mission</h3>
+                            <div class="arabic-text">رسالتنا</div>
+                            <p>To provide authentic Islamic education, foster personal growth, and serve the Muslim community with dedication and excellence. We strive to be a beacon of Islamic knowledge and values in Nigeria.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Our Vision</h3>
+                            <div class="arabic-text">رؤيتنا</div>
+                            <p>To be the leading center for Islamic education and Arabic studies in West Africa, producing scholars and leaders who will contribute positively to society while maintaining strong Islamic values.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Campus Section -->
+            <section class="section campus-section">
+                <div class="container">
+                    <h2 class="section-title">Our Beautiful Campus</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <picture>
+                                <source srcset="images/optimized/school-building.webp" type="image/webp">
+                                <img src="images/school-building.jpg" alt="Markazul-Uloom Campus" class="campus-image" loading="lazy" width="467" height="350">
+                            </picture>
+                            <h3>Modern Islamic Architecture</h3>
+                            <p>Our campus features stunning Islamic architecture with baby blue and white buildings. The design harmoniously blends traditional Islamic elements with modern educational facilities, creating an inspiring environment for learning and worship.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Campus Facilities</h3>
+                            <div class="facility-group">
+                                <h4>Educational Buildings</h4>
+                                <ul>
+                                    <li>Modern classrooms with audio-visual equipment</li>
+                                    <li>Specialized Arabic language laboratories</li>
+                                    <li>Computer and technology centers</li>
+                                    <li>Comprehensive Islamic library</li>
+                                    <li>Research and study halls</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="facility-group">
+                                <h4>Worship Facilities</h4>
+                                <ul>
+                                    <li>Main mosque with beautiful blue dome</li>
+                                    <li>Separate prayer areas for men and women</li>
+                                    <li>Modern ablution facilities</li>
+                                    <li>Peaceful courtyards for reflection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                          </section>
+
+            <!-- About Our Imam Section -->
+            <section id="imam" class="section imam-section">
+                <div class="container grid grid-2">
+                    <div class="imam-image-container">
+                        <picture>
+                            <source srcset="images/optimized/imam.webp" type="image/webp">
+                            <img src="images/imam.jpg" alt="Our Imam" class="imam-image" loading="lazy" width="396" height="528">
+                        </picture>
+                    </div>
+                    <div class="imam-content">
+                        <h2 class="section-title">About Our Mudir</h2>
+                        <p class="section-subtitle">Sheikh Dr. Abbas Abdulazeez</p>
+                        <p>Sheikh Dr. Abbas Abdulazeez is the esteemed founder of Markaz-ul-Uloom School of Arabic and Islamic Studies, and a distinguished Islamic scholar, educationist, and community leader whose vision and scholarship have shaped Islamic education in Nigeria. With deep grounding in Arabic, Qur'anic studies, Hadith, and Islamic jurisprudence, he established Markaz-ul-Uloom over four decades ago, transforming it from a modest centre in Otubu, Agege into a renowned institution now headquartered in Alagbado.</p>
+                        <p>Under his leadership, the Markaz has produced thousands of scholars and professionals, blending classical Islamic knowledge with contemporary relevance. Known for his humility, principled leadership, and community service, Sheikh Abbas remains a guiding force in the moral and intellectual development of countless individuals and the broader Muslim community.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Beautiful Campus Section -->
+            <section id="campus" class="section campus-section">
+                <div class="container">
+                    <h2 class="section-title">Our Beautiful Campus</h2>
+                    <p class="section-subtitle">A nurturing environment for learning and personal growth</p>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>The School Building</h3>
+                            <picture>
+                                <source srcset="images/optimized/school-building.webp" type="image/webp">
+                                <img src="images/school-building.jpg" alt="School Building" class="campus-image" loading="lazy" width="467" height="350">
+                            </picture>
+                            <p>Our modern school building provides a conducive environment for academic excellence, equipped with spacious classrooms and learning facilities.</p>
+                        </div>
+                        <div class="card">
+                            <h3>The Mosque</h3>
+                            <picture>
+                                <source srcset="images/optimized/masjid-project.webp" type="image/webp">
+                                <img src="images/masjid-project.jpg" alt="Mosque" class="campus-image" loading="lazy">
+                            </picture>
+                            <p>The mosque is the heart of our institution, offering a serene space for daily prayers, Quranic recitation, and personal reflection.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Admissions Section -->
+            <section id="services" class="section services-overview">         <div class="container">
+                    <h2 class="section-title">Our Admissions</h2>
+                    <div class="grid grid-3">
+                        <div class="service-card">
+                            <div class="service-icon">📖</div>
+                            <h3>Islamic Education</h3>
+                            <div class="arabic-text">التعليم الإسلامي</div>
+                            <p>Comprehensive Islamic studies including Quran, Hadith, Fiqh, and Arabic language courses for all levels.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🕌</div>
+                            <h3>Daily Prayers</h3>
+                            <div class="arabic-text">الصلوات اليومية</div>
+                            <p>Five daily congregational prayers led by qualified Imams, creating a strong personal community.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">👥</div>
+                            <h3>Community Programs</h3>
+                            <div class="arabic-text">البرامج المجتمعية</div>
+                            <p>Various community outreach programs, youth development, and social services for the local community.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prayer Times -->
+            <section class="section prayer-times-section">
+                <div class="container">
+                    <h2 class="section-title">Today's Prayer Times</h2>
+                    <div class="arabic-text section-subtitle prayer-times-arabic">أوقات الصلاة اليوم</div>
+                    <div class="prayer-times-grid">
+                        <div class="prayer-time-card">
+                            <div class="prayer-name">Fajr</div>
+                            <div class="prayer-arabic">الفجر</div>
+                            <div class="prayer-time">5:13 AM</div>
+                        </div>
+                        <div class="prayer-time-card">
+                            <div class="prayer-name">Dhuhr</div>
+                            <div class="prayer-arabic">الظهر</div>
+                            <div class="prayer-time">12:47 PM</div>
+                        </div>
+                        <div class="prayer-time-card">
+                            <div class="prayer-name">Asr</div>
+                            <div class="prayer-arabic">العصر</div>
+                            <div class="prayer-time">4:15 PM</div>
+                        </div>
+                        <div class="prayer-time-card">
+                            <div class="prayer-name">Maghrib</div>
+                            <div class="prayer-arabic">المغرب</div>
+                            <div class="prayer-time">7:04 PM</div>
+                        </div>
+                        <div class="prayer-time-card">
+                            <div class="prayer-name">Isha</div>
+                            <div class="prayer-arabic">العشاء</div>
+                            <div class="prayer-time">8:15 PM</div>
+                        </div>
+                    </div>
+                    <p class="prayer-location">Prayer times for Alagbado, Lagos, Nigeria</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h1 class="page-title">About Markazul-Uloom</h1>
+                    <div class="arabic-text page-subtitle">عن مركز العلوم</div>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h2>Our History</h2>
+                            <div class="arabic-text">تاريخنا</div>
+                            <p>Founded in 1985, Markazul-Uloom has been a cornerstone of Islamic education in Alagbado, Lagos State, Nigeria. From humble beginnings with a single classroom, we have grown into a comprehensive Islamic educational institution serving thousands of students over four decades.</p>
+                            
+                            <h3>Key Milestones</h3>
+                            <ul>
+                                <li><strong>1985:</strong> Foundation of Markazul-Uloom with basic Islamic education</li>
+                                <li><strong>1990:</strong> Expansion to include Arabic language programs</li>
+                                <li><strong>2000:</strong> Construction of the main mosque building</li>
+                                <li><strong>2010:</strong> Addition of modern educational facilities</li>
+                                <li><strong>2020:</strong> Introduction of digital learning platforms</li>
+                                <li><strong>2025:</strong> Celebrating 40 years of excellence</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h2>Our Leadership</h2>
+                            <div class="arabic-text">قيادتنا</div>
+                            <p>Under the guidance of qualified Islamic scholars and educators, Markazul-Uloom has maintained its commitment to authentic Islamic education while adapting to modern educational needs.</p>
+                            
+                            <h3>Educational Philosophy</h3>
+                            <p>We believe in:</p>
+                            <ul>
+                                <li>Authentic Islamic education based on Quran and Sunnah</li>
+                                <li>Integration of traditional and modern teaching methods</li>
+                                <li>Character development alongside academic excellence</li>
+                                <li>Community service and social responsibility</li>
+                                <li>Respect for diversity within Islamic unity</li>
+                            </ul>
+                            
+                            <div class="quote-box">
+                                <div class="arabic-text">"طلب العلم فريضة على كل مسلم"</div>
+                                <p><em>"Seeking knowledge is an obligation upon every Muslim"</em></p>
+                                <p>- Hadith of Prophet Muhammad (PBUH)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Institution Legacy Section -->
+            <section class="section" style="background-color: #f8f9fa;">
+                <div class="container">
+                    <h2 class="section-title">Our Legacy & Mission</h2>
+                    <div class="arabic-text section-subtitle">إرثنا ورسالتنا</div>
+                    
+                    <div class="card" style="max-width: 1000px; margin: 0 auto; padding: 3rem; text-align: center;">
+                        <p style="font-size: 1.2rem; line-height: 1.8; color: #333; margin-bottom: 2rem;">
+                            Markaz-ul-Uloom, established in Otubu, Lagos over four decades ago, has evolved into a leading Islamic and Arabic institution with a lasting impact on education, community, and personality. Now headquartered in Alagbado, it continues to maintain deep roots in Otubu. The institution is built on three core pillars: <strong>Academic Learning</strong>, <strong>Community Development</strong>, and <strong>Charity</strong>. It offers structured programs for all ages in Arabic, Qur'anic studies, and Islamic sciences, while also accommodating modern educational needs. The academic arm has produced thousands of graduates excelling in both secular and Islamic spheres, upholding the legacy of faith and knowledge.
+                        </p>
+                        
+                        <div class="grid grid-3" style="margin-top: 2rem;">
+                            <div class="pillar-card" style="text-align: center; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📚</div>
+                                <h3 style="color: #0056b3; margin-bottom: 0.5rem;">Academic Learning</h3>
+                                <div class="arabic-text" style="font-size: 0.9rem; color: #666;">التعلم الأكاديمي</div>
+                            </div>
+                            <div class="pillar-card" style="text-align: center; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
+                                <h3 style="color: #0056b3; margin-bottom: 0.5rem;">Community Development</h3>
+                                <div class="arabic-text" style="font-size: 0.9rem; color: #666;">تنمية المجتمع</div>
+                            </div>
+                            <div class="pillar-card" style="text-align: center; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💝</div>
+                                <h3 style="color: #0056b3; margin-bottom: 0.5rem;">Charity</h3>
+                                <div class="arabic-text" style="font-size: 0.9rem; color: #666;">الخيرية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Admissions Page -->
+        <div id="services-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h1 class="page-title">Our Admissions</h1>
+                    <div class="arabic-text page-subtitle">قبولنا</div>
+                    
+                    <div class="services-grid">
+                        <div class="service-detail-card">
+                            <div class="service-icon">📖</div>
+                            <h3>Quranic Studies</h3>
+                            <div class="arabic-text">الدراسات القرآنية</div>
+                            <p>Comprehensive Quranic education including memorization (Hifz), recitation (Qira'at), and interpretation (Tafsir).</p>
+                            <ul>
+                                <li>Quran memorization programs</li>
+                                <li>Tajweed and proper recitation</li>
+                                <li>Tafsir and interpretation</li>
+                                <li>Quranic Arabic studies</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-detail-card">
+                            <div class="service-icon">📜</div>
+                            <h3>المَرْحَلَةُ الإعدادية</h3>
+                            <div class="arabic-text">Preparatory Stage</div>
+                            <p>Foundational Islamic studies program covering essential subjects for comprehensive religious education.</p>
+                            <ul>
+                                <li>Qur'an Memorization</li>
+                                <li>Hadith</li>
+                                <li>Jurisprudence</li>
+                                <li>History</li>
+                                <li>Grammar</li>
+                                <li>Morphology</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-detail-card">
+                            <div class="service-icon">⚖️</div>
+                            <h3>المرحلة الثانوية/التوجيهية</h3>
+                            <div class="arabic-text">Secondary/Guidance Stage</div>
+                            <p>Advanced Islamic studies program preparing students for higher education and specialized religious knowledge.</p>
+                            <ul>
+                                <li>Science of Qur'an</li>
+                                <li>Fundamental jurisprudence</li>
+                                <li>Invocation</li>
+                                <li>Rhetoric</li>
+                                <li>Philosophy</li>
+                                <li>Logic</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-detail-card">
+                            <div class="service-icon">🔤</div>
+                            <h3>Arabic Language</h3>
+                            <div class="arabic-text">اللغة العربية</div>
+                            <p>Complete Arabic language program from beginner to advanced levels, including grammar, literature, and conversation.</p>
+                            <ul>
+                                <li>Arabic grammar (Nahw)</li>
+                                <li>Arabic morphology (Sarf)</li>
+                                <li>Classical literature</li>
+                                <li>Modern Arabic conversation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-detail-card">
+                            <div class="service-icon">🕌</div>
+                            <h3>Community Services</h3>
+                            <div class="arabic-text">الخدمات المجتمعية</div>
+                            <p>Various community programs and services to support the local Muslim community.</p>
+                            <ul>
+                                <li>Daily congregational prayers</li>
+                                <li>Friday prayers (Jumu'ah)</li>
+                                <li>Islamic counseling</li>
+                                <li>Marriage and funeral services</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-detail-card">
+                            <div class="service-icon">📚</div>
+                            <h3>NBAIS</h3>
+                            <div class="arabic-text">المجلس الوطني للدراسات العربية والإسلامية</div>
+                            <p>The National Board for Arabic and Islamic Studies (NBAIS) has gone through thick and thin. It was founded by Alhaji Sir, Ahmadu Bello Sardauna of Sokoto in 1960. Subsequently, it was transferred to Ahmadu Bello University, Zaria in 1969. The Board has undergone series of positive transformation.</p>
+                            <ul>
+                                <li>Arabic language certification</li>
+                                <li>Islamic studies accreditation</li>
+                                <li>Educational standards development</li>
+                                <li><a href="https://nbais.com.ng/" target="_blank" style="color: #007bff; text-decoration: underline;">Visit NBAIS Website</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Programmes Page -->
+        <div id="programmes-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Academic Programmes</h2>
+                    <p class="section-subtitle">Comprehensive Islamic and Arabic Studies Curriculum</p>
+                    
+                    <div class="programmes-grid">
+                        <div class="programme-card">
+                            <h3>Primary Stage (المرحلة الابتدائية)</h3>
+                            <ul class="programme-subjects">
+                                <li>Quranic Studies</li>
+                                <li>Basic Arabic Grammar</li>
+                                <li>Islamic History</li>
+                                <li>Hadith Studies</li>
+                                <li>Islamic Ethics</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="programme-card">
+                            <h3>Secondary Stage (المرحلة الثانوية)</h3>
+                            <ul class="programme-subjects">
+                                <li>Science of Qur'an</li>
+                                <li>Fundamental Jurisprudence</li>
+                                <li>Invocation</li>
+                                <li>Rhetoric</li>
+                                <li>Philosophy</li>
+                                <li>Logic</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="programme-card">
+                            <h3>Advanced Studies (الدراسات العليا)</h3>
+                            <ul class="programme-subjects">
+                                <li>Advanced Quranic Exegesis</li>
+                                <li>Islamic Jurisprudence</li>
+                                <li>Arabic Literature</li>
+                                <li>Comparative Religion</li>
+                                <li>Islamic Finance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="programme-card">
+                            <h3>Teacher Training (إعداد المعلمين)</h3>
+                            <ul class="programme-subjects">
+                                <li>Pedagogy in Islamic Education</li>
+                                <li>Curriculum Development</li>
+                                <li>Educational Psychology</li>
+                                <li>Teaching Methodology</li>
+                                <li>Assessment Techniques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Staff Page -->
+        <div id="staff-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Our Dedicated Staff</h2>
+                    <p class="section-subtitle">Qualified Islamic Scholars and Educators</p>
+                    
+                    <div class="staff-grid">
+                        <div class="staff-card">
+                            <h3>Administrative Team</h3>
+                            <div class="staff-member">
+                                <h4>Principal</h4>
+                                <p>Ustadh Khalid Tijani</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Vice Principal</h4>
+                                <p>Ustadh Saheed Muhyideen</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Registrar</h4>
+                                <p>Ustadh Mutohir Abdulazeez</p>
+                            </div>
+                        </div>
+                        
+                        <div class="staff-card">
+                            <h3>Teaching Faculty</h3>
+                            <div class="staff-member">
+                                <h4>Ustadh Najimdeen Salahudeen</h4>
+                                <p>Islamic Studies Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Abdulrasheed Shuaib</h4>
+                                <p>Arabic Language Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Abdulrasheed Muhibudeen</h4>
+                                <p>Quranic Studies Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Abdulqayuum Ahmed</h4>
+                                <p>Islamic Jurisprudence Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Sharafdeen Muh. Basheer</h4>
+                                <p>Hadith Studies Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Ismaheel Muh. Awwal</h4>
+                                <p>Arabic Grammar Instructor</p>
+                            </div>
+                        </div>
+                        
+                        <div class="staff-card">
+                            <h3>Additional Faculty</h3>
+                            <div class="staff-member">
+                                <h4>Ustadh Abdullateef Aalim</h4>
+                                <p>Islamic History Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Abdulqadir Abdulazeez</h4>
+                                <p>Tafseer Studies Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Ijaka</h4>
+                                <p>Islamic Ethics Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Kaamil Muh Basheer</h4>
+                                <p>Arabic Literature Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Daud</h4>
+                                <p>Islamic Philosophy Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Dhirkrullah Muh Awwal</h4>
+                                <p>Quranic Recitation Instructor</p>
+                            </div>
+                            <div class="staff-member">
+                                <h4>Ustadh Mustapha</h4>
+                                <p>Islamic Studies Instructor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Students Page -->
+        <div id="students-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Student Life</h2>
+                    <p class="section-subtitle">Nurturing the Next Generation of Islamic Scholars</p>
+                    
+                    <div class="students-content">
+                        <div class="student-info-card">
+                            <h3>Current Enrollment</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-number">350+</span>
+                                    <span class="stat-label">Active Students</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">15</span>
+                                    <span class="stat-label">Different Programs</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">12</span>
+                                    <span class="stat-label">Countries Represented</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="student-info-card">
+                            <h3>Student Services</h3>
+                            <ul class="services-list">
+                                <li>Academic Counseling</li>
+                                <li>Career Guidance</li>
+                                <li>Scholarship Programs</li>
+                                <li>Extracurricular Activities</li>
+                                <li>Student Housing Assistance</li>
+                                <li>Health and Wellness Support</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="student-info-card">
+                            <h3>Student Organizations</h3>
+                            <ul class="services-list">
+                                <li>Islamic Students Association</li>
+                                <li>Arabic Language Club</li>
+                                <li>Debate Society</li>
+                                <li>Community Service Group</li>
+                                <li>Quranic Recitation Circle</li>
+                                <li>Cultural Exchange Program</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Alumni Page -->
+        <div id="alumni-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Our Alumni Network</h2>
+                    <p class="section-subtitle">40 Years of Graduates Making a Difference</p>
+                    
+                    <div class="alumni-content">
+                        <div class="alumni-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">5,000+</span>
+                                <span class="stat-label">Total Graduates</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">200+</span>
+                                <span class="stat-label">Certified Scholars</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Countries Worldwide</span>
+                            </div>
+                        </div>
+                        
+                        <div class="alumni-sections">
+                            <div class="alumni-card">
+                                <h3>Career Paths</h3>
+                                <ul class="career-list">
+                                    <li>Islamic Scholars and Imams</li>
+                                    <li>Arabic Language Teachers</li>
+                                    <li>University Professors</li>
+                                    <li>Community Leaders</li>
+                                    <li>Islamic Finance Professionals</li>
+                                    <li>Religious Counselors</li>
+                                    <li>Authors and Researchers</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="alumni-card">
+                                <h3>Alumni Services</h3>
+                                <ul class="services-list">
+                                    <li>Continuing Education Programs</li>
+                                    <li>Professional Development Workshops</li>
+                                    <li>Networking Events</li>
+                                    <li>Career Placement Assistance</li>
+                                    <li>Alumni Directory</li>
+                                    <li>Mentorship Programs</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="alumni-card">
+                                <h3>Stay Connected</h3>
+                                <p>Join our alumni network to stay connected with fellow graduates and continue your journey of Islamic learning and professional growth.</p>
+                                <div class="contact-info">
+                                    <p><strong>Alumni Relations:</strong></p>
+                                    <p>Email: alumni@markazululoom.org</p>
+                                    <p>Phone: +234 814 531 8366</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Administration Page -->
+        <div id="administration-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h1 class="page-title">Administration</h1>
+                    <div class="arabic-text page-subtitle">الإدارة</div>
+                    <p class="section-subtitle">Leadership and Management of Markaz-ul-Uloom</p>
+                    
+                    <div class="admin-intro">
+                        <p class="intro-text">The administration of Markaz-ul-Uloom is committed to providing excellent Islamic education and maintaining the highest standards of academic and personal development. Our leadership team brings together decades of experience in Islamic scholarship, education, and community service.</p>
+                        <div class="arabic-text">إدارة مركز العلوم ملتزمة بتقديم التعليم الإسلامي المتميز والحفاظ على أعلى معايير التطوير الأكاديمي والروحي</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" style="background-color: #f8f9fa;">
+                <div class="container">
+                    <h2 class="section-title">Leadership Team</h2>
+                    <div class="arabic-text section-subtitle">فريق القيادة</div>
+                    
+                    <div class="bot-intro">
+                        <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                            Our Leadership Team provides strategic oversight, governance, and guidance to ensure Markaz-ul-Uloom maintains its mission of excellence in Islamic education while adapting to contemporary educational needs.
+                        </p>
+                        <div class="arabic-text" style="text-align: center; margin-bottom: 3rem;">يوفر فريق القيادة الإشراف الاستراتيجي والحوكمة والتوجيه لضمان الحفاظ على رسالة التميز في التعليم الإسلامي</div>
+                    </div>
+
+                    <div class="bot-structure">
+                        <div class="grid grid-2">
+                            <!-- Executive Leadership -->
+                            <div class="card bot-category">
+                                <div class="category-header">
+                                    <div class="category-icon">👑</div>
+                                    <h3>Executive Leadership</h3>
+                                    <div class="arabic-text">القيادة التنفيذية</div>
+                                </div>
+                                <div class="bot-list">
+                                    <div class="bot-member">
+                                        <h4>Sheikh Abbas Abdulazeez</h4>
+                                        <p class="bot-title">Chairman</p>
+                                        <div class="arabic-text">رئيس مجلس الإدارة</div>
+                                        <p class="bot-description">Founder and visionary leader providing strategic direction and Islamic educational guidance.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Alhaji Abdulfatah Okanlawon</h4>
+                                        <p class="bot-title">Vice Chairman Admin</p>
+                                        <div class="arabic-text">نائب رئيس الإدارة</div>
+                                        <p class="bot-description">Administrative oversight and operational excellence leadership.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Alhaji Abdulkabir Dhikrullah</h4>
+                                        <p class="bot-title">Board Member</p>
+                                        <div class="arabic-text">عضو مجلس الإدارة</div>
+                                        <p class="bot-description">Strategic planning and institutional development guidance.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Dr. Abdulrauf Agbaje</h4>
+                                        <p class="bot-title">Secretary</p>
+                                        <div class="arabic-text">الأمين العام</div>
+                                        <p class="bot-description">Educational consultant and administrative coordination specialist.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advisory Council -->
+                            <div class="card bot-category">
+                                <div class="category-header">
+                                    <div class="category-icon">🎓</div>
+                                    <h3>Advisory Council</h3>
+                                    <div class="arabic-text">المجلس الاستشاري</div>
+                                </div>
+                                <div class="bot-list">
+                                    <div class="bot-member">
+                                        <h4>Dr. Taofiq Salahudeen</h4>
+                                        <p class="bot-title">Chairman</p>
+                                        <div class="arabic-text">رئيس المجلس الاستشاري</div>
+                                        <p class="bot-description">Leading the advisory council with expertise in Islamic education and community development.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Dr. Riddance Yusuf</h4>
+                                        <p class="bot-title">Vice Chairman Home</p>
+                                        <div class="arabic-text">نائب الرئيس المحلي</div>
+                                        <p class="bot-description">Domestic affairs and local community relations advisor.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Sheikh Abdulsemih Tadese</h4>
+                                        <p class="bot-title">Vice Chairman Diaspora</p>
+                                        <div class="arabic-text">نائب الرئيس للشتات</div>
+                                        <p class="bot-description">International relations and diaspora community engagement.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Ustaz Abdulqayuum Ahmed</h4>
+                                        <p class="bot-title">Secretary</p>
+                                        <div class="arabic-text">أمين السر</div>
+                                        <p class="bot-description">Advisory council coordination and documentation.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Ustaz Ahmad Abdulazeez</h4>
+                                        <p class="bot-title">Assistant Secretary</p>
+                                        <div class="arabic-text">مساعد أمين السر</div>
+                                        <p class="bot-description">Supporting secretarial functions and administrative assistance.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Engr. Abdulwasiu Egunjobi</h4>
+                                        <p class="bot-title">Technical Advisor</p>
+                                        <div class="arabic-text">المستشار التقني</div>
+                                        <p class="bot-description">Infrastructure development and technical project oversight.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Ustaz Abdulfatah Abdulrauf</h4>
+                                        <p class="bot-title">Educational Advisor</p>
+                                        <div class="arabic-text">المستشار التعليمي</div>
+                                        <p class="bot-description">Curriculum development and educational standards guidance.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Barr. Shakirudeen Bello PhD.</h4>
+                                        <p class="bot-title">Legal Advisor</p>
+                                        <div class="arabic-text">المستشار القانوني</div>
+                                        <p class="bot-description">Legal affairs and compliance oversight.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Mallam Yushau Okanlawon</h4>
+                                        <p class="bot-title">Community Relations Advisor</p>
+                                        <div class="arabic-text">مستشار العلاقات المجتمعية</div>
+                                        <p class="bot-description">Community engagement and public relations coordination.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Ustaz Yunus Al Imam</h4>
+                                        <p class="bot-title">Religious Affairs Advisor</p>
+                                        <div class="arabic-text">مستشار الشؤون الدينية</div>
+                                        <p class="bot-description">Islamic guidance and religious program oversight.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Engr. Abdulhameed Okunade</h4>
+                                        <p class="bot-title">Development Advisor</p>
+                                        <div class="arabic-text">مستشار التطوير</div>
+                                        <p class="bot-description">Strategic development and expansion planning.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Mr. Taoheed Akinade</h4>
+                                        <p class="bot-title">Financial Advisor</p>
+                                        <div class="arabic-text">المستشار المالي</div>
+                                        <p class="bot-description">Financial planning and resource management guidance.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Mr. Abdullah Abdullah Abdulazeez</h4>
+                                        <p class="bot-title">Operations Advisor</p>
+                                        <div class="arabic-text">مستشار العمليات</div>
+                                        <p class="bot-description">Operational efficiency and process improvement.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Dr. Saheed Sanni</h4>
+                                        <p class="bot-title">Academic Advisor</p>
+                                        <div class="arabic-text">المستشار الأكاديمي</div>
+                                        <p class="bot-description">Academic excellence and research development guidance.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Ustaz Ismaheel Muhammad Awaal</h4>
+                                        <p class="bot-title">Student Affairs Advisor</p>
+                                        <div class="arabic-text">مستشار شؤون الطلاب</div>
+                                        <p class="bot-description">Student welfare and academic support coordination.</p>
+                                    </div>
+                                    <div class="bot-member">
+                                        <h4>Hajia Shakirah Oladokun</h4>
+                                        <p class="bot-title">Women's Affairs Advisor</p>
+                                        <div class="arabic-text">مستشارة شؤون المرأة</div>
+                                        <p class="bot-description">Women's education and community development programs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bot-governance" style="margin-top: 3rem;">
+                        <h3 style="text-align: center; color: #0056b3; margin-bottom: 2rem;">Governance Structure</h3>
+                        <div class="arabic-text" style="text-align: center; margin-bottom: 2rem;">هيكل الحوكمة</div>
+                        
+                        <div class="grid grid-3">
+                            <div class="governance-card" style="text-align: center; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📋</div>
+                                <h4 style="color: #0056b3; margin-bottom: 0.5rem;">Quarterly Meetings</h4>
+                                <div class="arabic-text" style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">اجتماعات ربع سنوية</div>
+                                <p style="color: #666; font-size: 0.9rem;">Regular board meetings to review progress, approve policies, and strategic planning.</p>
+                            </div>
+                            <div class="governance-card" style="text-align: center; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                                <h4 style="color: #0056b3; margin-bottom: 0.5rem;">Annual Reports</h4>
+                                <div class="arabic-text" style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">التقارير السنوية</div>
+                                <p style="color: #666; font-size: 0.9rem;">Comprehensive annual reports on academic, financial, and community impact.</p>
+                            </div>
+                            <div class="governance-card" style="text-align: center; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                                <h4 style="color: #0056b3; margin-bottom: 0.5rem;">Strategic Oversight</h4>
+                                <div class="arabic-text" style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">الإشراف الاستراتيجي</div>
+                                <p style="color: #666; font-size: 0.9rem;">Long-term vision planning and institutional development guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section bg-light">
+                <div class="container">
+                    <h2 class="section-title">Administrative Departments</h2>
+                    <div class="arabic-text section-subtitle">الأقسام الإدارية</div>
+                    
+                    <div class="departments-grid">
+                        <div class="department-card">
+                            <div class="department-icon">🎓</div>
+                            <h3>Academic Affairs</h3>
+                            <div class="arabic-text">الشؤون الأكاديمية</div>
+                            <p>Oversees curriculum development, academic standards, examinations, and educational quality assurance.</p>
+                            <ul class="department-functions">
+                                <li>Curriculum planning and development</li>
+                                <li>Academic calendar management</li>
+                                <li>Examination coordination</li>
+                                <li>Quality assurance and accreditation</li>
+                                <li>Teacher training and development</li>
+                            </ul>
+                        </div>
+
+                        <div class="department-card">
+                            <div class="department-icon">👥</div>
+                            <h3>Student Affairs</h3>
+                            <div class="arabic-text">شؤون الطلاب</div>
+                            <p>Manages student services, welfare, discipline, and extracurricular activities.</p>
+                            <ul class="department-functions">
+                                <li>Student registration and records</li>
+                                <li>Counseling and guidance services</li>
+                                <li>Disciplinary matters</li>
+                                <li>Extracurricular activities</li>
+                                <li>Student welfare and support</li>
+                            </ul>
+                        </div>
+
+                        <div class="department-card">
+                            <div class="department-icon">💰</div>
+                            <h3>Finance & Accounts</h3>
+                            <div class="arabic-text">المالية والحسابات</div>
+                            <p>Handles financial planning, budgeting, fee collection, and financial reporting.</p>
+                            <ul class="department-functions">
+                                <li>Budget preparation and monitoring</li>
+                                <li>Fee collection and management</li>
+                                <li>Financial reporting and auditing</li>
+                                <li>Procurement and purchasing</li>
+                                <li>Salary and benefits administration</li>
+                            </ul>
+                        </div>
+
+                        <div class="department-card">
+                            <div class="department-icon">🏢</div>
+                            <h3>Human Resources</h3>
+                            <div class="arabic-text">الموارد البشرية</div>
+                            <p>Manages staff recruitment, development, and administrative personnel matters.</p>
+                            <ul class="department-functions">
+                                <li>Staff recruitment and selection</li>
+                                <li>Employee training and development</li>
+                                <li>Performance management</li>
+                                <li>Staff welfare and benefits</li>
+                                <li>Policy development and implementation</li>
+                            </ul>
+                        </div>
+
+                        <div class="department-card">
+                            <div class="department-icon">🔧</div>
+                            <h3>Facilities Management</h3>
+                            <div class="arabic-text">إدارة المرافق</div>
+                            <p>Maintains campus facilities, infrastructure, and ensures a conducive learning environment.</p>
+                            <ul class="department-functions">
+                                <li>Building maintenance and repairs</li>
+                                <li>Utilities management</li>
+                                <li>Security and safety</li>
+                                <li>Cleaning and sanitation</li>
+                                <li>Equipment and technology support</li>
+                            </ul>
+                        </div>
+
+                        <div class="department-card">
+                            <div class="department-icon">📞</div>
+                            <h3>Public Relations</h3>
+                            <div class="arabic-text">العلاقات العامة</div>
+                            <p>Manages external communications, community relations, and institutional marketing.</p>
+                            <ul class="department-functions">
+                                <li>Community outreach programs</li>
+                                <li>Media relations and communications</li>
+                                <li>Alumni relations</li>
+                                <li>Event planning and coordination</li>
+                                <li>Website and social media management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Administrative Policies</h2>
+                    <div class="arabic-text section-subtitle">السياسات الإدارية</div>
+                    
+                    <div class="policies-grid">
+                        <div class="policy-card">
+                            <h3>Academic Policies</h3>
+                            <div class="arabic-text">السياسات الأكاديمية</div>
+                            <ul class="policy-list">
+                                <li>Admission requirements and procedures</li>
+                                <li>Academic progression standards</li>
+                                <li>Examination and assessment policies</li>
+                                <li>Graduation requirements</li>
+                                <li>Academic integrity and conduct</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-card">
+                            <h3>Student Policies</h3>
+                            <div class="arabic-text">سياسات الطلاب</div>
+                            <ul class="policy-list">
+                                <li>Code of conduct and discipline</li>
+                                <li>Attendance and punctuality requirements</li>
+                                <li>Dress code and Islamic etiquette</li>
+                                <li>Fee payment and refund policies</li>
+                                <li>Grievance and appeals procedures</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-card">
+                            <h3>Staff Policies</h3>
+                            <div class="arabic-text">سياسات الموظفين</div>
+                            <ul class="policy-list">
+                                <li>Recruitment and selection criteria</li>
+                                <li>Professional development requirements</li>
+                                <li>Performance evaluation standards</li>
+                                <li>Leave and benefits policies</li>
+                                <li>Professional conduct guidelines</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-card">
+                            <h3>Financial Policies</h3>
+                            <div class="arabic-text">السياسات المالية</div>
+                            <ul class="policy-list">
+                                <li>Budget planning and approval processes</li>
+                                <li>Procurement and purchasing guidelines</li>
+                                <li>Financial reporting standards</li>
+                                <li>Audit and compliance procedures</li>
+                                <li>Donation and fund management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section bg-light">
+                <div class="container">
+                    <h2 class="section-title">Contact Administration</h2>
+                    <div class="arabic-text section-subtitle">اتصل بالإدارة</div>
+                    
+                    <div class="admin-contact-grid">
+                        <div class="contact-card">
+                            <h3>General Administration</h3>
+                            <div class="arabic-text">الإدارة العامة</div>
+                            <div class="contact-details">
+                                <p><strong>Office Hours:</strong></p>
+                                <p>Friday: 8:00 AM - 5:00 PM</p>
+                                <p>Saturday: 10:00 AM - 5:00 PM</p>
+                                <p>Sunday: 10:00 AM - 5:00 PM</p>
+                                <br>
+                                <p><strong>Contact Information:</strong></p>
+                                <p>📞 +234 814 531 8366</p>
+                                <p>📧 markazululoomalagbado40@gmail.com</p>
+                                <p>📍 1 Buyide Avenue, Alagbado, Lagos</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>Academic Office</h3>
+                            <div class="arabic-text">المكتب الأكاديمي</div>
+                            <div class="contact-details">
+                                <p><strong>For Academic Inquiries:</strong></p>
+                                <p>• Course registration</p>
+                                <p>• Academic records</p>
+                                <p>• Examination matters</p>
+                                <p>• Curriculum information</p>
+                                <br>
+                                <p><strong>Academic Registrar:</strong></p>
+                                <p>Ustadh Yusuf Ibrahim</p>
+                                <p>📧 academic@markazululoom.org</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>Student Services</h3>
+                            <div class="arabic-text">خدمات الطلاب</div>
+                            <div class="contact-details">
+                                <p><strong>For Student Matters:</strong></p>
+                                <p>• Admissions and enrollment</p>
+                                <p>• Student welfare</p>
+                                <p>• Counseling services</p>
+                                <p>• Extracurricular activities</p>
+                                <br>
+                                <p><strong>Student Affairs Office:</strong></p>
+                                <p>📧 students@markazululoom.org</p>
+                                <p>📞 +234 814 531 8366 (Ext. 102)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>Finance Office</h3>
+                            <div class="arabic-text">المكتب المالي</div>
+                            <div class="contact-details">
+                                <p><strong>For Financial Matters:</strong></p>
+                                <p>• Fee payments</p>
+                                <p>• Financial assistance</p>
+                                <p>• Donation processing</p>
+                                <p>• Financial records</p>
+                                <br>
+                                <p><strong>Chief Financial Officer:</strong></p>
+                                <p>Alhaji Musa Adebayo</p>
+                                <p>📧 finance@markazululoom.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="admin-mission-card">
+                        <h2>Our Administrative Commitment</h2>
+                        <div class="arabic-text">التزامنا الإداري</div>
+                        <p class="mission-text">The administration of Markaz-ul-Uloom is dedicated to creating an environment that fosters Islamic learning, character development, and academic excellence. We are committed to transparency, efficiency, and service to our students, staff, and community.</p>
+                        <div class="arabic-text mission-arabic">إدارة مركز العلوم مكرسة لخلق بيئة تعزز التعلم الإسلامي وتطوير الشخصية والتميز الأكاديمي</div>
+                        
+                        <div class="commitment-values">
+                            <h3>Our Core Values</h3>
+                            <div class="arabic-text">قيمنا الأساسية</div>
+                            <div class="values-grid">
+                                <div class="value-item">
+                                    <div class="value-icon">🤲</div>
+                                    <h4>Islamic Principles</h4>
+                                    <p>All our administrative decisions are guided by Islamic values and principles</p>
+                                </div>
+                                <div class="value-item">
+                                    <div class="value-icon">🎯</div>
+                                    <h4>Excellence</h4>
+                                    <p>We strive for the highest standards in all aspects of our operations</p>
+                                </div>
+                                <div class="value-item">
+                                    <div class="value-icon">🤝</div>
+                                    <h4>Service</h4>
+                                    <p>We are committed to serving our students, staff, and community with dedication</p>
+                                </div>
+                                <div class="value-item">
+                                    <div class="value-icon">💎</div>
+                                    <h4>Integrity</h4>
+                                    <p>We maintain the highest levels of honesty and transparency in all our dealings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Anniversary Page -->
+        <div id="anniversary-page" class="page">
+            <section class="anniversary-hero">
+                <div class="container">
+                    <div class="anniversary-content">
+                        <h2 class="anniversary-subtitle">Celebrating Four Decades of Islamic Education</h2>
+
+                        
+                        <!-- Quranic Verse about 40 years -->
+                        <div class="forty-years-verse">
+                            <div class="quranic-verse-40 arabic-text">وَوَصَّيْنَا الْإِنسَانَ بِوَالِدَيْهِ إِحْسَانًا ۖ حَمَلَتْهُ أُمُّهُ كُرْهًا وَوَضَعَتْهُ كُرْهًا ۖ وَحَمْلُهُ وَفِصَالُهُ ثَلَاثُونَ شَهْرًا ۚ حَتَّىٰ إِذَا بَلَغَ أَشُدَّهُ وَبَلَغَ <span class="highlight-forty-years">أَرْبَعِينَ سَنَةً</span> قَالَ رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي ۖ إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ</div>
+                            <div class="verse-reference-40">سورة الأحقاف - آية ١٥</div>
+                            <div class="verse-translation">"And We have enjoined upon man, to his parents, good treatment. His mother carried him with hardship and gave birth to him with hardship, and his gestation and weaning [period] is thirty months. [He grows] until, when he reaches maturity and reaches [the age of] <span class="highlight-forty-years-en">forty years</span>, he says, 'My Lord, enable me to be grateful for Your favor which You have bestowed upon me and upon my parents and to work righteousness of which You will approve and make righteous for me my offspring. Indeed, I have repented to You, and indeed, I am of the Muslims.'"</div>
+                        </div>
+                        <div class="arabic-text anniversary-arabic">أربعون عاماً من التميز في التعليم الإسلامي</div>
+                        <p class="anniversary-description">1985 - 2025: A Journey of Faith, Knowledge, and Service</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Our Journey Through the Decades</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1985</div>
+                            <div class="timeline-content">
+                                <h3>Foundation</h3>
+                                <p>Markazul-Uloom was established with a vision to provide authentic Islamic education to the community in Alagbado.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1995</div>
+                            <div class="timeline-content">
+                                <h3>First Decade</h3>
+                                <p>Graduated our first class of Islamic scholars and expanded our curriculum to include advanced Arabic studies.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2005</div>
+                            <div class="timeline-content">
+                                <h3>Campus Expansion</h3>
+                                <p>Built new facilities including the main mosque, library, and additional classrooms to accommodate growing enrollment.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2015</div>
+                            <div class="timeline-content">
+                                <h3>Digital Age</h3>
+                                <p>Introduced technology-enhanced learning and began offering online programs to reach students beyond our local community.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-content">
+                                <h3>40th Anniversary</h3>
+                                <p>Celebrating four decades of excellence in Islamic education and looking toward the future with renewed commitment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section achievements-section">
+                <div class="container">
+                    <h2 class="section-title">Our Achievements</h2>
+                    <div class="grid grid-3">
+                        <div class="achievement-card">
+                            <div class="achievement-number">5000+</div>
+                            <h3>Graduates</h3>
+                            <p>Students who have completed their Islamic education with us</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-number">200+</div>
+                            <h3>Scholars</h3>
+                            <p>Qualified Islamic scholars and teachers trained at our institution</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-number">44</div>
+                            <h3>Programs Offered</h3>
+                            <p>Different Islamic and Arabic studies programs offered</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Anniversary Inspirational Section -->
+            <section class="anniversary-inspiration">
+                <div class="container">
+                    <div class="inspiration-content">
+                        <picture>
+                            <source srcset="images/optimized/anniversary-quote.webp" type="image/webp">
+                            <img src="images/anniversary-quote.jpg" alt="Anniversary Inspirational Quote" class="anniversary-quote-image" loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donation Section for 40th Anniversary -->
+            <section class="donation-section anniversary-donation">
+                <div class="container">
+                    <h2 class="section-title">Celebrate with a Donation</h2>
+                    <div class="arabic-text section-subtitle">احتفل معنا بالتبرع</div>
+                    <p class="section-subtitle">Help us continue our mission for the next 40 years</p>
+                    
+                    <div class="grid grid-2">
+                        <div class="card donation-card">
+                            <h3>40th Anniversary Fund</h3>
+                            <div class="arabic-text">صندوق الذكرى الأربعين</div>
+                            <p>As we celebrate four decades of excellence in Islamic education, we invite you to be part of our continued journey. Your donation will help us enhance our facilities, expand our programs, and serve the community for the next 40 years.</p>
+                            
+                            <div class="anniversary-goals">
+                                <h4>Anniversary Campaign Goals</h4>
+                                <div class="goal-item">
+                                    <span class="goal-icon">📚</span>
+                                    <div>
+                                        <h5>Library Expansion</h5>
+                                        <p>Upgrade our Islamic library with 10,000 new books and digital resources</p>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <span class="goal-icon">💻</span>
+                                    <div>
+                                        <h5>Technology Enhancement</h5>
+                                        <p>Modernize classrooms with smart boards and audio-visual equipment</p>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <span class="goal-icon">🎓</span>
+                                    <div>
+                                        <h5>Scholarship Fund</h5>
+                                        <p>Provide scholarships for 100 deserving students annually</p>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <span class="goal-icon">🏗️</span>
+                                    <div>
+                                        <h5>Infrastructure Development</h5>
+                                        <p>Renovate existing buildings and improve campus facilities</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card donation-card">
+                            <h3>Anniversary Donation Tiers</h3>
+                            <div class="arabic-text">مستويات التبرع للذكرى</div>
+                            
+                            <div class="anniversary-tiers">
+                                <div class="anniversary-tier platinum">
+                                    <div class="tier-header">
+                                        <span class="tier-icon">🏆</span>
+                                        <div>
+                                            <h4>Platinum Legacy</h4>
+                                            <span class="tier-amount">₦10,000,000+</span>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>Permanent recognition plaque</li>
+                                        <li>Naming rights to a facility</li>
+                                        <li>VIP invitation to all events</li>
+                                        <li>Annual appreciation dinner</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="anniversary-tier gold">
+                                    <div class="tier-header">
+                                        <span class="tier-icon">🥇</span>
+                                        <div>
+                                            <h4>Golden Supporter</h4>
+                                            <span class="tier-amount">₦5,000,000+</span>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>Recognition in anniversary book</li>
+                                        <li>Special anniversary certificate</li>
+                                        <li>Priority event invitations</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="anniversary-tier silver">
+                                    <div class="tier-header">
+                                        <span class="tier-icon">🥈</span>
+                                        <div>
+                                            <h4>Silver Patron</h4>
+                                            <span class="tier-amount">₦1,000,000+</span>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>Name in anniversary publication</li>
+                                        <li>Anniversary commemorative gift</li>
+                                        <li>Event invitations</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="anniversary-tier bronze">
+                                    <div class="tier-header">
+                                        <span class="tier-icon">🥉</span>
+                                        <div>
+                                            <h4>Community Friend</h4>
+                                            <span class="tier-amount">₦100,000+</span>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>Thank you certificate</li>
+                                        <li>Anniversary newsletter</li>
+                                        <li>Community recognition</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-methods anniversary-methods" style="margin-top: 2rem;">
+                        <h3 class="anniversary-donate-title">How to Donate</h3>
+                        <div class="arabic-text gold-arabic">كيفية التبرع</div>
+                        <div class="grid grid-4">
+                            <div class="method-card">
+                                <div class="method-icon">🏦</div>
+                                <h4>Bank Transfer</h4>
+                                <p><strong>MARKAZUL ULOOM ALAGBADO LAGOS</strong><br>
+                                Account: 2005139960<br>
+                                FCMB</p>
+                            </div>
+                            <div class="method-card">
+                                <div class="method-icon">💳</div>
+                                <h4>Mobile Payment</h4>
+                                <p>Opay, PalmPay, Kuda<br>
+                                <strong>Coming Soon</strong><br>
+                                Reference: Anniversary</p>
+                            </div>
+                            <div class="method-card">
+                                <div class="method-icon">🏢</div>
+                                <h4>In Person</h4>
+                                <p>Visit our office<br>
+                                1 Buyide Avenue<br>
+                                Alagbado, Lagos</p>
+                            </div>
+                            <div class="method-card">
+                                <div class="method-icon">🌐</div>
+                                <h4>Online</h4>
+                                <p>Contact us for secure<br>
+                                online payment options<br>
+                                markazululoomalagbado40@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="anniversary-quote" style="margin-top: 2rem;">
+                        <div class="quote-box">
+                            <div class="arabic-text">"وَمَا تُقَدِّمُوا لِأَنفُسِكُم مِّنْ خَيْرٍ تَجِدُوهُ عِندَ اللَّهِ هُوَ خَيْرًا وَأَعْظَمَ أَجْرًا"</div>
+                            <p><em>"And whatever good you put forward for yourselves, you will find it with Allah. It is better and greater in reward"</em></p>
+                            <p>- Quran 73:20</p>
+                        </div>
+                    </div>
+                    
+                    <div class="anniversary-impact" style="margin-top: 2rem;">
+                        <h3>40 Years of Impact</h3>
+                        <div class="arabic-text">أربعون عاماً من التأثير</div>
+                        <div class="grid grid-4">
+                            <div class="impact-stat">
+                                <div class="stat-number">5,000+</div>
+                                <div class="stat-label">Graduates</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="stat-number">200+</div>
+                                <div class="stat-label">Scholars Trained</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="stat-number">44</div>
+                                <div class="stat-label">Programs Offered</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="stat-number">40</div>
+                                <div class="stat-label">Years of Service</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Masjid Project Page -->
+        <div id="masjid-project-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h1 class="page-title">Al-Uloom Central Mosque</h1>
+                    <div class="arabic-text page-subtitle">مشروع المسجد</div>
+                    <p class="section-subtitle">Expanding Our Sacred Space for the Community</p>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Our Vision for the New Masjid</h3>
+                            <picture>
+                                <source srcset="images/optimized/masjid-project.webp" type="image/webp">
+                                <img src="images/masjid-project.jpg" alt="Masjid Project Rendering" class="campus-image" loading="lazy">
+                            </picture>
+                            <p>The Al-Uloom Central Mosque is an ambitious initiative to expand our current mosque facilities, creating a larger, more accommodating, and personally uplifting space for our growing community. Our vision is to build a masjid that not only serves as a place of worship but also as a vibrant center for education, community engagement, and personal development.</p>
+                            <p>The expansion will include a larger prayer hall, dedicated spaces for women, enhanced ablution facilities, and additional classrooms for our Islamic studies programs. We aim to blend traditional Islamic architecture with modern amenities, ensuring comfort and functionality for all worshippers.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Why This Project Matters</h3>
+                            <ul>
+                                <li><strong>Growing Community Needs:</strong> Our current facilities are becoming insufficient to accommodate the increasing number of worshippers and students.</li>
+                                <li><strong>Enhanced Learning Environment:</strong> New classrooms will allow us to expand our educational offerings and cater to more students.</li>
+                                <li><strong>Community Hub:</strong> The expanded masjid will serve as a central point for community gatherings, interfaith dialogues, and social services.</li>
+                                <li><strong>Spiritual Growth:</strong> A more spacious and beautiful environment will enhance the personal experience for all who visit.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section-title" style="margin-top: 4rem;">Project Milestones</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">Phase 1</div>
+                            <div class="timeline-content">
+                                <h3>Land Acquisition & Planning (Completed)</h3>
+                                <p>Securing additional land adjacent to the current mosque and finalizing architectural designs and permits.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Phase 2</div>
+                            <div class="timeline-content">
+                                <h3>Foundation & Structure (In Progress)</h3>
+                                <p>Laying the foundation and erecting the main structural elements of the new prayer halls and extensions.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Phase 3</div>
+                            <div class="timeline-content">
+                                <h3>Interior & Finishing (Upcoming)</h3>
+                                <p>Completing interior works, including plastering, flooring, electrical, plumbing, and decorative elements.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Phase 4</div>
+                            <div class="timeline-content">
+                                <h3>Grand Opening (Future)</h3>
+                                <p>Inauguration of the new masjid and opening its doors to the community for full use.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Section for Masjid Project -->
+                    <section class="donation-section" style="margin-top: 4rem;">
+                        <div class="container">
+                            <h2 class="section-title">Support Al-Uloom Central Mosque</h2>
+                            <div class="arabic-text section-subtitle">ادعم مشروع المسجد</div>
+                            
+                            <div class="grid grid-2">
+                                <div class="card donation-card">
+                                    <h3>How You Can Contribute</h3>
+                                    <div class="arabic-text">كيف يمكنك المساهمة</div>
+                                    <p>This project is a collective effort, and your support is crucial to its success. We invite you to contribute generously to Al-Uloom Central Mosque. Every donation, no matter how small, brings us closer to realizing this noble vision.</p>
+                                    
+                                    <div class="donation-options">
+                                        <h4>Donation Categories</h4>
+                                        <div class="donation-tier">
+                                            <span class="tier-name">Foundation Sponsor</span>
+                                            <span class="tier-amount">₦5,000,000+</span>
+                                        </div>
+                                        <div class="donation-tier">
+                                            <span class="tier-name">Pillar Sponsor</span>
+                                            <span class="tier-amount">₦1,000,000+</span>
+                                        </div>
+                                        <div class="donation-tier">
+                                            <span class="tier-name">Community Supporter</span>
+                                            <span class="tier-amount">₦500,000+</span>
+                                        </div>
+                                        <div class="donation-tier">
+                                            <span class="tier-name">General Donation</span>
+                                            <span class="tier-amount">Any Amount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card donation-card">
+                                    <h3>Donation Methods</h3>
+                                    <div class="arabic-text">طرق التبرع</div>
+                                    
+                                    <div class="donation-methods masjid-donation-methods">
+                                        <div class="donation-method">
+                                            <h4>🏦 Bank Transfer</h4>
+                                            <p><strong>Account Name:</strong> MARKAZUL ULOOM ALAGBADO LAGOS<br>
+                                            <strong>Account Number:</strong> 2005139960<br>
+                                            <strong>Bank:</strong> FCMB</p>
+                                        </div>
+                                        
+                                        <div class="donation-method">
+                                            <h4>💳 Mobile Money</h4>
+                                            <p><strong>Opay:</strong> Coming Soon<br>
+                                            <strong>PalmPay:</strong> Coming Soon<br>
+                                            <strong>Kuda:</strong> Coming Soon</p>
+                                        </div>
+                                        
+                                        <div class="donation-method">
+                                            <h4>🏢 In-Person</h4>
+                                            <p>Visit us at:<br>
+                                            1 Buyide Avenue, Alagbado<br>
+                                            Lagos State, Nigeria<br>
+                                            <br>
+                                            64B, Otubu bus stop, off Ogba road<br>
+                                            Agege, Lagos<br>
+                                            <strong>Office Hours:</strong> Mon-Fri 8AM-5PM</p>
+                                        </div>
+                                        
+                                        <div class="donation-method">
+                                            <h4>🌍 International</h4>
+                                            <p>For international donations, please contact us at:<br>
+                                            <strong>Email:</strong> markazululoomalagbado40@gmail.com<br>
+                                            <strong>WhatsApp:</strong> +234 814 531 8366</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="donation-impact" style="margin-top: 2rem;">
+                                <h3>Your Impact</h3>
+                                <div class="arabic-text">تأثير تبرعك</div>
+                                <div class="grid grid-3">
+                                    <div class="impact-card">
+                                        <div class="impact-icon">🕌</div>
+                                        <h4>Worship Space</h4>
+                                        <p>Accommodate 500+ worshippers for daily prayers and special occasions</p>
+                                    </div>
+                                    <div class="impact-card">
+                                        <div class="impact-icon">📚</div>
+                                        <h4>Education</h4>
+                                        <p>Provide modern classrooms for 200+ students in Islamic studies</p>
+                                    </div>
+                                    <div class="impact-card">
+                                        <div class="impact-icon">🤝</div>
+                                        <h4>Community</h4>
+                                        <p>Create a hub for community events, interfaith dialogue, and social services</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="donation-quote" style="margin-top: 2rem;">
+                                <div class="quote-box">
+                                    <div class="arabic-text">"مَن بَنَى مَسْجِدًا يَبْتَغِي بِهِ وَجْهَ اللَّهِ بَنَى اللَّهُ لَهُ مِثْلَهُ فِي الْجَنَّةِ"</div>
+                                    <p><em>"Whoever builds a mosque seeking Allah's pleasure, Allah will build for him a similar house in Paradise"</em></p>
+                                    <p>- Hadith of Prophet Muhammad (PBUH)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page">
+            <section class="section">
+                <div class="container">
+                    <h1 class="page-title">Contact Us</h1>
+                    <div class="arabic-text page-subtitle">اتصل بنا</div>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h2>Get in Touch</h2>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <div class="contact-icon">📍</div>
+                                    <div>
+                                        <h3>Address</h3>
+                                        <div class="arabic-text">العنوان</div>
+                                        <p>1 Buyide Avenue<br>Alagbado, Lagos State<br>Nigeria<br><br>64B, Otubu bus stop, off Ogba road<br>Agege, Lagos</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">📞</div>
+                                    <div>
+                                        <h3>Phone</h3>
+                                        <div class="arabic-text">الهاتف</div>
+                                        <p>+234 814 531 8366</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">📧</div>
+                                    <div>
+                                        <h3>Email</h3>
+                                        <div class="arabic-text">البريد الإلكتروني</div>
+                                        <p>markazululoomalagbado40@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">🌐</div>
+                                    <div>
+                                        <h3>Social Media</h3>
+                                        <div class="arabic-text">وسائل التواصل الاجتماعي</div>
+                                        <p>Facebook: Markazul-Uloom<br>WhatsApp: +234 814 531 8366</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h2>Office Hours</h2>
+                            <div class="arabic-text">ساعات العمل</div>
+                             <div class="office-hours">
+                                <div class="hours-item">
+                                    <span>Friday</span>
+                                    <span>8:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Saturday</span>
+                                    <span>10:00 AM - 5:00 PM</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Sunday</span>
+                                    <span>10:00 AM - 5:00 PM</span>
+                                </div>
+                            </div>
+                            
+                            <h3>Prayer Times</h3>
+                            <div class="arabic-text">أوقات الصلاة</div>
+                            <p>Daily prayers are held five times according to the Islamic schedule. Friday prayers (Jumu'ah) are held at 2:00 PM.</p>
+                            <div class="prayer-times-display" style="margin-top: 1rem; padding: 1rem; background: rgba(0,86,179,0.1); border-radius: 8px;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
+                                    <div><strong>Fajr:</strong> <span class="prayer-time-display" data-prayer="Fajr">5:13 AM</span></div>
+                                    <div><strong>Dhuhr:</strong> <span class="prayer-time-display" data-prayer="Dhuhr">12:47 PM</span></div>
+                                    <div><strong>Asr:</strong> <span class="prayer-time-display" data-prayer="Asr">4:15 PM</span></div>
+                                    <div><strong>Maghrib:</strong> <span class="prayer-time-display" data-prayer="Maghrib">7:04 PM</span></div>
+                                    <div><strong>Isha:</strong> <span class="prayer-time-display" data-prayer="Isha">8:15 PM</span></div>
+                                    <div style="grid-column: 1 / -1; text-align: center; font-size: 0.8rem; color: #666; margin-top: 0.5rem;">
+                                        <em>Times automatically updated daily for Lagos, Nigeria</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Messaging Section -->
+                    <section class="messaging-section">
+                        <div class="container">
+                            <h2 class="section-title">Get in Touch Instantly</h2>
+                            <div class="arabic-text section-subtitle">تواصل معنا فوراً</div>
+                            <p class="section-subtitle">Choose your preferred way to reach us</p>
+                            
+                            <!-- Enhanced Contact Form -->
+                            <div class="contact-form-section" style="margin-bottom: 3rem;">
+                                <h3 style="text-align: center; margin-bottom: 2rem; color: #0056b3;">Send us a Message</h3>
+                                <div class="arabic-text" style="text-align: center; margin-bottom: 2rem;">أرسل لنا رسالة</div>
+                                
+                                <form class="contact-form" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 86, 179, 0.1);" onsubmit="handleContactForm(event)">
+                                    <div class="form-group">
+                                        <input type="text" class="form-input" id="name" name="name" required placeholder=" ">
+                                        <label class="form-label" for="name">Full Name *</label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input type="email" class="form-input" id="email" name="email" required placeholder=" ">
+                                        <label class="form-label" for="email">Email Address *</label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input type="tel" class="form-input" id="phone" name="phone" placeholder=" ">
+                                        <label class="form-label" for="phone">Phone Number</label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <select class="form-input" id="subject" name="subject" required>
+                                            <option value="">Select Subject *</option>
+                                            <option value="admissions">Admissions Inquiry</option>
+                                            <option value="programs">Program Information</option>
+                                            <option value="donation">Donation Inquiry</option>
+                                            <option value="events">Events & Activities</option>
+                                            <option value="general">General Information</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <textarea class="form-input" id="message" name="message" rows="5" required placeholder=" " style="resize: vertical; min-height: 120px;"></textarea>
+                                        <label class="form-label" for="message">Your Message *</label>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1rem;">
+                                        Send Message
+                                    </button>
+                                    
+                                    <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                                        We'll respond to your message within 24 hours during business days.
+                                    </p>
+                                </form>
+                            </div>
+                            
+                            <div class="messaging-cards">
+                                <div class="messaging-card whatsapp-card">
+                                    <svg class="messaging-icon" viewBox="0 0 24 24" fill="#25D366" style="width: 48px; height: 48px;">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
+                                    </svg>
+                                    <h3>WhatsApp</h3>
+                                    <div class="arabic-text">واتساب</div>
+                                    <p>Send us a message on WhatsApp for quick responses. We're available during office hours and will respond to your inquiries promptly.</p>
+                                    <a href="https://wa.me/2348145318366?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20Markazul-Uloom." target="_blank" class="messaging-btn whatsapp-btn">
+                                        Chat on WhatsApp
+                                    </a>
+                                </div>
+                                
+                                <div class="messaging-card email-card">
+                                    <svg class="messaging-icon" viewBox="0 0 24 24" fill="#EA4335" style="width: 48px; height: 48px;">
+                                        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.91L12 10.09l9.455-6.269h.909c.904 0 1.636.732 1.636 1.636Z"/>
+                                    </svg>
+                                    <h3>Email</h3>
+                                    <div class="arabic-text">البريد الإلكتروني</div>
+                                    <p>Send us a detailed email for admissions, general inquiries, or any questions about our programs and services.</p>
+                                    <a href="mailto:markazululoomalagbado40@gmail.com?subject=Inquiry%20about%20Markazul-Uloom&body=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20your%20programs%20and%20services." class="messaging-btn email-btn">
+                                        Send Email
+                                    </a>
+                                </div>
+                                
+                                <div class="messaging-card phone-card">
+                                    <svg class="messaging-icon" viewBox="0 0 24 24" fill="#0056b3" style="width: 48px; height: 48px;">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                    </svg>
+                                    <h3>Phone Call</h3>
+                                    <div class="arabic-text">المكالمة الهاتفية</div>
+                                    <p>Call us directly during office hours for immediate assistance. Our staff is ready to help with any questions or concerns.</p>
+                                    <a href="tel:+2348145318366" class="messaging-btn phone-btn">
+                                        Call Now
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-hours" style="margin-top: 2rem; text-align: center;">
+                                <h3>Response Times</h3>
+                                <div class="arabic-text">أوقات الاستجابة</div>
+                                <div class="grid grid-3" style="margin-top: 1rem;">
+                                    <div class="response-time">
+                                        <strong>WhatsApp:</strong> Within 1 hour during office hours
+                                    </div>
+                                    <div class="response-time">
+                                        <strong>Email:</strong> Within 24 hours
+                                    </div>
+                                    <div class="response-time">
+                                        <strong>Phone:</strong> Immediate during office hours
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+
+        <!-- Events Page -->
+        <div id="events-page" class="page">
+            <section class="hero events-hero">
+                <div class="container">
+                    <div class="events-hero-content">
+                        <h1 class="events-title">School Events</h1>
+                        <div class="arabic-text events-arabic">فعاليات المدرسة</div>
+                        <p class="events-description">Join us in celebrating Islamic education through various academic, personal, and community events throughout the year.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <div class="arabic-text section-subtitle">الأحداث القادمة</div>
+                    
+                    <div class="events-grid">
+                        <div class="event-card upcoming">
+                            <div class="event-date">
+                                <div class="event-month">Dec</div>
+                                <div class="event-day">26</div>
+                                <div class="event-year">2025</div>
+                            </div>
+                            <div class="event-content">
+                                <h3>Annual Arabic Symposium</h3>
+                                <div class="arabic-text">ندوة علمية ثقافية</div>
+                                <p>This symposium, organized by the School Alumni, where notable scholars from all walks of life are invited to present papers on a topic of interest. It is equally a program where students are encouraged to see the brighter side of learning Arabic and Islamic Studies, thereby widening their horizons.</p>
+                                <div class="event-details">
+                                    <span class="event-time">🕐 10:00 AM - 2:00 PM</span>
+                                    <span class="event-location">📍 School Library</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-card upcoming">
+                            <div class="event-date">
+                                <div class="event-month">Mar</div>
+                                <div class="event-day">15</div>
+                                <div class="event-year">2025</div>
+                            </div>
+                            <div class="event-content">
+                                <h3>Ramadan Iftar Program</h3>
+                                <div class="arabic-text">برنامج إفطار رمضان - 15 رمضان 1447</div>
+                                <p>Community Iftar gathering for students, families, and local community members during the holy month of Ramadan.</p>
+                                <div class="event-details">
+                                    <span class="event-time">🕐 6:30 PM - 8:00 PM</span>
+                                    <span class="event-location">📍 School Courtyard</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-card upcoming">
+                            <div class="event-date">
+                                <div class="event-month">Dec</div>
+                                <div class="event-day">27-28</div>
+                                <div class="event-year">2025</div>
+                            </div>
+                            <div class="event-content">
+                                <h3>Graduation Ceremony</h3>
+                                <div class="arabic-text">حفل التخرج</div>
+                                <p>Annual graduation ceremony celebrating our students' achievements in Islamic and Arabic studies.</p>
+                                <div class="event-details">
+                                    <span class="event-time">🕐 11:00 AM - 3:00 PM</span>
+                                    <span class="event-location">📍 Main Auditorium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section bg-light">
+                <div class="container">
+                    <h2 class="section-title">Annual Events Calendar</h2>
+                    <div class="arabic-text section-subtitle">التقويم السنوي للفعاليات</div>
+                    
+                    <div class="calendar-events">
+                        <div class="calendar-month">
+                            <h3>Islamic Events</h3>
+                            <div class="arabic-text">الأحداث الإسلامية</div>
+                            <ul class="event-list">
+                                <li><strong>Isra and Mi'raj:</strong> Night Journey Commemoration</li>
+                                <li><strong>Ramadan Programs:</strong> Daily Iftar and Tarawih prayers</li>
+                                <li><strong>Ramadan Tafsir Lecture:</strong> Daily Quran interpretation sessions</li>
+                                <li><strong>Eid Celebrations:</strong> Eid al-Fitr and Eid al-Adha festivities</li>
+                                <li><strong>Hajj Preparation:</strong> Educational sessions for pilgrims</li>
+                            </ul>
+                        </div>
+
+                        <div class="calendar-month">
+                            <h3>Academic Events</h3>
+                            <div class="arabic-text">الأحداث الأكاديمية</div>
+                            <ul class="event-list">
+                                <li><strong>New Student Orientation:</strong> Welcome program for new students</li>
+                                <li><strong>Parent-Teacher Conferences:</strong> Quarterly academic progress meetings</li>
+                                <li><strong>Arabic Language Week:</strong> Celebrating Arabic language and culture</li>
+                                <li><strong>Science Fair:</strong> Islamic perspective on modern science</li>
+                                <li><strong>Final Examinations:</strong> End-of-term assessments</li>
+                            </ul>
+                        </div>
+
+                        <div class="calendar-month">
+                            <h3>Community Events</h3>
+                            <div class="arabic-text">أحداث المجتمع</div>
+                            <ul class="event-list">
+                                <li><strong>Open House:</strong> Community visits and school tours</li>
+                                <li><strong>Charity Drives:</strong> Zakat and Sadaqah collection programs</li>
+                                <li><strong>Health Awareness:</strong> Medical checkups and health education</li>
+                                <li><strong>Cultural Exchange:</strong> Inter-school Islamic programs</li>
+                                <li><strong>Alumni Reunion:</strong> Gathering of former students</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="card event-registration">
+                        <h2>Event Registration & Information</h2>
+                        <div class="arabic-text">تسجيل الأحداث والمعلومات</div>
+                        <p>Stay updated with our latest events and register for upcoming programs. For more information about any event, please contact our administration office.</p>
+                        
+                        <div class="grid grid-2">
+                            <div class="registration-info">
+                                <h3>How to Register</h3>
+                                <div class="arabic-text">كيفية التسجيل</div>
+                                <ul>
+                                    <li>Visit our administration office during school hours</li>
+                                    <li>Call us at +234 814 531 8366</li>
+                                    <li>Send WhatsApp message for quick registration</li>
+                                    <li>Email us at markazululoomalagbado40@gmail.com</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="event-contact">
+                                <h3>Event Coordinator</h3>
+                                <div class="arabic-text">منسق الأحداث</div>
+                                <p><strong>Ustadh AbdulQadir Hasan</strong><br>
+                                Events & Activities Coordinator</p>
+                                <p>📞 +234 814 531 8366<br>
+                                📧 markazululoomalagbado40@gmail.com</p>
+                                <p><strong>Office Hours:</strong><br>
+                                Friday: 8:00 AM - 5:00 PM<br>
+                                Saturday: 10:00 AM - 5:00 PM<br>
+                                Sunday: 10:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>        </div>
+
+        <!-- Donate Page -->
+        <div id="donate-page" class="page">
+            <!-- Support Markaz-ul-Uloom Section -->
+            <section class="section support-section">
+                <div class="container">
+                    <h1 class="page-title">Support Markaz-ul-Uloom</h1>
+                    <div class="arabic-text page-subtitle">ادعم مركز العلوم</div>
+                    
+                    <div class="donation-intro">
+                        <p class="intro-text">Your generous donations help us continue our mission of providing quality Islamic and Arabic education, maintaining our mosque facilities, and serving our community. Every contribution, no matter the size, makes a meaningful difference in the lives of our students and community members.</p>
+                        <div class="arabic-text">تبرعاتكم الكريمة تساعدنا على مواصلة رسالتنا في تقديم التعليم الإسلامي والعربي الجيد</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bank Account Information Section -->
+            <section class="section bank-account-section">
+                <div class="container">
+                    <h2 class="section-title">Bank Account Information</h2>
+                    <div class="arabic-text section-subtitle">معلومات الحساب المصرفي</div>
+                    
+                    <div class="bank-info-grid">
+                        <div class="bank-account-card">
+                            <div class="bank-icon">🏦</div>
+                            <h3>Official Bank Account</h3>
+                            <div class="bank-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Account Name:</span>
+                                    <span class="detail-value">MARKAZUL ULOOM ALAGBADO LAGOS</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Account Number:</span>
+                                    <span class="detail-value">2005139960</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Bank:</span>
+                                    <span class="detail-value">FCMB (First City Monument Bank)</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Account Type:</span>
+                                    <span class="detail-value">Current Account</span>
+                                </div>
+                            </div>
+                            <div class="important-notice">
+                                <strong>Important:</strong> Please send proof of payment to our email 
+                                <a href="mailto:markazululoomalagbado40@gmail.com">markazululoomalagbado40@gmail.com</a> 
+                                or WhatsApp <a href="tel:+2348145318366">+234 814 531 8366</a> for acknowledgment and receipt.
+                            </div>
+                        </div>
+                        
+                        <div class="mobile-payment-card">
+                            <div class="mobile-icon">📱</div>
+                            <h3>Mobile Payment Options</h3>
+                            <div class="mobile-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Opay, PalmPay, Kuda:</span>
+                                    <span class="detail-value">Coming Soon</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Reference:</span>
+                                    <span class="detail-value">General Donation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donation Methods Section -->
+            <section class="section">
+                <div class="container">
+
+                    <div class="donation-contact">
+                        <h2 class="section-title white-title">Need Help with Your Donation?</h2>
+                        <div class="arabic-text section-subtitle gold-arabic">تحتاج مساعدة في التبرع؟</div>
+                        
+                        <div class="contact-info">
+                            <p><strong>📞 Phone:</strong> +234 814 531 8366</p>
+                            <p><strong>📧 Email:</strong> markazululoomalagbado40@gmail.com</p>
+                            <p><strong>💬 WhatsApp:</strong> +234 814 531 8366</p>
+                            <p><strong>🕐 Office Hours:</strong><br>
+                            Friday: 8:00 AM - 5:00 PM<br>
+                            Saturday: 10:00 AM - 5:00 PM<br>
+                            Sunday: 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="donation-quote">
+                        <div class="quote-content">
+                            <div class="arabic-text large-quote">مَنْ بَنَى مَسْجِدًا يَبْتَغِي بِهِ وَجْهَ اللَّهِ بَنَى اللَّهُ لَهُ مِثْلَهُ فِي الْجَنَّةِ</div>
+                            <p class="quote-translation">"Whoever builds a mosque seeking Allah's pleasure, Allah will build for him something similar in Paradise."</p>
+                            <p class="quote-source">- Prophet Muhammad (ﷺ)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+          </div>
+    </div>
+
+    <!-- Donate Page Section -->
+    <div class="page" id="donate-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+                    <h1 class="hero-title">Support Our Mission</h1>
+                    <h2 class="hero-subtitle">General Donations</h2>
+                    <div class="arabic-welcome">تبرعوا لدعم رسالتنا التعليمية والدعوية</div>
+                    <p class="hero-description">Your generous contributions help us continue providing quality Islamic education, maintaining our mosque, and serving our community. Every donation, no matter the size, makes a meaningful difference in the lives of our students and community members.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Areas Section -->
+        <section class="donation-areas">
+            <div class="container">
+                <h2 class="section-title">Where Your Donations Help</h2>
+                <div class="donation-grid">
+                    <div class="donation-card">
+                        <div class="donation-icon">📚</div>
+                        <h3>School Operations</h3>
+                        <p class="arabic-subtitle">العمليات المدرسية</p>
+                        <p>Support daily school operations including teacher salaries, educational materials, utilities, and facility maintenance to ensure quality Islamic education.</p>
+                        <ul>
+                            <li>Teacher salaries and training</li>
+                            <li>Educational materials and books</li>
+                            <li>Classroom equipment and technology</li>
+                            <li>School utilities and maintenance</li>
+                        </ul>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-icon">🕌</div>
+                        <h3>Mosque Maintenance</h3>
+                        <p class="arabic-subtitle">صيانة المسجد</p>
+                        <p>Help maintain our prayer facilities, utilities, and create a welcoming environment for worship and community gatherings.</p>
+                        <ul>
+                            <li>Prayer hall maintenance</li>
+                            <li>Utilities and cleaning</li>
+                            <li>Sound system and equipment</li>
+                            <li>Facility improvements</li>
+                        </ul>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-icon">🎓</div>
+                        <h3>Student Scholarships</h3>
+                        <p class="arabic-subtitle">منح الطلاب</p>
+                        <p>Provide financial assistance to deserving students who need support to continue their Islamic education and achieve their academic goals.</p>
+                        <ul>
+                            <li>Tuition fee assistance</li>
+                            <li>Books and supplies</li>
+                            <li>Transportation support</li>
+                            <li>Meal programs</li>
+                        </ul>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-icon">🤝</div>
+                        <h3>Community Programs</h3>
+                        <p class="arabic-subtitle">البرامج المجتمعية</p>
+                        <p>Support community outreach, Islamic events, educational seminars, and programs that benefit the wider Muslim community.</p>
+                        <ul>
+                            <li>Islamic events and seminars</li>
+                            <li>Community outreach programs</li>
+                            <li>Youth development activities</li>
+                            <li>Interfaith dialogue initiatives</li>
+                        </ul>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-icon">🚨</div>
+                        <h3>Emergency Fund</h3>
+                        <p class="arabic-subtitle">صندوق الطوارئ</p>
+                        <p>Help us respond to unexpected needs, urgent repairs, and emergency situations that may arise in our school or mosque operations.</p>
+                        <ul>
+                            <li>Urgent facility repairs</li>
+                            <li>Emergency student assistance</li>
+                            <li>Unexpected operational costs</li>
+                            <li>Crisis response support</li>
+                        </ul>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-icon">📖</div>
+                        <h3>Library & Resources</h3>
+                        <p class="arabic-subtitle">المكتبة والموارد</p>
+                        <p>Expand our library collection, digital resources, and educational materials to enhance the learning experience for all students.</p>
+                        <ul>
+                            <li>Islamic books and references</li>
+                            <li>Digital learning resources</li>
+                            <li>Research materials</li>
+                            <li>Online educational platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Methods Section -->
+        <section class="donation-methods">
+            <div class="container">
+                <h2 class="section-title">How to Donate</h2>
+                <div class="methods-grid">
+                    <!-- Bank Transfer -->
+                    <div class="method-card">
+                        <div class="method-icon">🏦</div>
+                        <h3>Bank Transfer</h3>
+                        <p class="arabic-subtitle">التحويل المصرفي</p>
+                        <div class="bank-details">
+                            <div class="detail-item">
+                                <strong>Account Name:</strong>
+                                <span>MARKAZUL ULOOM ALAGBADO LAGOS</span>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Account Number:</strong>
+                                <span>2005139960</span>
+                            </div>
+                            <div class="detail-item">
+                                <strong>Bank:</strong>
+                                <span>FCMB</span>
+                            </div>
+                        </div>
+                        <p class="method-note">Please send proof of payment to our email for acknowledgment.</p>
+                    </div>
+
+                    <!-- In-Person Donations -->
+                    <div class="method-card">
+                        <div class="method-icon">🏢</div>
+                        <h3>In-Person Donations</h3>
+                        <p class="arabic-subtitle">التبرعات الشخصية</p>
+                        <div class="location-details">
+                            <div class="location">
+                                <strong>Main Campus:</strong>
+                                <p>1 Buyide Avenue, Alagbado<br>Lagos State, Nigeria</p>
+                            </div>
+                            <div class="location">
+                                <strong>Otubu Branch:</strong>
+                                <p>64B, Otubu bus stop, off Ogba road<br>Agege, Lagos</p>
+                            </div>
+                        </div>
+                        <p class="method-note">Visit during office hours: Friday 8:00 AM - 5:00 PM, Saturday & Sunday 10:00 AM - 5:00 PM</p>
+                    </div>
+
+                    <!-- Online Payment -->
+                    <div class="method-card">
+                        <div class="method-icon">💳</div>
+                        <h3>Online Payment</h3>
+                        <p class="arabic-subtitle">الدفع الإلكتروني</p>
+                        <p>For online donations and international transfers, please contact us for secure payment options.</p>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> <a href="mailto:markazululoomalagbado40@gmail.com">markazululoomalagbado40@gmail.com</a></p>
+                            <p><strong>Phone:</strong> <a href="tel:+2348145318366">+234 814 531 8366</a></p>
+                        </div>
+                        <p class="method-note">We'll provide secure payment links and international transfer details upon request.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggested Amounts Section -->
+        <section class="suggested-amounts">
+            <div class="container">
+                <h2 class="section-title">Suggested Donation Amounts</h2>
+                <div class="amounts-grid">
+                    <div class="amount-card">
+                        <div class="amount">₦5,000</div>
+                        <p>Supports one student's books for a month</p>
+                    </div>
+                    <div class="amount-card">
+                        <div class="amount">₦10,000</div>
+                        <p>Covers utilities for the mosque for a week</p>
+                    </div>
+                    <div class="amount-card">
+                        <div class="amount">₦25,000</div>
+                        <p>Provides scholarship support for one student</p>
+                    </div>
+                    <div class="amount-card">
+                        <div class="amount">₦50,000</div>
+                        <p>Funds a community program or event</p>
+                    </div>
+                    <div class="amount-card">
+                        <div class="amount">₦100,000</div>
+                        <p>Supports teacher training and development</p>
+                    </div>
+                    <div class="amount-card custom" onclick="handleCustomDonation()">
+                        <div class="amount">Custom</div>
+                        <p>Any amount you can contribute</p>
+                    </div>
+                </div>
+                <p class="amounts-note">Every donation, regardless of amount, is deeply appreciated and makes a real difference in our community.</p>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact-section">
+            <div class="container">
+                <h2 class="section-title">Your Impact</h2>
+                <div class="impact-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">44</div>
+                        <div class="stat-label">Programs Offered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Students Graduated</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">40</div>
+                        <div class="stat-label">Years of Service</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Campus Locations</div>
+                    </div>
+                </div>
+                <div class="impact-text">
+                    <p>Thanks to the generous support of donors like you, Markaz-ul-Uloom has been serving the Muslim community for over four decades. Your contributions help us maintain our commitment to excellence in Islamic education and community service.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact for Donations -->
+        <section class="donation-contact">
+            <div class="container">
+                <div class="contact-card">
+                    <h2>Questions About Donations?</h2>
+                    <p class="arabic-subtitle">أسئلة حول التبرعات؟</p>
+                    <p>Our team is here to help you with any questions about donations, specific projects, or how your contribution will be used.</p>
+                    <div class="contact-methods">
+                        <a href="mailto:markazululoomalagbado40@gmail.com" class="contact-btn email-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            Email Us
+                        </a>
+                        <a href="https://wa.me/2348145318366" class="contact-btn whatsapp-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                        <a href="tel:+2348145318366" class="contact-btn phone-btn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            Call Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page Section -->
+    <div class="page" id="contact-page">
+        <section class="contact-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
+                    <h1 class="hero-title">Contact Us</h1>
+                    <div class="arabic-welcome">تواصل معنا</div>
+                    <p class="hero-description">We welcome your questions, inquiries, and feedback. Our team is here to assist you with information about our programs, admissions, and services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Our Locations</h3>
+                        <div class="location-info">
+                            <div class="location">
+                                <h4>Main Campus</h4>
+                                <p>1 Buyide Avenue, Alagbado<br>Lagos State, Nigeria</p>
+                            </div>
+                            <div class="location">
+                                <h4>Otubu Branch</h4>
+                                <p>64B, Otubu bus stop, off Ogba road<br>Agege, Lagos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Phone & WhatsApp</h3>
+                        <div class="contact-details">
+                            <p><strong>Phone:</strong> <a href="tel:+2348145318366">+234 814 531 8366</a></p>
+                            <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348145318366">+234 814 531 8366</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <div class="contact-details">
+                            <p><a href="mailto:markazululoomalagbado40@gmail.com">markazululoomalagbado40@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🕐</div>
+                        <h3>Office Hours</h3>
+                        <div class="contact-details">
+                            <p><strong>Friday:</strong> 8:00 AM - 5:00 PM</p>
+                            <p><strong>Saturday & Sunday:</strong> 10:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-methods">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-buttons">
+                    <a href="mailto:markazululoomalagbado40@gmail.com" class="contact-btn email-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Send Email
+                    </a>
+                    <a href="https://wa.me/2348145318366" class="contact-btn whatsapp-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+2348145318366" class="contact-btn phone-btn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        Call Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <picture>
+                            <source srcset="images/optimized/logo.webp" type="image/webp">
+                            <img src="images/logo.jpg" alt="Markazul-Uloom Logo" class="footer-logo-img" loading="lazy" width="107" height="110">
+                        </picture>
+                        <div>
+                            <h3>Markazul-Uloom</h3>
+                            <p>School of Arabic & Islamic Studies</p>
+                        </div>
+                    </div>
+                    <div class="arabic-text">مركز العلوم للدراسات العربية والإسلامية</div>
+                    <p>Serving the Muslim community in Otubu/Alagbado, Lagos, Nigeria since 1985. Providing authentic Islamic education and personal guidance for over four decades.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" onclick="showPage('services')">Admissions</a></li>
+                        <li><a href="#" onclick="showPage('events')">Events</a></li>
+                        <li><a href="#" onclick="showPage('anniversary')">40th Anniversary</a></li>
+                        <li><a href="#" onclick="showPage('masjid-project')">Al-Uloom Central Mosque</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 1 Buyide Avenue, Alagbado, Lagos State, Nigeria<br>📍 64B, Otubu bus stop, off Ogba road, Agege, Lagos</p>
+                    <p>📞 +234 814 531 8366</p>
+                    <p>📧 markazululoomalagbado40@gmail.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="arabic-text">تواصل معنا</div>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/marcazululoomalagbado" target="_blank" class="footer-social-link facebook-footer" title="Follow us on Facebook">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/official_markazululoom?igsh=MTN6bmgwYWxiM2pkdg==" target="_blank" class="footer-social-link instagram-footer" title="Follow us on Instagram">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/@markazululoom" target="_blank" class="footer-social-link youtube-footer" title="Subscribe to our YouTube">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://wa.me/2348145318366" target="_blank" class="footer-social-link whatsapp-footer" title="Message us on WhatsApp">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
+                            </svg>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="mailto:markazululoomalagbado40@gmail.com" class="footer-social-link email-footer" title="Send us an email">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.91L12 10.09l9.455-6.269h.909c.904 0 1.636.732 1.636 1.636Z"/>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Prayer Times</h3>
+                    <div class="footer-prayer-times">
+                        <div>Fajr: 5:13 AM</div>
+                        <div>Dhuhr: 12:47 PM</div>
+                        <div>Asr: 4:15 PM</div>
+                        <div>Maghrib: 7:04 PM</div>
+                        <div>Isha: 8:15 PM</div>
+                    </div>
+                    <div class="prayer-times-updated" style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem; text-align: center;">
+                        Updating automatically...
+                    </div>
+                    <button onclick="refreshPrayerTimes()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; cursor: pointer; margin-top: 0.5rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                        🔄 Refresh Times
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="arabic-text">رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ</div>
+                <p>&copy; 2025 Markazul-Uloom School of Arabic & Islamic Studies. All rights reserved.</p>
+                <div class="arabic-text">جميع الحقوق محفوظة لمركز العلوم ٢٠٢٥</div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="https://wa.me/2348145318366?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20Markazul-Uloom." target="_blank" class="floating-btn floating-whatsapp" title="Chat with us on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
+            </svg>
+        </a>
+        <a href="mailto:markazululoomalagbado40@gmail.com?subject=Inquiry%20about%20Markazul-Uloom&body=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20your%20programs%20and%20services." class="floating-btn floating-email" title="Send us an email">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.91L12 10.09l9.455-6.269h.909c.904 0 1.636.732 1.636 1.636Z"/>
+            </svg>
+        </a>
+        <a href="tel:+2348145318366" class="floating-btn floating-phone" title="Call us">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script src="./js/script.min.js" defer></script>
+</body>
+</html>
+

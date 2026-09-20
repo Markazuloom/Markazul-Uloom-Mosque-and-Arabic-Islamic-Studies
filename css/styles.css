@@ -1,0 +1,5025 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Enhanced animations and transitions */
+*, *::before, *::after {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved focus styles for accessibility */
+*:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
+}
+
+.arabic-text {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    text-align: right;
+    color: #0056b3; /* Darker blue from logo */
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header - Hide-on-Scroll Implementation */
+.header {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    color: white;
+    padding: 0.3rem 0;
+    box-shadow: 0 4px 20px rgba(0, 86, 179, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+    will-change: transform;
+}
+
+/* Body padding - minimal since header will hide */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    padding-top: 0; /* No padding since header will hide on scroll */
+}
+
+/* Header states */
+.header-visible {
+    transform: translateY(0);
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .header {
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .header-hidden {
+        transform: translateY(-100%);
+    }
+}
+
+/* Header container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+/* Header content layout */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-text {
+    text-align: left;
+}
+
+.logo-subtitle {
+    text-align: center !important;
+    font-size: 0.8rem !important; /* Further reduced from 0.9rem */
+    margin: 0.2rem 0 0 0 !important;
+}
+
+.header-arabic-text {
+    font-size: 0.9rem !important; /* Further reduced from 1rem */
+    color: #FFD700 !important;
+    text-align: left !important;
+    direction: rtl;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0.2rem 0 0 0 !important;
+}
+
+.nav {
+    display: flex;
+    gap: 0.5rem; /* Reduced from 1rem to keep all items on one line */
+    flex-wrap: wrap;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 0;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .logo {
+        justify-content: center;
+    }
+    
+    .logo-img {
+        height: 50px; /* Further reduced from 60px for mobile default */
+    }
+    
+    .logo-text h1 {
+        font-size: 1.1rem; /* Further reduced from 1.2rem for mobile */
+    }
+    
+    .logo-subtitle {
+        font-size: 0.7rem !important; /* Further reduced for mobile */
+    }
+    
+    .header-arabic-text {
+        font-size: 0.8rem !important; /* Further reduced for mobile */
+        text-align: center !important;
+    }
+    
+    .nav {
+        justify-content: center;
+        gap: 0.3rem; /* Further reduced for mobile to keep all items on one line */
+    }
+    
+    .nav-btn {
+        padding: 0.4rem 0.8rem; /* Further reduced for mobile */
+        font-size: 0.75rem; /* Further reduced for mobile */
+    }
+    
+    .nav-social {
+        justify-content: center;
+        gap: 0.2rem; /* Further reduced for mobile */
+    }
+    
+    .social-icon {
+        width: 16px; /* Reduced from 20px for mobile */
+        height: 16px; /* Reduced from 20px for mobile */
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 60px; /* Further reduced from 80px to make default header smaller */
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo-text h1 {
+    font-size: 1.3rem; /* Slightly reduced from 1.5rem */
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo-text p {
+    font-size: 1rem;
+    margin: 0;
+    color: #e0f2ff; /* Lighter blue for contrast */
+    font-weight: 500;
+}
+
+.logo-text .arabic-text {
+    font-size: 0.9rem;
+    color: #e0f2ff; /* Lighter blue for contrast */
+    margin: 0.2rem 0 0 0;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Social icons within navigation */
+.nav-social {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.6rem 1rem; /* Reduced from 0.8rem 1.5rem to make buttons smaller */
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.85rem; /* Reduced from 0.95rem */
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #FFD700; /* Gold accent */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown Menu Styles */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown-arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 86, 179, 0.3);
+    border-radius: 15px;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    color: black;
+    padding: 0.6rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 86, 179, 0.1);
+    color: #0056b3;
+}
+
+/* Main Content */
+
+
+.page.active {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 50%, #e0f2ff 100%); /* Darker blue gradient */
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="islamic" patternUnits="userSpaceOnUse" width="20" height="20"><polygon points="10,0 20,10 10,20 0,10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23islamic)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.bismillah {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #FFD700; /* Gold accent */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #f0f8ff;
+}
+
+.hero-arabic {
+    text-align: center !important;
+    font-size: 1.8rem !important;
+    color: #FFD700 !important;
+    font-weight: 700;
+    margin: 1.5rem 0 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.prayer-times-arabic {
+    color: #FFD700 !important;
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.events-arabic {
+    font-size: 1.6rem !important;
+    font-weight: 700;
+    color: #FFD700 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-arabic {
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    color: #FFD700; /* Gold accent */
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f0f8ff;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: #0056b3; /* Darker blue from logo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: #f0f8ff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid #FFD700; /* Gold accent */
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #0056b3; /* Darker blue from logo */
+    transform: translateY(-3px);
+}
+
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #004080; /* Even darker blue for titles */
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #0056b3); /* Gold to blue gradient */
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: #0056b3; /* Darker blue from logo */
+}
+
+.page-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #004080; /* Even darker blue for titles */
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: #0056b3; /* Darker blue from logo */
+}
+
+/* Grid System */
+.grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* Darker blue shadow */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.25); /* Darker blue shadow */
+    border-color: #FFD700; /* Gold accent */
+}
+
+.card h3 {
+    color: #004080; /* Even darker blue for titles */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card h4 {
+    color: #004080; /* Even darker blue for titles */
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+.card ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+/* Campus Section */
+.campus-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+}
+
+.campus-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.facility-group {
+    margin-bottom: 2rem;
+}
+
+/* Service Cards */
+.services-overview {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* Darker blue shadow */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.25); /* Darker blue shadow */
+    border-color: #FFD700; /* Gold accent */
+}
+
+.service-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: #FFD700; /* Gold accent */
+}
+
+.service-card h3 {
+    color: #004080; /* Even darker blue for titles */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-card .arabic-text {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-detail-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* Darker blue shadow */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+}
+
+.service-detail-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.25); /* Darker blue shadow */
+    border-color: #FFD700; /* Gold accent */
+}
+
+.service-detail-card .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #FFD700; /* Gold accent */
+}
+
+.service-detail-card h3 {
+    color: #004080; /* Even darker blue for titles */
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.service-detail-card .arabic-text {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.service-detail-card ul {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Prayer Times */
+.prayer-times-section {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%); /* Darker blue gradient */
+    color: white;
+}
+
+.prayer-times-section .section-title {
+    color: white;
+}
+
+.prayer-times-section .section-title::after {
+    background: linear-gradient(90deg, white, #FFD700); /* White to Gold gradient */
+}
+
+.prayer-times-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.prayer-time-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.prayer-time-card:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+}
+
+.prayer-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.prayer-arabic {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #FFD700; /* Gold accent */
+}
+
+.prayer-time {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFD700; /* Gold accent */
+}
+
+.prayer-location {
+    text-align: center;
+    font-style: italic;
+    color: #f0f8ff;
+    margin-top: 2rem;
+}
+
+/* Anniversary Page */
+.anniversary-hero {
+    background: linear-gradient(135deg, #0056b3 0%, #004080 50%, #002040 100%); /* Darker blue gradient */
+    color: white;
+    padding: 8rem 0 6rem 0; /* Increased top padding to 8rem */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 120px; /* Add top margin to push content below header */
+}
+
+.anniversary-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" patternUnits="userSpaceOnUse" width="25" height="25"><circle cx="12.5" cy="12.5" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+}
+
+.anniversary-content {
+    position: relative;
+    z-index: 2;
+}
+
+.anniversary-number {
+    font-size: 5rem; /* Reduced from 8rem to make the "40" smaller */
+    font-weight: 900;
+    color: #FFD700; /* Gold accent */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.anniversary-title {
+    font-size: 2.5rem; /* Reduced from 4rem to make "Years of Excellence" smaller */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.anniversary-subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #f0f8ff;
+}
+
+.anniversary-arabic {
+    font-size: 2rem;
+    margin: 2rem 0;
+    color: #FFD700; /* Gold accent */
+}
+
+.anniversary-description {
+    font-size: 1.5rem;
+    color: #f0f8ff;
+    font-style: italic;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #FFD700, #0056b3); /* Gold to blue gradient */
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-year {
+    background: linear-gradient(135deg, #FFD700, #0056b3); /* Gold to blue gradient */
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 100px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3); /* Darker blue shadow */
+    z-index: 2;
+    position: relative;
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* Darker blue shadow */
+    margin: 0 2rem;
+    flex: 1;
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+}
+
+.timeline-content h3 {
+    color: #004080; /* Even darker blue for titles */
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* Achievements */
+.achievements-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+}
+
+.achievement-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* Darker blue shadow */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.25); /* Darker blue shadow */
+    border-color: #FFD700; /* Gold accent */
+}
+
+.achievement-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #FFD700; /* Gold accent */
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.achievement-card h3 {
+    color: #004080; /* Even darker blue for titles */
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Contact Page */
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+}
+
+.contact-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    color: #FFD700; /* Gold accent */
+}
+
+.contact-item h3 {
+    color: #004080; /* Even darker blue for titles */
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-item .arabic-text {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.office-hours {
+    margin-top: 1.5rem;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+}
+
+.quote-box {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%); /* Darker blue gradient */
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.quote-box .arabic-text {
+    color: #FFD700; /* Gold accent */
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.quote-box em {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #004080 0%, #002040 100%); /* Even darker blue gradient */
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+    color: #FFD700; /* Gold accent */
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo-img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.footer-logo h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.footer-logo p {
+    margin: 0;
+    color: #e0f2ff; /* Lighter blue for contrast */
+    font-size: 0.9rem;
+}
+
+.footer-section .arabic-text {
+    color: #FFD700; /* Gold accent */
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #e0f2ff; /* Lighter blue for contrast */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FFD700; /* Gold accent */
+}
+
+.footer-prayer-times {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-prayer-times div {
+    background: rgba(0, 86, 179, 0.2); /* Darker blue with transparency */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0, 86, 179, 0.3); /* Darker blue with transparency */
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom .arabic-text {
+    color: #FFD700; /* Gold accent */
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #e0f2ff; /* Lighter blue for contrast */
+    margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-img {
+        height: 110px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.8rem;
+    }
+    
+    .nav {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .nav-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-arabic {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .anniversary-number {
+        font-size: 5rem;
+    }
+    
+    .anniversary-title {
+        font-size: 2.5rem;
+    }
+    
+    .anniversary-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: row !important;
+        padding-left: 70px;
+    }
+    
+    .timeline-year {
+        position: absolute;
+        left: 0;
+        min-width: 60px;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    .timeline-content {
+        margin: 0;
+    }
+    
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .prayer-times-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .service-card,
+    .service-detail-card {
+        padding: 1.5rem;
+    }
+    
+    .achievement-card {
+        padding: 2rem 1rem;
+    }
+    
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-content {
+        gap: 2rem;
+    }
+    
+    /* Even smaller social icons for very small screens */
+    .nav-social .social-link {
+        width: 16px; /* Further reduced for small mobile */
+        height: 16px; /* Further reduced for small mobile */
+    }
+    
+    .nav-social .social-icon {
+        width: 5px; /* Further reduced for small mobile */
+        height: 5px; /* Further reduced for small mobile */
+    }
+}
+
+/* Imam Section */
+.imam-section {
+    background: linear-gradient(135deg, #e6f3ff 0%, #f0f8ff 100%);
+}
+
+.imam-image-container {
+    text-align: center;
+}
+
+.imam-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.25);
+    border: 5px solid #FFD700; /* Gold border */
+}
+
+.imam-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imam-content .section-title,
+.imam-content .section-subtitle {
+    text-align: left;
+}
+
+.imam-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .imam-content .section-title,
+    .imam-content .section-subtitle {
+        text-align: center;
+    }
+}
+
+
+/* Social icons within navigation */
+.nav-social .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-social .social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-social .social-link.whatsapp-link:hover {
+    background: #25D366;
+    border-color: #25D366;
+}
+
+.nav-social .social-link.email-link:hover {
+    background: #EA4335;
+    border-color: #EA4335;
+}
+
+.nav-social .social-icon {
+    width: 12px;
+    height: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile responsive adjustments for navigation with inline social icons */
+@media (max-width: 768px) {
+    .nav {
+        justify-content: center;
+        gap: 0.3rem;
+    }
+    
+    .nav-social {
+        margin-left: 0.3rem;
+        padding-left: 0.3rem;
+    }
+    
+    .nav-social .social-link {
+        width: 18px; /* Reduced from 24px to make icons smaller */
+        height: 18px; /* Reduced from 24px to make icons smaller */
+    }
+    
+    .nav-social .social-icon {
+        width: 6px; /* Reduced from 8px to make icons smaller */
+        height: 6px; /* Reduced from 8px to make icons smaller */
+    }
+}
+
+/* Footer Social Media */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #e0f2ff;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-social-link .social-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.footer-social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-social-link.facebook-footer:hover {
+    background: #1877F2;
+    color: white;
+}
+
+.footer-social-link.instagram-footer:hover {
+    background: linear-gradient(45deg, #F56040, #E1306C);
+    color: white;
+}
+
+.footer-social-link.youtube-footer:hover {
+    background: #FF0000;
+    color: white;
+}
+
+.footer-social-link.whatsapp-footer:hover {
+    background: #25D366;
+    color: white;
+}
+
+.footer-social-link.email-footer:hover {
+    background: #EA4335;
+    color: white;
+}
+
+/* Floating Action Buttons */
+.floating-actions {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-whatsapp {
+    background: #25D366;
+}
+
+.floating-email {
+    background: #EA4335;
+}
+
+.floating-phone {
+    background: #0056b3;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 10px rgba(37, 211, 102, 0.2);
+    }
+    100% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Messaging Section */
+.messaging-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem 0;
+    margin: 2rem 0;
+    border-radius: 15px;
+}
+
+.messaging-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.messaging-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.messaging-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.messaging-card.whatsapp-card {
+    border-color: #25D366;
+}
+
+.messaging-card.email-card {
+    border-color: #EA4335;
+}
+
+.messaging-card.phone-card {
+    border-color: #0056b3;
+}
+
+.messaging-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.messaging-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.messaging-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.messaging-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.messaging-btn.whatsapp-btn {
+    background: #25D366;
+}
+
+.messaging-btn.email-btn {
+    background: #EA4335;
+}
+
+.messaging-btn.phone-btn {
+    background: #0056b3;
+}
+
+.messaging-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Social Media */
+@media (max-width: 768px) {
+    .nav-social {
+        gap: 0.3rem;
+    }
+    
+    .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .floating-actions {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+    
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .messaging-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-social {
+        gap: 0.6rem;
+    }
+    
+    .footer-social-link {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+}
+
+
+/* Anniversary Logo Styles */
+.anniversary-logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+}
+
+.anniversary-logo {
+    max-width: 220px; /* Reduced from 300px to make logo smaller */
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+    transition: all 0.3s ease;
+    border: 4px solid #FFD700;
+}
+
+.anniversary-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 86, 179, 0.4);
+}
+
+/* Responsive Anniversary Logo */
+@media (max-width: 768px) {
+    .anniversary-logo {
+        max-width: 180px; /* Reduced from 250px to make mobile logo smaller */
+    }
+    
+    .anniversary-logo-container {
+        padding: 1rem 0;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .anniversary-logo {
+        max-width: 150px; /* Reduced from 200px to make small mobile logo smaller */
+    }
+    
+    .anniversary-logo-container {
+        padding: 0.5rem 0;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* Anniversary Inspirational Section */
+.anniversary-inspiration {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin: 2rem 0;
+}
+
+.inspiration-content {
+    text-align: center;
+}
+
+.anniversary-quote-image {
+    max-width: 100%;
+    width: 800px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 86, 179, 0.2);
+    transition: all 0.3s ease;
+    border: 3px solid #FFD700;
+}
+
+.anniversary-quote-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 86, 179, 0.3);
+}
+
+/* Responsive Anniversary Quote Image */
+@media (max-width: 1024px) {
+    .anniversary-quote-image {
+        width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .anniversary-quote-image {
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .anniversary-inspiration {
+        padding: 2rem 0;
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .anniversary-quote-image {
+        border-radius: 15px;
+        border-width: 2px;
+    }
+    
+    .anniversary-inspiration {
+        padding: 1.5rem 0;
+        margin: 1rem 0;
+    }
+}
+
+
+/* Quranic Verse Styles */
+.quranic-verse {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #0056b3;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.1);
+    border: 2px solid #FFD700;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.verse-reference {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Quranic Verse */
+@media (max-width: 768px) {
+    .quranic-verse {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        padding: 1rem;
+        margin: 1.5rem 0 0.8rem 0;
+    }
+    
+    .verse-reference {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quranic-verse {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        padding: 0.8rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+    
+    .verse-reference {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* 40 Years Verse Section */
+.forty-years-verse {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(0, 86, 179, 0.05) 100%);
+    border-radius: 20px;
+    border: 3px solid #FFD700;
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.15);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quranic-verse-40 {
+    font-size: 1.6rem;
+    line-height: 1.9;
+    color: white;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.verse-reference-40 {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.verse-translation {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #FFD700;
+}
+
+/* Responsive 40 Years Verse */
+@media (max-width: 768px) {
+    .forty-years-verse {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .quranic-verse-40 {
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+    
+    .verse-reference-40 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .verse-translation {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .forty-years-verse {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .quranic-verse-40 {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .verse-reference-40 {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .verse-translation {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+}
+
+
+/* Highlighted Forty Years Text */
+.highlight-forty-years {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #0056b3;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    border: 2px solid #FFD700;
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+.highlight-forty-years-en {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #0056b3;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 12px rgba(255, 215, 0, 0.4);
+    border: 2px solid #FFD700;
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* Responsive Highlighted Text */
+@media (max-width: 768px) {
+    .highlight-forty-years {
+        padding: 0.2rem 0.4rem;
+        border-radius: 6px;
+        font-size: 0.95em;
+    }
+    
+    .highlight-forty-years-en {
+        padding: 0.15rem 0.3rem;
+        border-radius: 4px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlight-forty-years {
+        padding: 0.15rem 0.3rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+    
+    .highlight-forty-years-en {
+        padding: 0.1rem 0.25rem;
+        border-radius: 3px;
+        font-size: 0.9em;
+    }
+}
+
+
+/* Events Page Styles */
+.events-hero {
+    background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.events-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.events-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.events-arabic {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #FFD700;
+}
+
+.events-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Events Grid */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 86, 179, 0.2);
+    border-color: #FFD700;
+}
+
+.event-card.upcoming {
+    border-left: 5px solid #FFD700;
+}
+
+.event-date {
+    background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.event-month {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-day {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.event-year {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.event-content {
+    padding: 2rem;
+}
+
+.event-content h3 {
+    color: #0056b3;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.event-content .arabic-text {
+    color: #FFD700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.event-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.event-time,
+.event-location {
+    font-size: 0.9rem;
+    color: #0056b3;
+    font-weight: 500;
+}
+
+/* Calendar Events */
+.calendar-events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.calendar-month {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.1);
+    border-top: 4px solid #FFD700;
+}
+
+.calendar-month h3 {
+    color: #0056b3;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-month .arabic-text {
+    color: #FFD700;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+    line-height: 1.5;
+}
+
+.event-list li:last-child {
+    border-bottom: none;
+}
+
+.event-list li strong {
+    color: #0056b3;
+    font-weight: 600;
+}
+
+/* Event Registration */
+.event-registration {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #FFD700;
+}
+
+.event-registration h2 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.event-registration .arabic-text {
+    text-align: center;
+    color: #FFD700;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.registration-info h3,
+.event-contact h3 {
+    color: #0056b3;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.registration-info .arabic-text,
+.event-contact .arabic-text {
+    color: #FFD700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.registration-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.registration-info ul li {
+    padding: 0.5rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.registration-info ul li:before {
+    content: "✓";
+    color: #FFD700;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.event-contact p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Events Page */
+@media (max-width: 768px) {
+    .events-title {
+        font-size: 2.2rem;
+    }
+    
+    .events-arabic {
+        font-size: 1.2rem;
+    }
+    
+    .events-description {
+        font-size: 1rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .event-content {
+        padding: 1.5rem;
+    }
+    
+    .calendar-events {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .calendar-month {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-hero {
+        padding: 3rem 0;
+    }
+    
+    .events-title {
+        font-size: 1.8rem;
+    }
+    
+    .events-arabic {
+        font-size: 1rem;
+    }
+    
+    .event-date {
+        padding: 1rem;
+    }
+    
+    .event-day {
+        font-size: 2rem;
+    }
+    
+    .event-content {
+        padding: 1rem;
+    }
+    
+    .calendar-month {
+        padding: 1rem;
+    }
+    
+    .event-details {
+        gap: 0.3rem;
+    }
+}
+
+
+
+
+/* Donation Page Styles */
+.donation-areas {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+.donation-areas .section-title {
+    color: #0056b3;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.donation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.donation-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.donation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+}
+
+.donation-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.donation-card h3 {
+    color: #0056b3;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.donation-card .arabic-subtitle {
+    font-size: 1.1rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.donation-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.donation-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.donation-card ul li {
+    padding: 0.5rem 0;
+    color: #555;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.donation-card ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Donation Methods */
+.donation-methods {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+}
+
+.donation-methods .section-title {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+
+.method-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.method-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.method-card h3 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.arabic-subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.bank-details, .location-details, .contact-info {
+    text-align: left;
+    margin: 1.5rem 0;
+}
+
+.detail-item, .location {
+    margin-bottom: 1rem;
+}
+
+.detail-item strong, .location strong {
+    color: #1565C0;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.detail-item span, .location p {
+    color: #333;
+    margin: 0;
+}
+
+.method-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.contact-info a {
+    color: #1565C0;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+.method-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.method-card:hover {
+    border-color: #FFD700;
+    background: #f8f9fa;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.method-icon {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.method-card h3 {
+    color: #0056b3;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.method-card .arabic-subtitle {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.bank-details, .location-details {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    border-left: 4px solid #0056b3;
+}
+
+.detail-item, .location {
+    margin-bottom: 1rem;
+}
+
+.detail-item strong, .location strong {
+    color: #0056b3;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.method-note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Suggested Amounts */
+.suggested-amounts {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+.suggested-amounts .section-title {
+    color: #0056b3;
+}
+
+.amounts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.amount-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.amount-card:hover {
+    transform: translateY(-3px);
+    border-color: #FFD700;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.amount-card.custom {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #0056b3;
+}
+
+.amount {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 1rem;
+}
+
+.amount-card.custom .amount {
+    color: #0056b3;
+}
+
+.amount-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.amount-card.custom p {
+    color: #0056b3;
+    font-weight: 500;
+}
+
+.amounts-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-style: italic;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Impact Section */
+.donation-impact {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    text-align: center;
+}
+
+.donation-impact .section-title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.donation-impact .section-subtitle {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.impact-text {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.impact-text p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    color: #0056b3;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.impact-text {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.impact-text p {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Donation Contact */
+.donation-contact {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #004494 0%, #0056b3 100%);
+    color: white;
+}
+
+.contact-card {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.contact-card .arabic-subtitle {
+    color: #FFD700;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: white;
+    color: #0056b3;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+    background: #f8f9fa;
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.whatsapp-btn:hover {
+    background: #25d366;
+    color: white;
+}
+
+.email-btn:hover {
+    background: #dc3545;
+    color: white;
+}
+
+.phone-btn:hover {
+    background: #28a745;
+    color: white;
+}
+
+/* Arabic Welcome Text */
+.arabic-welcome {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    text-align: center;
+    color: #FFD700;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Donation Page Specific Styles */
+.hero-subtitle {
+    color: white !important;
+    font-weight: 600;
+}
+
+.hero-description {
+    color: white !important;
+    font-weight: 500;
+}
+
+/* Mobile Responsiveness for Donation Page */
+@media (max-width: 768px) {
+    .donation-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .methods-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .amounts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .donation-card {
+        padding: 1.5rem;
+    }
+    
+    .method-card {
+        padding: 1.5rem;
+    }
+    
+    .amount-card {
+        padding: 1.5rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .contact-card h2 {
+        font-size: 2rem;
+    }
+    
+    .arabic-welcome {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .amounts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .impact-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .donation-icon {
+        font-size: 2.5rem;
+    }
+    
+    .method-icon {
+        font-size: 2rem;
+    }
+    
+    .amount {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+
+/* Donation Page Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="islamic" patternUnits="userSpaceOnUse" width="20" height="20"><polygon points="10,0 20,10 10,20 0,10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23islamic)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section .bismillah {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hero-section .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.hero-section .hero-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white !important;
+}
+
+.hero-section .arabic-welcome {
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hero-section .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white !important;
+    line-height: 1.6;
+}
+
+
+/* Custom Donation Card Clickable Styles */
+.amount-card.custom {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.amount-card.custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.3);
+    border-color: #FFD700;
+}
+
+.amount-card.custom:active {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 86, 179, 0.25);
+}
+
+.amount-card.custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.amount-card.custom:hover::before {
+    left: 100%;
+}
+
+.amount-card.custom .amount {
+    color: #0056b3;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.amount-card.custom:hover .amount {
+    color: #FFD700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 40th Anniversary Page - Gold "How to Donate" Title */
+.anniversary-donate-title {
+    color: #FFD700 !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Al-Uloom Central Mosque Page - Remove Blue Background from Donation Methods */
+.masjid-donation-methods {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.masjid-donation-methods .donation-method {
+    background: white !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Make Al-Uloom Central Mosque donation methods text black */
+.masjid-donation-methods .donation-method h4,
+.masjid-donation-methods .donation-method p,
+.masjid-donation-methods .donation-method strong {
+    color: black !important;
+}
+
+
+/* Gold Arabic Text */
+.gold-arabic {
+    color: #FFD700 !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Donation Methods Text Colors for Light Background */
+.donation-methods .method-card h3,
+.donation-methods .method-card h4,
+.donation-methods .method-card p,
+.donation-methods .method-card strong,
+.donation-methods .method-card .bank-details,
+.donation-methods .method-card .detail-item,
+.donation-methods .method-card .location-details,
+.donation-methods .method-card .location,
+.donation-methods .method-card .contact-details,
+.donation-methods .method-card .method-note {
+    color: #333 !important;
+}
+
+.donation-methods .method-card .detail-item strong,
+.donation-methods .method-card .location strong {
+    color: #0056b3 !important; /* Blue for labels */
+}
+
+.donation-methods .method-card a {
+    color: #0056b3 !important; /* Blue for links */
+    text-decoration: underline;
+}
+
+.donation-methods .method-card a:hover {
+    color: #FFD700 !important; /* Gold on hover */
+}
+
+
+/* White text for donation methods on blue background */
+.donation-methods-section h4,
+.donation-methods-section p,
+.donation-methods-section strong {
+    color: white !important;
+}
+
+.donation-methods-section .arabic-text {
+    color: #FFD700 !important;
+}
+
+/* Ensure all donation method text is white */
+.donation-method h4,
+.donation-method p,
+.donation-method strong {
+    color: white !important;
+}
+
+.donation-method .arabic-text {
+    color: #FFD700 !important;
+}
+
+
+/* White title for blue background sections */
+.white-title {
+    color: white !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure "Need Help with Your Donation?" text is white */
+.donation-contact h2 {
+    color: white !important;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Donate Page Section Backgrounds */
+
+/* Support Markaz-ul-Uloom Section - Light Blue Background */
+.support-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    padding: 3rem 0;
+    margin-bottom: 0;
+}
+
+.support-section .page-title {
+    color: #0056b3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.support-section .arabic-text {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.support-section .intro-text {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Choose Your Donation Category Section - White Background with Border */
+.donation-categories-section {
+    background: #ffffff;
+    padding: 3rem 0;
+    margin-bottom: 0;
+    border-top: 3px solid #0056b3;
+    border-bottom: 3px solid #0056b3;
+}
+
+.donation-categories-section .section-title {
+    color: #0056b3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.donation-categories-section .arabic-text {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Enhanced donation category cards */
+.donation-categories-section .donation-category {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donation-categories-section .donation-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
+    border-color: #0056b3;
+}
+
+.donation-categories-section .category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.donation-categories-section .donation-category h3 {
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+}
+
+.donation-categories-section .donation-category .arabic-text {
+    color: #FFD700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.donation-categories-section .donation-category p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.donation-categories-section .category-benefits {
+    list-style: none;
+    padding: 0;
+}
+
+.donation-categories-section .category-benefits li {
+    color: #666;
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.donation-categories-section .category-benefits li:before {
+    content: "✓";
+    color: #28a745;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Donation Methods Section - Light Gray Background */
+.donation-methods-section {
+    background: #f8f9fa;
+    padding: 3rem 0;
+    margin-top: 0;
+}
+
+.donation-methods-section .section-title {
+    color: #0056b3;
+}
+
+.donation-methods-section .arabic-text {
+    color: #FFD700;
+}
+
+
+/* Staff, BOT, and Alumni Section Styling */
+.staff-category, .bot-category, .alumni-category {
+    margin-bottom: 2rem;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.category-header h3 {
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+}
+
+.staff-member, .bot-member, .alumni-member {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0056b3;
+}
+
+.staff-member:last-child, .bot-member:last-child, .alumni-member:last-child {
+    margin-bottom: 0;
+}
+
+.staff-member h4, .bot-member h4, .alumni-member h4 {
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.staff-title, .bot-title, .alumni-title {
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.staff-description, .bot-description, .alumni-description {
+    color: #555;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+.staff-stats .stat-card, .alumni-stats .stat-card {
+    transition: transform 0.3s ease;
+}
+
+.staff-stats .stat-card:hover, .alumni-stats .stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.governance-card {
+    transition: transform 0.3s ease;
+}
+
+.governance-card:hover {
+    transform: translateY(-5px);
+}
+
+.alumni-contact-buttons a {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alumni-contact-buttons a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .staff-categories .grid-2, .bot-structure .grid-2, .alumni-categories .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .staff-stats .grid-4, .alumni-stats .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .bot-governance .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .alumni-contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .alumni-contact-buttons a {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .staff-stats .grid-4, .alumni-stats .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .staff-member, .bot-member, .alumni-member {
+        padding: 1rem;
+    }
+    
+    .category-icon {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* Fix for header covering first sections of pages */
+/* Proper padding to account for header height */
+.page .hero,
+.page .section:first-child {
+    padding-top: 220px; /* Enough padding to clear the ~201px header */
+}
+
+/* Mobile adjustments for first sections */
+@media (max-width: 768px) {
+    .page .hero,
+    .page .section:first-child {
+        padding-top: 240px; /* Extra padding for mobile header variations */
+    }
+}
+
+/* Specific adjustments for pages */
+#home-page .hero {
+    padding-top: 220px; /* Proper padding for homepage hero */
+}
+
+#about-page .section:first-child,
+#services-page .section:first-child,
+#masjid-project-page .section:first-child,
+#contact-page .section:first-child,
+#events-page .section:first-child {
+    padding-top: 220px; /* Proper padding for all page first sections */
+}
+
+/* Mobile specific adjustments - proper padding for header visibility */
+@media (max-width: 768px) {
+    #home-page .hero {
+        padding-top: 240px; /* Extra padding for mobile homepage */
+    }
+    
+    #about-page .section:first-child,
+    #services-page .section:first-child,
+    #masjid-project-page .section:first-child,
+    #contact-page .section:first-child,
+    #events-page .section:first-child {
+        padding-top: 240px; /* Extra padding for mobile page first sections */
+    }
+}
+
+
+/* Arabic Hadith Quote Styling */
+.large-quote {
+    font-size: 3.2rem; /* Increased from 3rem for even more prominence */
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    color: #FFD700; /* Gold color to match the theme */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Mobile adjustments for the large quote */
+@media (max-width: 768px) {
+    .large-quote {
+        font-size: 2.6rem; /* Increased from 2.4rem for better mobile prominence */
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .large-quote {
+        font-size: 2.3rem; /* Increased from 2.1rem for better small screen visibility */
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+}
+
+
+/* Bigger Arabic donation text styling */
+.donation-intro .arabic-text {
+    font-size: 1.4rem; /* Increased from default for better prominence */
+    font-weight: bold;
+    color: #FFD700; /* Gold color to match the theme */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* Mobile adjustments for the donation intro Arabic text */
+@media (max-width: 768px) {
+    .donation-intro .arabic-text {
+        font-size: 1.2rem; /* Slightly smaller on mobile but still prominent */
+        padding: 0.6rem;
+        margin: 0.8rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .donation-intro .arabic-text {
+        font-size: 1.1rem; /* Responsive sizing for small screens */
+        padding: 0.5rem;
+        margin: 0.6rem 0;
+    }
+}
+
+
+/* Small mobile screens - proper padding for header visibility */
+@media (max-width: 480px) {
+    .page .hero,
+    .page .section:first-child {
+        padding-top: 260px; /* Extra padding for small screens to ensure visibility */
+    }
+    
+    #home-page .hero {
+        padding-top: 260px; /* Extra padding for small mobile homepage */
+    }
+    
+    #about-page .section:first-child,
+    #services-page .section:first-child,
+    #masjid-project-page .section:first-child,
+    #contact-page .section:first-child,
+    #events-page .section:first-child,
+    #donate-page .section:first-child {
+        padding-top: 260px; /* Extra padding for small mobile page first sections */
+    }
+}
+
+
+/* New Pages Styles */
+
+/* Programmes Page */
+.programmes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.programme-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.programme-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.programme-card h3 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.programme-subjects {
+    list-style: none;
+    padding: 0;
+}
+
+.programme-subjects li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: black;
+}
+
+.programme-subjects li:last-child {
+    border-bottom: none;
+}
+
+/* Staff Page */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.staff-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.staff-card h3 {
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 0.5rem;
+}
+
+.staff-member {
+    margin-bottom: 1.5rem;
+}
+
+.staff-member h4 {
+    color: black;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.staff-member p {
+    color: black;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Students Page */
+.students-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.student-info-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.student-info-card h3 {
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: black;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+}
+
+.services-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: black;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.services-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.services-list li:last-child {
+    border-bottom: none;
+}
+
+/* Alumni Page */
+.alumni-content {
+    margin-top: 2rem;
+}
+
+.alumni-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-label {
+    display: block;
+    font-size: 1rem;
+    color: black;
+    font-weight: 500;
+}
+
+.alumni-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.alumni-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.alumni-card h3 {
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.career-list {
+    list-style: none;
+    padding: 0;
+}
+
+.career-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: black;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.career-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.career-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+    color: black;
+}
+
+.contact-info strong {
+    color: #FFD700;
+}
+
+/* Mobile Responsive for New Pages */
+@media (max-width: 768px) {
+    .programmes-grid,
+    .staff-grid,
+    .students-content,
+    .alumni-sections {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .alumni-stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card .stat-number {
+        font-size: 2rem;
+    }
+    
+    .programme-card,
+    .staff-card,
+    .student-info-card,
+    .alumni-card {
+        padding: 1.5rem;
+    }
+}
+
+
+
+/* Administration Page Styles */
+.admin-intro {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    border-left: 4px solid #0056b3;
+}
+
+.admin-intro .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #495057;
+}
+
+/* Leadership Team Styles */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.leader-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 86, 179, 0.1);
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leader-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 86, 179, 0.15);
+}
+
+.leader-info h3 {
+    color: #0056b3;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.leader-info h4 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.leader-title {
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.leader-description {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.leader-qualifications h5 {
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.leader-qualifications ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.leader-qualifications li {
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #495057;
+}
+
+.leader-qualifications li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Administrative Departments Styles */
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.department-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 86, 179, 0.1);
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 86, 179, 0.15);
+}
+
+.department-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.department-card h3 {
+    color: #0056b3;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.department-card p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.department-functions {
+    list-style: none;
+    padding-left: 0;
+}
+
+.department-functions li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #495057;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.department-functions li:last-child {
+    border-bottom: none;
+}
+
+.department-functions li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Administrative Policies Styles */
+.policies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.policy-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 86, 179, 0.1);
+    border: 1px solid #e9ecef;
+    border-top: 4px solid #0056b3;
+}
+
+.policy-card h3 {
+    color: #0056b3;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.policy-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.policy-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #495057;
+    border-bottom: 1px solid #f8f9fa;
+    line-height: 1.5;
+}
+
+.policy-list li:last-child {
+    border-bottom: none;
+}
+
+.policy-list li::before {
+    content: "📋";
+    position: absolute;
+    left: 0;
+    font-size: 0.9rem;
+}
+
+/* Contact Administration Styles */
+.admin-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 86, 179, 0.1);
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #0056b3;
+}
+
+.contact-card h3 {
+    color: #0056b3;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.contact-details {
+    margin-top: 1rem;
+}
+
+.contact-details p {
+    margin-bottom: 0.5rem;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.contact-details strong {
+    color: #333;
+}
+
+/* Administrative Mission Card */
+.admin-mission-card {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.admin-mission-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.mission-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.mission-arabic {
+    color: #FFD700 !important;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.commitment-values {
+    margin-top: 2rem;
+}
+
+.commitment-values h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.value-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.value-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.value-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.value-item p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Responsive Design for Administration Page */
+@media (max-width: 768px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .departments-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .policies-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .admin-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .admin-mission-card {
+        padding: 2rem;
+    }
+    
+    .admin-mission-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .leader-card,
+    .department-card,
+    .policy-card,
+    .contact-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-intro {
+        padding: 1.5rem;
+    }
+    
+    .admin-mission-card {
+        padding: 1.5rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-item {
+        padding: 1rem;
+    }
+}
+
+
+/* Main Anniversary Logo Styles */
+.main-anniversary-logo {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.main-anniversary-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-anniversary-image:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .main-anniversary-image {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-anniversary-image {
+        max-width: 250px;
+    }
+}
+
+
+/* Anniversary Hero Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .anniversary-hero {
+        margin-top: 140px; /* Increased top margin for mobile */
+        padding: 6rem 0 4rem 0; /* Adjusted padding for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .anniversary-hero {
+        margin-top: 160px; /* Even more top margin for small mobile */
+        padding: 4rem 0 3rem 0; /* Reduced padding for small screens */
+    }
+}
+
+
+/* Bank Account Information Section Styles */
+.bank-info-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.bank-details-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border: 2px solid #0056b3;
+}
+
+.bank-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.bank-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #0056b3;
+}
+
+.bank-header h3 {
+    color: #0056b3;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.bank-details {
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+}
+
+.detail-value {
+    font-weight: 700;
+    color: #0056b3;
+    font-size: 1.1rem;
+    flex: 2;
+    text-align: right;
+}
+
+.bank-note {
+    background: #e3f2fd;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #0056b3;
+}
+
+.bank-note p {
+    margin: 0;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.bank-note a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bank-note a:hover {
+    text-decoration: underline;
+}
+
+.mobile-payment-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #28a745;
+}
+
+.payment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.payment-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #28a745;
+}
+
+.payment-header h3 {
+    color: #28a745;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.payment-option:last-child {
+    border-bottom: none;
+}
+
+.payment-label {
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+}
+
+.payment-value {
+    font-weight: 700;
+    color: #28a745;
+    font-size: 1.1rem;
+    flex: 1;
+    text-align: right;
+}
+
+/* Mobile Responsive Styles for Bank Info */
+@media (max-width: 768px) {
+    .detail-row,
+    .payment-option {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .detail-value,
+    .payment-value {
+        text-align: left;
+        font-size: 1rem;
+    }
+    
+    .bank-details-card,
+    .mobile-payment-card {
+        padding: 1.5rem;
+    }
+    
+    .bank-header,
+    .payment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .bank-icon,
+    .payment-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+/* Bank Account Information Section Styles */
+.bank-account-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+}
+
+.bank-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bank-account-card, .mobile-payment-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid #0056b3;
+}
+
+.mobile-payment-card {
+    border-color: #28a745;
+}
+
+.bank-icon, .mobile-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.bank-account-card h3, .mobile-payment-card h3 {
+    color: #0056b3;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.mobile-payment-card h3 {
+    color: #28a745;
+}
+
+.bank-details, .mobile-details {
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #495057;
+    flex: 1;
+}
+
+.detail-value {
+    font-weight: 700;
+    color: #0056b3;
+    flex: 1;
+    text-align: right;
+}
+
+.mobile-payment-card .detail-value {
+    color: #28a745;
+}
+
+.important-notice {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.important-notice a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.important-notice a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .bank-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .detail-value {
+        text-align: left;
+    }
+}
+
+
+/* Mobile responsive styles for service icons */
+@media (max-width: 768px) {
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-detail-card .service-icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .service-detail-card .service-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+    }
+}
+
+
+
+/* Enhanced Hover Effects and Micro-interactions */
+.nav-btn {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-btn:hover::before {
+    left: 100%;
+}
+
+/* Enhanced card hover effects */
+.card {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
+}
+
+/* Enhanced button animations */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Floating action buttons enhanced animations */
+.floating-btn {
+    transform: scale(1) translateY(0);
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    animation-play-state: paused;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Enhanced loading animation for images */
+img {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Improved mobile touch targets */
+@media (max-width: 768px) {
+    .nav-btn, .btn, .floating-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Enhanced mobile navigation */
+    .nav {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .nav-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Enhanced scroll indicators */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation for cards */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Enhanced prayer times animation */
+.prayer-time-card {
+    transform: scale(1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prayer-time-card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0056b3, #007bff);
+    color: white;
+}
+
+/* Enhanced social media icons */
+.social-link {
+    transform: scale(1) rotate(0deg);
+}
+
+.social-link:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Improved accessibility - reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Enhanced loading states */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Enhanced form styles (for future contact forms) */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+    outline: none;
+}
+
+.form-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #666;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    color: #0056b3;
+    background: white;
+    padding: 0 0.5rem;
+}
+
+/* Enhanced error states */
+.form-input.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 40th Anniversary Popup Modal Styles */
+
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.modal-close:hover {
+    background: #f0f0f0;
+    color: #333;
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    text-align: center;
+    padding: 30px 30px 20px;
+    border-bottom: 2px solid #e9ecef;
+    background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+    color: white;
+    border-radius: 17px 17px 0 0;
+    position: relative;
+}
+
+.modal-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.modal-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.3;
+}
+
+.modal-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.modal-message {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.modal-date {
+    background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+    display: inline-block;
+}
+
+.modal-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0 0;
+    line-height: 1.5;
+}
+
+.modal-footer {
+    padding: 0 30px 30px;
+    text-align: center;
+}
+
+.modal-btn {
+    background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+    background: linear-gradient(135deg, #004494 0%, #003366 100%);
+}
+
+.modal-btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness for Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 20px;
+        width: calc(100% - 40px);
+        border-radius: 15px;
+    }
+    
+    .modal-header {
+        padding: 25px 20px 15px;
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .modal-logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+    
+    .modal-title {
+        font-size: 20px;
+    }
+    
+    .modal-body {
+        padding: 25px 20px;
+    }
+    
+    .modal-message {
+        font-size: 16px;
+    }
+    
+    .modal-date {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+    
+    .modal-subtitle {
+        font-size: 14px;
+    }
+    
+    .modal-footer {
+        padding: 0 20px 25px;
+    }
+    
+    .modal-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+    
+    .modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Animation for modal entrance */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.7) translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.7) translateY(50px);
+    }
+}
+
+.modal-content.animate-in {
+    animation: modalFadeIn 0.3s ease forwards;
+}
+
+.modal-content.animate-out {
+    animation: modalFadeOut 0.3s ease forwards;
+}
+
+
+
+/* Anniversary Page Specific Styles */
+.anniversary-page .hero-content {
+    padding-top: 120px; /* Adjust as needed to clear the fixed header */
+}
+
+.anniversary-page .hero-content .anniversary-logo {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto; /* Center the logo and add some bottom margin */
+}
+
+
+
+
+/* Anniversary Page Logo Styling */
+.anniversary-page-logo {
+    max-width: 250px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Center the logo and add vertical margin */
+}
+
+/* Adjust padding for anniversary hero section to clear fixed header */
+.anniversary-hero .container {
+    padding-top: 120px; /* Example value, adjust based on header height */
+}
+
+
+
+
+/* Fix for Anniversary Page Logo Background */
+.anniversary-page-logo {
+    background-color: white; /* Ensure white background for transparent logo */
+    border-radius: 50%; /* Make it circular */
+    padding: 10px; /* Add some padding around the logo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border: 4px solid #FFD700; /* Gold border */
+}
+
+
+
+
+/* Force transparent logo to have white circular background and correct size on Anniversary Page */
+.anniversary-hero .hero-content .anniversary-page-logo {
+    background-color: white !important; /* Force white background */
+    border-radius: 50% !important; /* Force circular shape */
+    max-width: 200px !important; /* Adjust size to be smaller */
+    height: auto !important;
+    padding: 10px !important; /* Add padding around the logo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important; /* Add a subtle shadow */
+    border: 4px solid #FFD700 !important; /* Gold border */
+}
+
+@media (max-width: 768px) {
+    .anniversary-hero .hero-content .anniversary-page-logo {
+        max-width: 150px !important; /* Smaller on mobile */
+    }
+}
+
+
+
+
+/* 40th Anniversary Popup Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    backdrop-filter: blur(5px);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.show {
+    display: flex; /* Show when active */
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    z-index: 10001;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.7) translateY(50px);
+    transition: all 0.3s ease;
+    border: 3px solid #0056b3;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+
+
+/* 40th Anniversary Popup Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* On top of everything else */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #000;
+}

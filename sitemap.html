@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete sitemap for Markaz-ul-Uloom School of Arabic & Islamic Studies website. Find all pages and sections easily.">
+    <meta name="keywords" content="sitemap, Markaz-ul-Uloom, website navigation, Islamic education, Arabic studies">
+    <title>Sitemap - Markaz-ul-Uloom School of Arabic & Islamic Studies</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #0056b3;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .sitemap-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .sitemap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .section-title {
+            color: #0056b3;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-icon {
+            font-size: 1.8rem;
+        }
+        
+        .sitemap-links {
+            list-style: none;
+        }
+        
+        .sitemap-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .sitemap-links a {
+            color: #495057;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+        
+        .sitemap-links a:hover {
+            color: #0056b3;
+            background: #f8f9fa;
+            transform: translateX(5px);
+        }
+        
+        .link-icon {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .back-home {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .back-home a {
+            display: inline-block;
+            background: #0056b3;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,86,179,0.3);
+        }
+        
+        .back-home a:hover {
+            background: #004494;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,86,179,0.4);
+        }
+        
+        .stats {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Website Sitemap</h1>
+            <div class="arabic-text">خريطة الموقع</div>
+            <p>Complete navigation guide for Markaz-ul-Uloom School of Arabic & Islamic Studies</p>
+        </div>
+        
+        <div class="stats">
+            <h3 style="color: #0056b3; margin-bottom: 1rem;">Website Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Total Pages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Main Sections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40</div>
+                    <div class="stat-label">Years of Service</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Mobile Responsive</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sitemap-grid">
+            <!-- Main Navigation -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">🏠</span>
+                    Main Navigation
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#home"><span class="link-icon">🏠</span> Homepage</a></li>
+                    <li><a href="/#about"><span class="link-icon">ℹ️</span> About Us</a></li>
+                    <li><a href="/#contact"><span class="link-icon">📞</span> Contact</a></li>
+                    <li><a href="/sitemap.html"><span class="link-icon">🗺️</span> Sitemap (This Page)</a></li>
+                </ul>
+            </div>
+            
+            <!-- Admissions -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">🎓</span>
+                    Admissions
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#admissions"><span class="link-icon">📚</span> Admissions Overview</a></li>
+                    <li><a href="/#islamic-education"><span class="link-icon">🕌</span> Islamic Education</a></li>
+                    <li><a href="/#arabic-studies"><span class="link-icon">📖</span> Arabic Studies</a></li>
+                    <li><a href="/#quran-studies"><span class="link-icon">📜</span> Quran Studies</a></li>
+                    <li><a href="/#hadith-studies"><span class="link-icon">📝</span> Hadith Studies</a></li>
+                    <li><a href="/#fiqh-studies"><span class="link-icon">⚖️</span> Fiqh Studies</a></li>
+                </ul>
+            </div>
+            
+            <!-- Administration -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">👥</span>
+                    Administration
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#administration"><span class="link-icon">🏢</span> Administration Overview</a></li>
+                    <li><a href="/#leadership-team"><span class="link-icon">👨‍💼</span> Leadership Team</a></li>
+                    <li><a href="/#advisory-council"><span class="link-icon">🤝</span> Advisory Council</a></li>
+                    <li><a href="/#administrative-departments"><span class="link-icon">🏛️</span> Departments</a></li>
+                    <li><a href="/#academic-affairs"><span class="link-icon">📊</span> Academic Affairs</a></li>
+                    <li><a href="/#student-affairs"><span class="link-icon">👨‍🎓</span> Student Affairs</a></li>
+                </ul>
+            </div>
+            
+            <!-- Events & Calendar -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">📅</span>
+                    Events & Calendar
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#events"><span class="link-icon">🎉</span> Events Overview</a></li>
+                    <li><a href="/#academic-calendar"><span class="link-icon">📅</span> Academic Calendar</a></li>
+                    <li><a href="/#islamic-events"><span class="link-icon">🌙</span> Islamic Events</a></li>
+                    <li><a href="/#ramadan-programs"><span class="link-icon">🌟</span> Ramadan Programs</a></li>
+                    <li><a href="/#eid-celebrations"><span class="link-icon">🎊</span> Eid Celebrations</a></li>
+                    <li><a href="/#hajj-preparation"><span class="link-icon">🕋</span> Hajj Preparation</a></li>
+                </ul>
+            </div>
+            
+            <!-- 40th Anniversary -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">🎂</span>
+                    40th Anniversary
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#anniversary"><span class="link-icon">🎉</span> Anniversary Overview</a></li>
+                    <li><a href="/#anniversary-history"><span class="link-icon">📚</span> Our History</a></li>
+                    <li><a href="/#anniversary-achievements"><span class="link-icon">🏆</span> Achievements</a></li>
+                    <li><a href="/#anniversary-celebration"><span class="link-icon">🎊</span> Celebration Events</a></li>
+                    <li><a href="/#legacy-projects"><span class="link-icon">🌟</span> Legacy Projects</a></li>
+                </ul>
+            </div>
+            
+            <!-- Al-Uloom Central Mosque -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">🕌</span>
+                    Al-Uloom Central Mosque
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#mosque"><span class="link-icon">🕌</span> Mosque Overview</a></li>
+                    <li><a href="/#mosque-project"><span class="link-icon">🏗️</span> Construction Project</a></li>
+                    <li><a href="/#prayer-times"><span class="link-icon">⏰</span> Prayer Times</a></li>
+                    <li><a href="/#friday-prayers"><span class="link-icon">🕌</span> Friday Prayers</a></li>
+                    <li><a href="/#mosque-facilities"><span class="link-icon">🏢</span> Facilities</a></li>
+                </ul>
+            </div>
+            
+            <!-- Donations -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">💝</span>
+                    Donations
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#donate"><span class="link-icon">💝</span> Donate Overview</a></li>
+                    <li><a href="/donate.html"><span class="link-icon">💳</span> Donation Page</a></li>
+                    <li><a href="/#education-fund"><span class="link-icon">🎓</span> Education Fund</a></li>
+                    <li><a href="/#mosque-maintenance"><span class="link-icon">🕌</span> Mosque Maintenance</a></li>
+                    <li><a href="/#student-scholarships"><span class="link-icon">🎓</span> Student Scholarships</a></li>
+                    <li><a href="/#community-programs"><span class="link-icon">🤝</span> Community Programs</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact & Location -->
+            <div class="sitemap-section">
+                <h2 class="section-title">
+                    <span class="section-icon">📍</span>
+                    Contact & Location
+                </h2>
+                <ul class="sitemap-links">
+                    <li><a href="/#contact"><span class="link-icon">📞</span> Contact Information</a></li>
+                    <li><a href="/#location"><span class="link-icon">📍</span> Our Location</a></li>
+                    <li><a href="/#alagbado-campus"><span class="link-icon">🏫</span> Alagbado Campus</a></li>
+                    <li><a href="/#otubu-branch"><span class="link-icon">🏢</span> Otubu Branch</a></li>
+                    <li><a href="/#social-media"><span class="link-icon">📱</span> Social Media</a></li>
+                    <li><a href="/#office-hours"><span class="link-icon">⏰</span> Office Hours</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="back-home">
+            <a href="/">← Return to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>
+

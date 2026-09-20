@@ -1,0 +1,63 @@
+[build]
+  # Build settings for Netlify
+  publish = "."
+  command = "echo 'Static site - no build required'"
+
+[build.environment]
+  # Environment variables
+  NODE_VERSION = "18"
+
+[[headers]]
+  # Security headers for all pages
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  # Cache static assets
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  # Redirect all requests to index.html for SPA behavior
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  # Force HTTPS
+  from = "http://markazul-uloom.netlify.app/*"
+  to = "https://markazul-uloom.netlify.app/:splat"
+  status = 301
+  force = true
+

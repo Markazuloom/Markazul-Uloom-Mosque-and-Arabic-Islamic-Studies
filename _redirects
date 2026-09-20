@@ -1,0 +1,6 @@
+# Netlify redirects file for Markaz-ul-Uloom website
+
+# Handle 404s by serving index.html (SPA behavior)
+/sitemap    /sitemap.html    200
+/donate     /donate.html     200
+
