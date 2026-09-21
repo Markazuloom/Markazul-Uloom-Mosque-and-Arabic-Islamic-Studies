@@ -18,15 +18,18 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 [[headers]]
-  # Cache static assets
+  # CSS/JS filenames don't change between deploys, so they can't be cached
+  # as "immutable" — that would hide every future fix from returning visitors
+  # for up to a year. Browsers still cache these, but must revalidate with
+  # the server on each use, so updates take effect on the very next load.
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "no-cache"
 
 [[headers]]
   for = "/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "no-cache"
 
 [[headers]]
   for = "/images/*"
