@@ -70,6 +70,22 @@ window.addEventListener("DOMContentLoaded", () => {
     handleHashNavigation();
 });
 
+// Keep the footer copyright year current without manual edits every year
+document.addEventListener("DOMContentLoaded", () => {
+    const year = new Date().getFullYear();
+
+    const yearEl = document.getElementById("copyright-year");
+    if (yearEl) {
+        yearEl.textContent = year;
+    }
+
+    const yearArEl = document.getElementById("copyright-year-ar");
+    if (yearArEl) {
+        const easternArabicDigits = "٠١٢٣٤٥٦٧٨٩";
+        yearArEl.textContent = String(year).replace(/[0-9]/g, d => easternArabicDigits[d]);
+    }
+});
+
 // Handle hash changes (when user navigates with back/forward buttons)
 window.addEventListener("hashchange", () => {
     handleHashNavigation();
@@ -206,20 +222,8 @@ class PrayerTimesManager {
 
     async updatePrayerTimesDisplay() {
         const timings = await this.fetchPrayerTimes();
-        
-        // Update footer prayer times
-        const footerPrayerTimes = document.querySelector('.footer-prayer-times');
-        if (footerPrayerTimes) {
-            footerPrayerTimes.innerHTML = `
-                <div>Fajr: ${this.formatTime(timings.Fajr)}</div>
-                <div>Dhuhr: ${this.formatTime(timings.Dhuhr)}</div>
-                <div>Asr: ${this.formatTime(timings.Asr)}</div>
-                <div>Maghrib: ${this.formatTime(timings.Maghrib)}</div>
-                <div>Isha: ${this.formatTime(timings.Isha)}</div>
-            `;
-        }
 
-        // Update any other prayer times displays on the page
+        // Update every prayer time display on the page (homepage + contact page)
         const prayerTimeElements = document.querySelectorAll('.prayer-time-display');
         prayerTimeElements.forEach(element => {
             const prayerName = element.dataset.prayer;
@@ -227,65 +231,35 @@ class PrayerTimesManager {
                 element.textContent = this.formatTime(timings[prayerName]);
             }
         });
-
-        // Add last updated timestamp
-        const lastUpdated = document.querySelector('.prayer-times-updated');
-        if (lastUpdated) {
-            const now = new Date();
-            lastUpdated.textContent = `Last updated: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
-        }
     }
 
     initializePrayerTimes() {
-        // Update prayer times when page loads
+        // Show today's times as soon as the page loads
         this.updatePrayerTimesDisplay();
-        
-        // Update prayer times every hour
-        setInterval(() => {
-            this.updatePrayerTimesDisplay();
-        }, 3600000); // 1 hour = 3600000 milliseconds
-        
-        // Update prayer times at midnight (new day)
+
+        // Then silently refresh once a day at midnight — prayer times only
+        // change once per day, so there's no need for anything more frequent
+        // or any user-facing control.
         const now = new Date();
         const tomorrow = new Date(now);
         tomorrow.setDate(tomorrow.getDate() + 1);
         tomorrow.setHours(0, 0, 0, 0);
         const msUntilMidnight = tomorrow.getTime() - now.getTime();
-        
+
         setTimeout(() => {
             this.updatePrayerTimesDisplay();
-            // Then update every 24 hours
             setInterval(() => {
                 this.updatePrayerTimesDisplay();
-            }, 86400000); // 24 hours = 86400000 milliseconds
+            }, 86400000); // 24 hours
         }, msUntilMidnight);
     }
 }
 
-// Initialize prayer times manager when DOM is loaded
+// Initialize prayer times manager when DOM is loaded; refreshing happens
+// automatically in the background (see initializePrayerTimes above).
 document.addEventListener('DOMContentLoaded', () => {
-    const prayerTimesManager = new PrayerTimesManager();
-    
-    // Make it globally accessible for manual updates
-    window.prayerTimesManager = prayerTimesManager;
+    new PrayerTimesManager();
 });
-
-// Function to manually refresh prayer times
-function refreshPrayerTimes(event) {
-    const button = event.target;
-    if (window.prayerTimesManager) {
-        if (button) {
-            button.disabled = true;
-            button.textContent = '⏳ Refreshing...';
-        }
-        window.prayerTimesManager.updatePrayerTimesDisplay().finally(() => {
-            if (button) {
-                button.disabled = false;
-                button.innerHTML = '🔄 Refresh Times';
-            }
-        });
-    }
-}
 
 // Enhanced Loading Animation
 function showLoading(element) {

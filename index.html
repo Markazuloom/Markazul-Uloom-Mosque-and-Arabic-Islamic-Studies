@@ -55,8 +55,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=6" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=6"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=7"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -147,27 +147,14 @@
                             <button onclick="showPage('staff')" class="dropdown-item" id="staff-btn">Staff</button>
                             <button onclick="showPage('students')" class="dropdown-item" id="students-btn">Students</button>
                             <button onclick="showPage('alumni')" class="dropdown-item" id="alumni-btn">Alumni</button>
+                            <button onclick="showPage('administration')" class="dropdown-item" id="administration-btn">Administration</button>
                         </div>
                     </div>
-                    
+
                     <button onclick="showPage('masjid-project')" class="nav-btn" id="masjid-project-btn">Al-Uloom Central Mosque</button>
                     <button onclick="showPage('events')" class="nav-btn" id="events-btn">Events</button>
+                    <button onclick="showPage('anniversary')" class="nav-btn" id="anniversary-btn">40th Anniversary</button>
                     <button onclick="showPage('donate')" class="nav-btn" id="donate-btn">Donate</button>
-
-                    <!-- More dropdown menu -->
-                    <div class="dropdown nav-dropdown">
-                        <button onclick="showPage('administration')" class="nav-btn dropdown-btn" id="more-btn">
-                            More
-                            <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M7 10l5 5 5-5z"/>
-                            </svg>
-                        </button>
-                        <div class="dropdown-menu">
-                            <button onclick="showPage('administration')" class="dropdown-item" id="administration-btn">Administration</button>
-                            <button onclick="showPage('anniversary')" class="dropdown-item" id="anniversary-btn">40th Anniversary</button>
-                        </div>
-                    </div>
-
                     <button onclick="showPage('contact')" class="nav-btn" id="contact-btn">Contact</button>
                 </nav>            </div>
         </div>
@@ -330,27 +317,27 @@
                         <div class="prayer-time-card">
                             <div class="prayer-name">Fajr</div>
                             <div class="prayer-arabic">الفجر</div>
-                            <div class="prayer-time">5:13 AM</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Fajr">5:13 AM</div>
                         </div>
                         <div class="prayer-time-card">
                             <div class="prayer-name">Dhuhr</div>
                             <div class="prayer-arabic">الظهر</div>
-                            <div class="prayer-time">12:47 PM</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Dhuhr">12:47 PM</div>
                         </div>
                         <div class="prayer-time-card">
                             <div class="prayer-name">Asr</div>
                             <div class="prayer-arabic">العصر</div>
-                            <div class="prayer-time">4:15 PM</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Asr">4:15 PM</div>
                         </div>
                         <div class="prayer-time-card">
                             <div class="prayer-name">Maghrib</div>
                             <div class="prayer-arabic">المغرب</div>
-                            <div class="prayer-time">7:04 PM</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Maghrib">7:04 PM</div>
                         </div>
                         <div class="prayer-time-card">
                             <div class="prayer-name">Isha</div>
                             <div class="prayer-arabic">العشاء</div>
-                            <div class="prayer-time">8:15 PM</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Isha">8:15 PM</div>
                         </div>
                     </div>
                     <p class="prayer-location">Prayer times for Alagbado, Lagos, Nigeria</p>
@@ -2238,29 +2225,12 @@
                         </a>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Prayer Times</h3>
-                    <div class="footer-prayer-times">
-                        <div>Fajr: 5:13 AM</div>
-                        <div>Dhuhr: 12:47 PM</div>
-                        <div>Asr: 4:15 PM</div>
-                        <div>Maghrib: 7:04 PM</div>
-                        <div>Isha: 8:15 PM</div>
-                    </div>
-                    <div class="prayer-times-updated" style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem; text-align: center;">
-                        Updating automatically...
-                    </div>
-                    <button onclick="refreshPrayerTimes(event)" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; cursor: pointer; margin-top: 0.5rem; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                        🔄 Refresh Times
-                    </button>
-                </div>
             </div>
             
             <div class="footer-bottom">
                 <div class="arabic-text">رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ</div>
-                <p>&copy; 2025 Markazul-Uloom School of Arabic & Islamic Studies. All rights reserved.</p>
-                <div class="arabic-text">جميع الحقوق محفوظة لمركز العلوم ٢٠٢٥</div>
+                <p>&copy; <span id="copyright-year">2025</span> Markazul-Uloom School of Arabic & Islamic Studies. All rights reserved.</p>
+                <div class="arabic-text">جميع الحقوق محفوظة لمركز العلوم <span id="copyright-year-ar">٢٠٢٥</span></div>
             </div>
         </div>
     </footer>
@@ -2286,7 +2256,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=6" defer></script>
+    <script src="./js/script.min.js?v=7" defer></script>
 </body>
 </html>
 
