@@ -2796,13 +2796,15 @@ body {
 
 
 /* Fix for header covering first sections of pages */
-/* Proper padding to account for the fixed header's real height (~90px desktop, ~82px mobile) */
+/* Proper padding to account for the fixed header's real height: ~96px in
+   its single-row desktop form (>=1200px, matches the header breakpoint
+   above), ~82-90px in its compact mobile-style form below that. */
 .page .hero,
 .page .section:first-child {
-    padding-top: 110px;
+    padding-top: 120px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
     .page .hero,
     .page .section:first-child {
         padding-top: 100px;
@@ -4591,7 +4593,13 @@ img {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 768px) {
+/* This breakpoint is intentionally wider than the site's usual 768px:
+   below ~1200px, 8 nav items plus the logo no longer fit on one line,
+   producing a tall, variable-height 2-row header (up to ~180px) that ate
+   into (and on some pages overlapped) the page content below it. Handing
+   off to the hamburger menu earlier keeps the header a fixed, predictable
+   height at every width. */
+@media (max-width: 1199px) {
     .header {
         padding: 0.5rem 0;
     }
@@ -4624,27 +4632,36 @@ img {
         flex-shrink: 0;
     }
 
+    /* Full-screen takeover menu instead of a dropdown panel: the header
+       (logo + toggle button, z-index 1000) stays visible on top of it,
+       since the overlay itself sits at z-index 999. Opacity/transform
+       (not max-height) drive the open/close animation, so there's no need
+       to guess a content-height cap. */
     .nav {
         flex-direction: column;
+        justify-content: flex-start;
         align-items: stretch;
+        position: fixed;
+        inset: 0;
         width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        gap: 0;
-        /* Full-width dropdown below the compact logo+toggle row */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: linear-gradient(135deg, #0056b3 0, #007bff 100%);
-        padding: 0 1rem;
+        height: 100vh;
+        max-height: none;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 0.3rem;
+        background: linear-gradient(160deg, #001b3d 0%, #003d82 55%, #0056b3 100%);
+        padding: 6rem 1.75rem 3rem;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-16px);
+        transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
     }
 
-    /* Padding only applies once expanded — on the collapsed (max-height:0)
-       state, padding is NOT constrained by max-height, so it would still
-       render as a visible sliver even with zero content height. */
     .nav.mobile-open {
-        padding: 0.35rem 1rem 0.5rem;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .header-content {
@@ -4658,10 +4675,10 @@ img {
     .nav-btn {
         width: 100%;
         text-align: left;
-        padding: 0.55rem 0.75rem;
-        font-size: 0.82rem;
+        padding: 0.85rem 1rem;
+        font-size: 1.05rem;
         border: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 0;
         border-left: 3px solid transparent;
         background: transparent;
@@ -4669,7 +4686,7 @@ img {
 
     .nav-btn:hover,
     .nav-btn.active {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
         border-left-color: #FFD700;
         transform: none;
         box-shadow: none;
@@ -4680,7 +4697,7 @@ img {
     }
 
     .nav-dropdown .dropdown-btn {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
         justify-content: space-between;
     }
 
@@ -4693,18 +4710,18 @@ img {
         transform: none;
         display: block;
         box-shadow: none;
-        background: rgba(0, 0, 0, 0.12);
+        background: rgba(0, 0, 0, 0.15);
         width: 100%;
         padding: 0;
         border-radius: 0;
         margin-top: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     }
 
     .dropdown-item {
         color: #fff;
         text-align: left;
-        padding: 0.45rem 0.75rem 0.45rem 1.75rem;
-        font-size: 0.76rem;
+        padding: 0.65rem 1rem 0.65rem 2rem;
+        font-size: 0.92rem;
     }
 }

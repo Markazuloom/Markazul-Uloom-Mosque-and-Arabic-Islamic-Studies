@@ -341,19 +341,14 @@ function toggleMobileMenu() {
 
     if (isOpen) {
         nav.classList.remove('mobile-open');
-        nav.style.maxHeight = '0';
         if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
     } else {
         nav.classList.add('mobile-open');
-        // A generous fixed cap, not scrollHeight: the async web-font swap
-        // (Inter/Amiri load after initial paint) changes button text metrics
-        // shortly after this runs, which made a scrollHeight snapshot taken
-        // here go stale and clip part of the menu. This value comfortably
-        // exceeds the real content height in any font state, so nothing
-        // gets clipped, at the minor cost of a slightly snappier (rather
-        // than perfectly proportional) open animation.
-        nav.style.maxHeight = '800px';
         if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+        // The menu is a full-screen overlay now, so lock background scroll
+        // while it's open rather than letting the page scroll behind it.
+        document.body.style.overflow = 'hidden';
     }
 }
 
