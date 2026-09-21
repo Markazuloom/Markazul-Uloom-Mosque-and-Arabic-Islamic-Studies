@@ -32,11 +32,16 @@ function showPage(pageId) {
 // Handle hash-based navigation
 function handleHashNavigation() {
     const hash = window.location.hash.substring(1); // Remove the # symbol
-    if (hash && hash !== '') {
-        showPage(hash);
-    } else {
-        showPage('home');
+    const pageId = hash && hash !== '' ? hash : 'home';
+
+    // Avoid redundant re-render: showPage() itself updates the hash, which
+    // fires this same handler again via 'hashchange'. Skip if already shown.
+    const currentActive = document.querySelector('.page.active');
+    if (currentActive && currentActive.id === pageId + '-page') {
+        return;
     }
+
+    showPage(pageId);
 }
 
 // Handle initial page load
@@ -258,101 +263,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Function to manually refresh prayer times
-function refreshPrayerTimes() {
-    if (window.prayerTimesManager) {
-        window.prayerTimesManager.updatePrayerTimesDisplay();
-    }
-}
-
-
-
-// Enhanced Navigation with Smooth Scrolling
-function showPageSmooth(pageId) {
-    // Hide all pages with fade effect
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.opacity = '0';
-        page.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            page.classList.remove("active");
-        }, 300);
-    });
-
-    // Deactivate all navigation buttons
-    document.querySelectorAll(".nav-btn").forEach(button => {
-        button.classList.remove("active");
-    });
-
-    // Show the selected page with fade effect
-    setTimeout(() => {
-        const selectedPage = document.getElementById(pageId + "-page");
-        const selectedButton = document.getElementById(pageId + "-btn");
-
-        if (selectedPage) {
-            selectedPage.classList.add("active");
-            selectedPage.style.opacity = '1';
-            selectedPage.style.transform = 'translateY(0)';
-        }
-        if (selectedButton) {
-            selectedButton.classList.add("active");
-        }
-        
-        // Update URL hash
-        window.location.hash = pageId;
-        
-        // Smooth scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 300);
-}
-
-// Enhanced Prayer Times with Auto-Update
-function updatePrayerTimes() {
-    const prayerTimes = {
-        Fajr: "5:13 AM",
-        Dhuhr: "12:47 PM", 
-        Asr: "4:15 PM",
-        Maghrib: "7:04 PM",
-        Isha: "8:15 PM"
-    };
-    
-    // Update prayer times in all locations
-    Object.keys(prayerTimes).forEach(prayer => {
-        const elements = document.querySelectorAll(`[data-prayer="${prayer}"]`);
-        elements.forEach(element => {
-            element.textContent = prayerTimes[prayer];
-        });
-    });
-    
-    // Update last updated time
-    const now = new Date();
-    const timeString = now.toLocaleTimeString('en-US', { 
-        hour: '2-digit', 
-        minute: '2-digit',
-        hour12: true 
-    });
-    
-    const updatedElements = document.querySelectorAll('.prayer-times-updated');
-    updatedElements.forEach(element => {
-        element.textContent = `Last updated: ${timeString}`;
-    });
-}
-
-// Refresh prayer times function
-function refreshPrayerTimes() {
+function refreshPrayerTimes(event) {
     const button = event.target;
-    button.style.transform = 'rotate(360deg)';
-    button.disabled = true;
-    
-    setTimeout(() => {
-        updatePrayerTimes();
-        button.style.transform = 'rotate(0deg)';
-        button.disabled = false;
-        
-        // Show success feedback
-        button.textContent = '✓ Updated';
-        setTimeout(() => {
-            button.innerHTML = '🔄 Refresh Times';
-        }, 2000);
-    }, 1000);
+    if (window.prayerTimesManager) {
+        if (button) {
+            button.disabled = true;
+            button.textContent = '⏳ Refreshing...';
+        }
+        window.prayerTimesManager.updatePrayerTimesDisplay().finally(() => {
+            if (button) {
+                button.disabled = false;
+                button.innerHTML = '🔄 Refresh Times';
+            }
+        });
+    }
 }
 
 // Enhanced Loading Animation
@@ -441,40 +365,18 @@ function toggleMobileMenu() {
     }
 }
 
-// Enhanced Donation Amount Handler
-function handleCustomDonation() {
-    const customAmount = prompt('Enter your donation amount (₦):');
-    if (customAmount && !isNaN(customAmount) && parseFloat(customAmount) > 0) {
-        alert(`Thank you for your generous donation of ₦${parseFloat(customAmount).toLocaleString()}! Please proceed with the payment using our provided bank details.`);
-    }
-}
-
 // Enhanced Page Initialization
 document.addEventListener("DOMContentLoaded", () => {
-    // Initialize prayer times
-    updatePrayerTimes();
-    
-    // Set up auto-update for prayer times (every hour)
-    setInterval(updatePrayerTimes, 3600000);
-    
     // Initialize scroll animations
     document.querySelectorAll('.section, .card').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         observer.observe(element);
     });
-    
+
     // Initialize navigation
     handleHashNavigation();
-    
-    // Add click handlers for enhanced navigation
-    document.querySelectorAll('.nav-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const pageId = e.target.id.replace('-btn', '');
-            showPageSmooth(pageId);
-        });
-    });
-    
+
     // Initialize loading animations for images
     document.querySelectorAll('img').forEach(img => {
         if (img.complete) {
