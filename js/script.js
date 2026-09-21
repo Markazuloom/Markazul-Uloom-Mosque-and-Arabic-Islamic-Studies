@@ -113,6 +113,18 @@ function initHideOnScrollHeader() {
 // Initialize hide-on-scroll when DOM is ready
 document.addEventListener('DOMContentLoaded', initHideOnScrollHeader);
 
+// Close the mobile nav menu after tapping a nav item, so users aren't
+// left staring at the open menu after navigating on a phone.
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+    nav.addEventListener('click', (e) => {
+        if (e.target.closest('.nav-btn, .dropdown-item') && nav.classList.contains('mobile-open')) {
+            toggleMobileMenu();
+        }
+    });
+});
+
 
 
 // Handle custom donation card click
@@ -354,14 +366,24 @@ function isValidPhone(phone) {
 // Enhanced Mobile Menu Toggle
 function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
+    const toggleBtn = document.querySelector('.mobile-menu-toggle');
     const isOpen = nav.classList.contains('mobile-open');
-    
+
     if (isOpen) {
         nav.classList.remove('mobile-open');
         nav.style.maxHeight = '0';
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
     } else {
         nav.classList.add('mobile-open');
-        nav.style.maxHeight = nav.scrollHeight + 'px';
+        // A generous fixed cap, not scrollHeight: the async web-font swap
+        // (Inter/Amiri load after initial paint) changes button text metrics
+        // shortly after this runs, which made a scrollHeight snapshot taken
+        // here go stale and clip part of the menu. This value comfortably
+        // exceeds the real content height in any font state, so nothing
+        // gets clipped, at the minor cost of a slightly snappier (rather
+        // than perfectly proportional) open animation.
+        nav.style.maxHeight = '800px';
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
     }
 }
 
