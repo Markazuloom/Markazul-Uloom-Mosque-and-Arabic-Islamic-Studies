@@ -10,7 +10,6 @@ Disallow: /index_backup.html
 
 # Allow all important pages
 Allow: /index.html
-Allow: /donate.html
 Allow: /css/
 Allow: /js/
 Allow: /images/

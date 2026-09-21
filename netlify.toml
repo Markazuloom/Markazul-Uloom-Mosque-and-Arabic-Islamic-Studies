@@ -52,6 +52,28 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
+  # donate.html was an old standalone page with stale bank details; send
+  # anyone with an old link/bookmark to the current, correct Donate section.
+  from = "/donate.html"
+  to = "/#donate"
+  status = 301
+  force = true
+
+[[redirects]]
+  # about.html and admissions.html were old unstyled stub pages, superseded
+  # by the About Us / Admissions sections in the main site.
+  from = "/about.html"
+  to = "/#about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/admissions.html"
+  to = "/#admissions"
+  status = 301
+  force = true
+
+[[redirects]]
   # Redirect all requests to index.html for SPA behavior
   from = "/*"
   to = "/index.html"

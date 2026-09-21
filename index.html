@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Markaz-ul-Uloom School of Arabic & Islamic Studies - Premier Islamic education institution in Lagos, Nigeria. Offering comprehensive Quran, Hadith, Fiqh, and Arabic language courses since 1985. Join our community for authentic Islamic learning and personal growth.">
+    <meta name="description" content="Markaz-ul-Uloom: Islamic school and mosque in Lagos, Nigeria. Quran, Hadith, Fiqh & Arabic studies since 1985. Prayer times, admissions, events & donations.">
     <meta name="keywords" content="Islamic education, Arabic studies, Quran, Hadith, Fiqh, Islamic school Lagos, Arabic language, Islamic institute Nigeria, Markaz-ul-Uloom, Alagbado, religious education">
     <meta name="author" content="Markaz-ul-Uloom School of Arabic & Islamic Studies">
     <meta name="robots" content="index, follow">
@@ -55,10 +55,59 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=3"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=5" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=5"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet"></noscript>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://m-uloom.org/#school",
+          "name": "Markaz-ul-Uloom School of Arabic & Islamic Studies",
+          "alternateName": "Markazul-Uloom",
+          "url": "https://m-uloom.org/",
+          "logo": "https://m-uloom.org/images/logo.jpg",
+          "image": "https://m-uloom.org/images/logo.jpg",
+          "description": "Islamic education institution in Lagos, Nigeria offering Quran, Hadith, Fiqh, and Arabic language courses since 1985.",
+          "foundingDate": "1985",
+          "email": "markazululoomalagbado40@gmail.com",
+          "telephone": "+2348145318366",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1 Buyide Avenue",
+            "addressLocality": "Alagbado",
+            "addressRegion": "Lagos State",
+            "addressCountry": "NG"
+          },
+          "sameAs": [
+            "https://www.facebook.com/marcazululoomalagbado",
+            "https://www.instagram.com/official_markazululoom",
+            "https://www.youtube.com/channel/UCIZq5gFRgrDHzE89J8yH6ag"
+          ]
+        },
+        {
+          "@type": "Mosque",
+          "@id": "https://m-uloom.org/#mosque",
+          "name": "Al-Uloom Central Mosque",
+          "url": "https://m-uloom.org/#masjid-project",
+          "telephone": "+2348145318366",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "64B, Otubu bus stop, off Ogba road",
+            "addressLocality": "Agege",
+            "addressRegion": "Lagos State",
+            "addressCountry": "NG"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -101,42 +150,25 @@
                         </div>
                     </div>
                     
-                    <button onclick="showPage('administration')" class="nav-btn" id="administration-btn">Administration</button>
-                    
-                    <button onclick="showPage('events')" class="nav-btn" id="events-btn">Events</button>
-                    <button onclick="showPage('anniversary')" class="nav-btn" id="anniversary-btn">40th Anniversary</button>
                     <button onclick="showPage('masjid-project')" class="nav-btn" id="masjid-project-btn">Al-Uloom Central Mosque</button>
+                    <button onclick="showPage('events')" class="nav-btn" id="events-btn">Events</button>
                     <button onclick="showPage('donate')" class="nav-btn" id="donate-btn">Donate</button>
-                    <button onclick="showPage('contact')" class="nav-btn" id="contact-btn">Contact</button>
-                    
-                    <!-- Social media icons moved to same line as navigation -->
-                    <div class="nav-social">
-                        <a href="https://www.facebook.com/marcazululoomalagbado" target="_blank" class="social-link facebook-link" title="Follow us on Facebook">
-                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+
+                    <!-- More dropdown menu -->
+                    <div class="dropdown nav-dropdown">
+                        <button onclick="showPage('administration')" class="nav-btn dropdown-btn" id="more-btn">
+                            More
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
                             </svg>
-                        </a>
-                        <a href="https://www.instagram.com/official_markazululoom?igsh=MTN6bmgwYWxiM2pkdg==" target="_blank" class="social-link instagram-link" title="Follow us on Instagram">
-                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCIZq5gFRgrDHzE89J8yH6ag" target="_blank" class="social-link youtube-link" title="Subscribe to our YouTube">
-                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                        </a>
-                        <a href="https://wa.me/2348145318366" target="_blank" class="social-link whatsapp-link" title="Message us on WhatsApp">
-                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
-                            </svg>
-                        </a>
-                        <a href="mailto:markazululoomalagbado40@gmail.com" class="social-link email-link" title="Send us an email">
-                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.91L12 10.09l9.455-6.269h.909c.904 0 1.636.732 1.636 1.636 Z"/>
-                            </svg>
-                        </a>
+                        </button>
+                        <div class="dropdown-menu">
+                            <button onclick="showPage('administration')" class="dropdown-item" id="administration-btn">Administration</button>
+                            <button onclick="showPage('anniversary')" class="dropdown-item" id="anniversary-btn">40th Anniversary</button>
+                        </div>
                     </div>
+
+                    <button onclick="showPage('contact')" class="nav-btn" id="contact-btn">Contact</button>
                 </nav>            </div>
         </div>
     </header>
@@ -255,7 +287,7 @@
                             <h3>The Mosque</h3>
                             <picture>
                                 <source srcset="images/optimized/masjid-project.webp" type="image/webp">
-                                <img src="images/masjid-project.jpg" alt="Mosque" class="campus-image" loading="lazy">
+                                <img src="images/masjid-project.jpg" alt="Mosque" class="campus-image" loading="lazy" width="1536" height="1024">
                             </picture>
                             <p>The mosque is the heart of our institution, offering a serene space for daily prayers, Quranic recitation, and personal reflection.</p>
                         </div>
@@ -1321,7 +1353,7 @@
                     <div class="inspiration-content">
                         <picture>
                             <source srcset="images/optimized/anniversary-quote.webp" type="image/webp">
-                            <img src="images/anniversary-quote.jpg" alt="Anniversary Inspirational Quote" class="anniversary-quote-image" loading="lazy">
+                            <img src="images/anniversary-quote.jpg" alt="Anniversary Inspirational Quote" class="anniversary-quote-image" loading="lazy" width="1080" height="1080">
                         </picture>
                     </div>
                 </div>
@@ -1524,7 +1556,7 @@
                             <h3>Our Vision for the New Masjid</h3>
                             <picture>
                                 <source srcset="images/optimized/masjid-project.webp" type="image/webp">
-                                <img src="images/masjid-project.jpg" alt="Masjid Project Rendering" class="campus-image" loading="lazy">
+                                <img src="images/masjid-project.jpg" alt="Masjid Project Rendering" class="campus-image" loading="lazy" width="1536" height="1024">
                             </picture>
                             <p>The Al-Uloom Central Mosque is an ambitious initiative to expand our current mosque facilities, creating a larger, more accommodating, and personally uplifting space for our growing community. Our vision is to build a masjid that not only serves as a place of worship but also as a vibrant center for education, community engagement, and personal development.</p>
                             <p>The expansion will include a larger prayer hall, dedicated spaces for women, enhanced ablution facilities, and additional classrooms for our Islamic studies programs. We aim to blend traditional Islamic architecture with modern amenities, ensuring comfort and functionality for all worshippers.</p>
@@ -2131,349 +2163,6 @@
           </div>
     </div>
 
-    <!-- Donate Page Section -->
-    <div class="page" id="donate-page">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
-                    <h1 class="hero-title">Support Our Mission</h1>
-                    <h2 class="hero-subtitle">General Donations</h2>
-                    <div class="arabic-welcome">تبرعوا لدعم رسالتنا التعليمية والدعوية</div>
-                    <p class="hero-description">Your generous contributions help us continue providing quality Islamic education, maintaining our mosque, and serving our community. Every donation, no matter the size, makes a meaningful difference in the lives of our students and community members.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Donation Areas Section -->
-        <section class="donation-areas">
-            <div class="container">
-                <h2 class="section-title">Where Your Donations Help</h2>
-                <div class="donation-grid">
-                    <div class="donation-card">
-                        <div class="donation-icon">📚</div>
-                        <h3>School Operations</h3>
-                        <p class="arabic-subtitle">العمليات المدرسية</p>
-                        <p>Support daily school operations including teacher salaries, educational materials, utilities, and facility maintenance to ensure quality Islamic education.</p>
-                        <ul>
-                            <li>Teacher salaries and training</li>
-                            <li>Educational materials and books</li>
-                            <li>Classroom equipment and technology</li>
-                            <li>School utilities and maintenance</li>
-                        </ul>
-                    </div>
-
-                    <div class="donation-card">
-                        <div class="donation-icon">🕌</div>
-                        <h3>Mosque Maintenance</h3>
-                        <p class="arabic-subtitle">صيانة المسجد</p>
-                        <p>Help maintain our prayer facilities, utilities, and create a welcoming environment for worship and community gatherings.</p>
-                        <ul>
-                            <li>Prayer hall maintenance</li>
-                            <li>Utilities and cleaning</li>
-                            <li>Sound system and equipment</li>
-                            <li>Facility improvements</li>
-                        </ul>
-                    </div>
-
-                    <div class="donation-card">
-                        <div class="donation-icon">🎓</div>
-                        <h3>Student Scholarships</h3>
-                        <p class="arabic-subtitle">منح الطلاب</p>
-                        <p>Provide financial assistance to deserving students who need support to continue their Islamic education and achieve their academic goals.</p>
-                        <ul>
-                            <li>Tuition fee assistance</li>
-                            <li>Books and supplies</li>
-                            <li>Transportation support</li>
-                            <li>Meal programs</li>
-                        </ul>
-                    </div>
-
-                    <div class="donation-card">
-                        <div class="donation-icon">🤝</div>
-                        <h3>Community Programs</h3>
-                        <p class="arabic-subtitle">البرامج المجتمعية</p>
-                        <p>Support community outreach, Islamic events, educational seminars, and programs that benefit the wider Muslim community.</p>
-                        <ul>
-                            <li>Islamic events and seminars</li>
-                            <li>Community outreach programs</li>
-                            <li>Youth development activities</li>
-                            <li>Interfaith dialogue initiatives</li>
-                        </ul>
-                    </div>
-
-                    <div class="donation-card">
-                        <div class="donation-icon">🚨</div>
-                        <h3>Emergency Fund</h3>
-                        <p class="arabic-subtitle">صندوق الطوارئ</p>
-                        <p>Help us respond to unexpected needs, urgent repairs, and emergency situations that may arise in our school or mosque operations.</p>
-                        <ul>
-                            <li>Urgent facility repairs</li>
-                            <li>Emergency student assistance</li>
-                            <li>Unexpected operational costs</li>
-                            <li>Crisis response support</li>
-                        </ul>
-                    </div>
-
-                    <div class="donation-card">
-                        <div class="donation-icon">📖</div>
-                        <h3>Library & Resources</h3>
-                        <p class="arabic-subtitle">المكتبة والموارد</p>
-                        <p>Expand our library collection, digital resources, and educational materials to enhance the learning experience for all students.</p>
-                        <ul>
-                            <li>Islamic books and references</li>
-                            <li>Digital learning resources</li>
-                            <li>Research materials</li>
-                            <li>Online educational platforms</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Donation Methods Section -->
-        <section class="donation-methods">
-            <div class="container">
-                <h2 class="section-title">How to Donate</h2>
-                <div class="methods-grid">
-                    <!-- Bank Transfer -->
-                    <div class="method-card">
-                        <div class="method-icon">🏦</div>
-                        <h3>Bank Transfer</h3>
-                        <p class="arabic-subtitle">التحويل المصرفي</p>
-                        <div class="bank-details">
-                            <div class="detail-item">
-                                <strong>Account Name:</strong>
-                                <span>MARKAZUL ULOOM ALAGBADO LAGOS</span>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Account Number:</strong>
-                                <span>2005139960</span>
-                            </div>
-                            <div class="detail-item">
-                                <strong>Bank:</strong>
-                                <span>FCMB</span>
-                            </div>
-                        </div>
-                        <p class="method-note">Please send proof of payment to our email for acknowledgment.</p>
-                    </div>
-
-                    <!-- In-Person Donations -->
-                    <div class="method-card">
-                        <div class="method-icon">🏢</div>
-                        <h3>In-Person Donations</h3>
-                        <p class="arabic-subtitle">التبرعات الشخصية</p>
-                        <div class="location-details">
-                            <div class="location">
-                                <strong>Main Campus:</strong>
-                                <p>1 Buyide Avenue, Alagbado<br>Lagos State, Nigeria</p>
-                            </div>
-                            <div class="location">
-                                <strong>Otubu Branch:</strong>
-                                <p>64B, Otubu bus stop, off Ogba road<br>Agege, Lagos</p>
-                            </div>
-                        </div>
-                        <p class="method-note">Visit during office hours: Friday 8:00 AM - 5:00 PM, Saturday & Sunday 10:00 AM - 5:00 PM</p>
-                    </div>
-
-                    <!-- Online Payment -->
-                    <div class="method-card">
-                        <div class="method-icon">💳</div>
-                        <h3>Online Payment</h3>
-                        <p class="arabic-subtitle">الدفع الإلكتروني</p>
-                        <p>For online donations and international transfers, please contact us for secure payment options.</p>
-                        <div class="contact-info">
-                            <p><strong>Email:</strong> <a href="mailto:markazululoomalagbado40@gmail.com">markazululoomalagbado40@gmail.com</a></p>
-                            <p><strong>Phone:</strong> <a href="tel:+2348145318366">+234 814 531 8366</a></p>
-                        </div>
-                        <p class="method-note">We'll provide secure payment links and international transfer details upon request.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Suggested Amounts Section -->
-        <section class="suggested-amounts">
-            <div class="container">
-                <h2 class="section-title">Suggested Donation Amounts</h2>
-                <div class="amounts-grid">
-                    <div class="amount-card">
-                        <div class="amount">₦5,000</div>
-                        <p>Supports one student's books for a month</p>
-                    </div>
-                    <div class="amount-card">
-                        <div class="amount">₦10,000</div>
-                        <p>Covers utilities for the mosque for a week</p>
-                    </div>
-                    <div class="amount-card">
-                        <div class="amount">₦25,000</div>
-                        <p>Provides scholarship support for one student</p>
-                    </div>
-                    <div class="amount-card">
-                        <div class="amount">₦50,000</div>
-                        <p>Funds a community program or event</p>
-                    </div>
-                    <div class="amount-card">
-                        <div class="amount">₦100,000</div>
-                        <p>Supports teacher training and development</p>
-                    </div>
-                    <div class="amount-card custom" onclick="handleCustomDonation()">
-                        <div class="amount">Custom</div>
-                        <p>Any amount you can contribute</p>
-                    </div>
-                </div>
-                <p class="amounts-note">Every donation, regardless of amount, is deeply appreciated and makes a real difference in our community.</p>
-            </div>
-        </section>
-
-        <!-- Impact Section -->
-        <section class="impact-section">
-            <div class="container">
-                <h2 class="section-title">Your Impact</h2>
-                <div class="impact-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">44</div>
-                        <div class="stat-label">Programs Offered</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1000+</div>
-                        <div class="stat-label">Students Graduated</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">40</div>
-                        <div class="stat-label">Years of Service</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2</div>
-                        <div class="stat-label">Campus Locations</div>
-                    </div>
-                </div>
-                <div class="impact-text">
-                    <p>Thanks to the generous support of donors like you, Markaz-ul-Uloom has been serving the Muslim community for over four decades. Your contributions help us maintain our commitment to excellence in Islamic education and community service.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact for Donations -->
-        <section class="donation-contact">
-            <div class="container">
-                <div class="contact-card">
-                    <h2>Questions About Donations?</h2>
-                    <p class="arabic-subtitle">أسئلة حول التبرعات؟</p>
-                    <p>Our team is here to help you with any questions about donations, specific projects, or how your contribution will be used.</p>
-                    <div class="contact-methods">
-                        <a href="mailto:markazululoomalagbado40@gmail.com" class="contact-btn email-btn">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                            Email Us
-                        </a>
-                        <a href="https://wa.me/2348145318366" class="contact-btn whatsapp-btn">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
-                            </svg>
-                            WhatsApp
-                        </a>
-                        <a href="tel:+2348145318366" class="contact-btn phone-btn">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            </svg>
-                            Call Us
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Contact Page Section -->
-    <div class="page" id="contact-page">
-        <section class="contact-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
-                    <h1 class="hero-title">Contact Us</h1>
-                    <div class="arabic-welcome">تواصل معنا</div>
-                    <p class="hero-description">We welcome your questions, inquiries, and feedback. Our team is here to assist you with information about our programs, admissions, and services.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-info-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="contact-icon">📍</div>
-                        <h3>Our Locations</h3>
-                        <div class="location-info">
-                            <div class="location">
-                                <h4>Main Campus</h4>
-                                <p>1 Buyide Avenue, Alagbado<br>Lagos State, Nigeria</p>
-                            </div>
-                            <div class="location">
-                                <h4>Otubu Branch</h4>
-                                <p>64B, Otubu bus stop, off Ogba road<br>Agege, Lagos</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">📞</div>
-                        <h3>Phone & WhatsApp</h3>
-                        <div class="contact-details">
-                            <p><strong>Phone:</strong> <a href="tel:+2348145318366">+234 814 531 8366</a></p>
-                            <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348145318366">+234 814 531 8366</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">✉️</div>
-                        <h3>Email</h3>
-                        <div class="contact-details">
-                            <p><a href="mailto:markazululoomalagbado40@gmail.com">markazululoomalagbado40@gmail.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">🕐</div>
-                        <h3>Office Hours</h3>
-                        <div class="contact-details">
-                            <p><strong>Friday:</strong> 8:00 AM - 5:00 PM</p>
-                            <p><strong>Saturday & Sunday:</strong> 10:00 AM - 5:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-methods">
-            <div class="container">
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="contact-buttons">
-                    <a href="mailto:markazululoomalagbado40@gmail.com" class="contact-btn email-btn">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        Send Email
-                    </a>
-                    <a href="https://wa.me/2348145318366" class="contact-btn whatsapp-btn">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
-                        </svg>
-                        WhatsApp
-                    </a>
-                    <a href="tel:+2348145318366" class="contact-btn phone-btn">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                        </svg>
-                        Call Us
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -2517,31 +2206,31 @@
                     <h3>Connect With Us</h3>
                     <div class="arabic-text">تواصل معنا</div>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/marcazululoomalagbado" target="_blank" class="footer-social-link facebook-footer" title="Follow us on Facebook">
+                        <a href="https://www.facebook.com/marcazululoomalagbado" target="_blank" class="footer-social-link facebook-footer" aria-label="Follow us on Facebook" title="Follow us on Facebook">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                             <span>Facebook</span>
                         </a>
-                        <a href="https://www.instagram.com/official_markazululoom?igsh=MTN6bmgwYWxiM2pkdg==" target="_blank" class="footer-social-link instagram-footer" title="Follow us on Instagram">
+                        <a href="https://www.instagram.com/official_markazululoom?igsh=MTN6bmgwYWxiM2pkdg==" target="_blank" class="footer-social-link instagram-footer" aria-label="Follow us on Instagram" title="Follow us on Instagram">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                             <span>Instagram</span>
                         </a>
-                        <a href="https://youtube.com/@markazululoom" target="_blank" class="footer-social-link youtube-footer" title="Subscribe to our YouTube">
+                        <a href="https://youtube.com/@markazululoom" target="_blank" class="footer-social-link youtube-footer" aria-label="Subscribe to our YouTube" title="Subscribe to our YouTube">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                             </svg>
                             <span>YouTube</span>
                         </a>
-                        <a href="https://wa.me/2348145318366" target="_blank" class="footer-social-link whatsapp-footer" title="Message us on WhatsApp">
+                        <a href="https://wa.me/2348145318366" target="_blank" class="footer-social-link whatsapp-footer" aria-label="Message us on WhatsApp" title="Message us on WhatsApp">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
                             </svg>
                             <span>WhatsApp</span>
                         </a>
-                        <a href="mailto:markazululoomalagbado40@gmail.com" class="footer-social-link email-footer" title="Send us an email">
+                        <a href="mailto:markazululoomalagbado40@gmail.com" class="footer-social-link email-footer" aria-label="Send us an email" title="Send us an email">
                             <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.91L12 10.09l9.455-6.269h.909c.904 0 1.636.732 1.636 1.636Z"/>
                             </svg>
@@ -2580,24 +2269,24 @@
 
     <!-- Floating Action Buttons -->
     <div class="floating-actions">
-        <a href="https://wa.me/2348145318366?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20Markazul-Uloom." target="_blank" class="floating-btn floating-whatsapp" title="Chat with us on WhatsApp">
+        <a href="https://wa.me/2348145318366?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20Markazul-Uloom." target="_blank" class="floating-btn floating-whatsapp" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
             </svg>
         </a>
-        <a href="mailto:markazululoomalagbado40@gmail.com?subject=Inquiry%20about%20Markazul-Uloom&body=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20your%20programs%20and%20services." class="floating-btn floating-email" title="Send us an email">
+        <a href="mailto:markazululoomalagbado40@gmail.com?subject=Inquiry%20about%20Markazul-Uloom&body=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20your%20programs%20and%20services." class="floating-btn floating-email" aria-label="Send us an email" title="Send us an email">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
                 <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.91L12 10.09l9.455-6.269h.909c.904 0 1.636.732 1.636 1.636Z"/>
             </svg>
         </a>
-        <a href="tel:+2348145318366" class="floating-btn floating-phone" title="Call us">
+        <a href="tel:+2348145318366" class="floating-btn floating-phone" aria-label="Call us" title="Call us">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
             </svg>
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=3" defer></script>
+    <script src="./js/script.min.js?v=5" defer></script>
 </body>
 </html>
 

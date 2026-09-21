@@ -1,3 +1,19 @@
+const PAGE_TITLES = {
+    home: "Markaz-ul-Uloom School of Arabic & Islamic Studies",
+    about: "About Us | Markaz-ul-Uloom",
+    services: "Admissions | Markaz-ul-Uloom",
+    programmes: "Programmes | Markaz-ul-Uloom",
+    staff: "Staff | Markaz-ul-Uloom",
+    students: "Students | Markaz-ul-Uloom",
+    alumni: "Alumni | Markaz-ul-Uloom",
+    administration: "Administration | Markaz-ul-Uloom",
+    anniversary: "40th Anniversary | Markaz-ul-Uloom",
+    "masjid-project": "Al-Uloom Central Mosque | Markaz-ul-Uloom",
+    contact: "Contact Us | Markaz-ul-Uloom",
+    events: "Events | Markaz-ul-Uloom",
+    donate: "Donate | Markaz-ul-Uloom"
+};
+
 function showPage(pageId) {
     // Hide all pages
     document.querySelectorAll(".page").forEach(page => {
@@ -21,10 +37,15 @@ function showPage(pageId) {
     if (selectedButton) {
         selectedButton.classList.add("active");
     }
-    
+
+    // Update tab title so bookmarks/history show the actual section
+    if (PAGE_TITLES[pageId]) {
+        document.title = PAGE_TITLES[pageId];
+    }
+
     // Update URL hash
     window.location.hash = pageId;
-    
+
     // Scroll to top
     window.scrollTo(0, 0);
 }
@@ -125,31 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
-// Handle custom donation card click
-function handleCustomDonation() {
-    // Create a modal or alert for custom donation
-    const customAmount = prompt("Please enter your custom donation amount (₦):");
-    
-    if (customAmount && !isNaN(customAmount) && parseFloat(customAmount) > 0) {
-        // Format the amount
-        const formattedAmount = parseFloat(customAmount).toLocaleString();
-        
-        // Create a message for the user
-        const message = `Thank you for your generous intention to donate ₦${formattedAmount}!\n\nTo proceed with your custom donation, please contact us through any of the following methods:\n\n• WhatsApp: +234 814 531 8366\n• Email: markazululoomalagbado40@gmail.com\n• Phone: +234 814 531 8366\n\nMention your custom amount of ₦${formattedAmount} when contacting us.`;
-        
-        alert(message);
-        
-        // Optionally scroll to contact methods section
-        const contactSection = document.querySelector('.donation-methods');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    } else if (customAmount !== null) {
-        alert("Please enter a valid donation amount.");
-    }
-}
 
 
 
