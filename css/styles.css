@@ -497,10 +497,6 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.facility-group {
-    margin-bottom: 2rem;
-}
-
 /* Service Cards */
 .services-overview {
     background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
@@ -2104,32 +2100,6 @@ body {
 }
 
 
-.method-card {
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.method-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
-
-.method-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.method-card h3 {
-    color: #1565C0;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
 .arabic-subtitle {
     color: #666;
     font-size: 1rem;
@@ -2157,14 +2127,6 @@ body {
     margin: 0;
 }
 
-.method-note {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-    margin-top: 1.5rem;
-    text-align: center;
-}
-
 .contact-info a {
     color: #1565C0;
     text-decoration: none;
@@ -2174,40 +2136,6 @@ body {
     text-decoration: underline;
 }
 
-
-.method-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.method-card:hover {
-    border-color: #FFD700;
-    background: #f8f9fa;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
-}
-
-.method-icon {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.method-card h3 {
-    color: #0056b3;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.method-card .arabic-subtitle {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
 
 .bank-details, .location-details {
     background: #f8f9fa;
@@ -2238,13 +2166,6 @@ body {
 
 .contact-info a:hover {
     text-decoration: underline;
-}
-
-.method-note {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-    margin-top: 1rem;
 }
 
 /* Suggested Amounts */
@@ -2456,10 +2377,6 @@ body {
         padding: 1.5rem;
     }
 
-    .method-card {
-        padding: 1.5rem;
-    }
-
     .stat-card {
         padding: 1.5rem;
     }
@@ -2474,10 +2391,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .method-icon {
-        font-size: 2rem;
-    }
-
     .stat-number {
         font-size: 2rem;
     }
@@ -2491,88 +2404,12 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Al-Uloom Central Mosque Page - Remove Blue Background from Donation Methods */
-.masjid-donation-methods {
-    background: transparent !important;
-    background-color: transparent !important;
-}
-
-.masjid-donation-methods .donation-method {
-    background: white !important;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Make Al-Uloom Central Mosque donation methods text black */
-.masjid-donation-methods .donation-method h4,
-.masjid-donation-methods .donation-method p,
-.masjid-donation-methods .donation-method strong {
-    color: black !important;
-}
-
-
 /* Gold Arabic Text */
 .gold-arabic {
     color: #FFD700 !important;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
-
-
-/* Donation Methods Text Colors for Light Background */
-.donation-methods .method-card h3,
-.donation-methods .method-card h4,
-.donation-methods .method-card p,
-.donation-methods .method-card strong,
-.donation-methods .method-card .bank-details,
-.donation-methods .method-card .detail-item,
-.donation-methods .method-card .location-details,
-.donation-methods .method-card .location,
-.donation-methods .method-card .contact-details,
-.donation-methods .method-card .method-note {
-    color: #333 !important;
-}
-
-.donation-methods .method-card .detail-item strong,
-.donation-methods .method-card .location strong {
-    color: #0056b3 !important; /* Blue for labels */
-}
-
-.donation-methods .method-card a {
-    color: #0056b3 !important; /* Blue for links */
-    text-decoration: underline;
-}
-
-.donation-methods .method-card a:hover {
-    color: #FFD700 !important; /* Gold on hover */
-}
-
-
-/* White text for donation methods on blue background */
-.donation-methods-section h4,
-.donation-methods-section p,
-.donation-methods-section strong {
-    color: white !important;
-}
-
-.donation-methods-section .arabic-text {
-    color: #FFD700 !important;
-}
-
-/* Ensure all donation method text is white */
-.donation-method h4,
-.donation-method p,
-.donation-method strong {
-    color: white !important;
-}
-
-.donation-method .arabic-text {
-    color: #FFD700 !important;
-}
-
 
 /* White title for blue background sections */
 .white-title {
@@ -2694,22 +2531,6 @@ body {
     left: 0;
 }
 
-/* Donation Methods Section - Light Gray Background */
-.donation-methods-section {
-    background: #f8f9fa;
-    padding: 3rem 0;
-    margin-top: 0;
-}
-
-.donation-methods-section .section-title {
-    color: #0056b3;
-}
-
-.donation-methods-section .arabic-text {
-    color: #FFD700;
-}
-
-
 /* Staff, BOT, and Alumni Section Styling */
 .staff-category, .bot-category, .alumni-category {
     margin-bottom: 2rem;
@@ -2768,14 +2589,6 @@ body {
 }
 
 .staff-stats .stat-card:hover, .alumni-stats .stat-card:hover {
-    transform: translateY(-5px);
-}
-
-.governance-card {
-    transition: transform 0.3s ease;
-}
-
-.governance-card:hover {
     transform: translateY(-5px);
 }
 
@@ -3370,56 +3183,6 @@ body {
     font-size: 1.2rem;
 }
 
-/* Administrative Policies Styles */
-.policies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.policy-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 86, 179, 0.1);
-    border: 1px solid #e9ecef;
-    border-top: 4px solid #0056b3;
-}
-
-.policy-card h3 {
-    color: #0056b3;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.policy-list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 1rem;
-}
-
-.policy-list li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: #495057;
-    border-bottom: 1px solid #f8f9fa;
-    line-height: 1.5;
-}
-
-.policy-list li:last-child {
-    border-bottom: none;
-}
-
-.policy-list li::before {
-    content: "📋";
-    position: absolute;
-    left: 0;
-    font-size: 0.9rem;
-}
-
 /* Contact Administration Styles */
 .admin-contact-grid {
     display: grid;
@@ -3543,11 +3306,6 @@ body {
         gap: 1.5rem;
     }
     
-    .policies-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
     .admin-contact-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -3568,7 +3326,6 @@ body {
     
     .leader-card,
     .department-card,
-    .policy-card,
     .contact-card {
         padding: 1.5rem;
     }
