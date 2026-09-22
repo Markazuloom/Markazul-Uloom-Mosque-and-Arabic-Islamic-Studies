@@ -32,6 +32,15 @@
     Cache-Control = "no-cache"
 
 [[headers]]
+  # The service worker script itself must never be cached long-term, or a
+  # fix to it (e.g. a bad cache strategy) could stay stuck on visitors'
+  # devices for a long time. Browsers already re-check it often on their
+  # own, but this makes sure Netlify's edge doesn't add extra staleness.
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"

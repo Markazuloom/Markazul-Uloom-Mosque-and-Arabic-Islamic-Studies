@@ -401,11 +401,13 @@ document.addEventListener('mousedown', () => {
     document.body.classList.remove('keyboard-navigation');
 });
 
-// Service Worker Registration (for future PWA features)
+// Service Worker Registration - enables offline access and installing
+// the site as an app on phones/desktop.
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        // Could register service worker here for PWA functionality
-        console.log('Service Worker support detected');
+        navigator.serviceWorker.register('/sw.js').catch((error) => {
+            console.error('Service worker registration failed:', error);
+        });
     });
 }
 

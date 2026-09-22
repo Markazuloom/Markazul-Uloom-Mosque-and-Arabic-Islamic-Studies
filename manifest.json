@@ -1,0 +1,26 @@
+{
+  "name": "Markaz-ul-Uloom School of Arabic & Islamic Studies",
+  "short_name": "Markaz-ul-Uloom",
+  "description": "Prayer times, admissions, events, and contact information for Markaz-ul-Uloom in Alagbado, Lagos.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#0056b3",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
