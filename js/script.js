@@ -91,64 +91,10 @@ window.addEventListener("hashchange", () => {
     handleHashNavigation();
 });
 
-// Simple Hide-on-Scroll Header Implementation (inspired by TUMF)
-let lastScrollTop = 0;
-let scrollThreshold = 10; // Minimum scroll distance to trigger hide/show
-
-function initHideOnScrollHeader() {
-    const header = document.querySelector('.header');
-    if (!header) return;
-
-    // Set initial state
-    header.classList.add('header-visible');
-
-    function handleScroll() {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Prevent negative scrolling
-        if (currentScroll < 0) return;
-        
-        // Calculate scroll direction
-        const scrollDirection = currentScroll > lastScrollTop ? 'down' : 'up';
-        const scrollDistance = Math.abs(currentScroll - lastScrollTop);
-        
-        // Only act if scroll distance is significant enough
-        if (scrollDistance < scrollThreshold) return;
-        
-        if (scrollDirection === 'down' && currentScroll > 100) {
-            // Scrolling down - hide header
-            header.classList.remove('header-visible');
-            header.classList.add('header-hidden');
-        } else if (scrollDirection === 'up' || currentScroll <= 100) {
-            // Scrolling up or at top - show header
-            header.classList.remove('header-hidden');
-            header.classList.add('header-visible');
-        }
-        
-        lastScrollTop = currentScroll;
-    }
-
-    // Use throttled scroll listener for better performance
-    let ticking = false;
-    function throttledScroll() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                handleScroll();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-
-    // Add scroll listener
-    window.addEventListener('scroll', throttledScroll, { passive: true });
-    
-    // Handle page load
-    handleScroll();
-}
-
-// Initialize hide-on-scroll when DOM is ready
-document.addEventListener('DOMContentLoaded', initHideOnScrollHeader);
+// The header used to hide on scroll-down and reappear on scroll-up, but
+// that scroll listener + transform transition was the source of visible
+// lag/jank on scroll (especially on phones). The header is simpler and
+// smoother just staying fixed in place at all times.
 
 // Close the mobile nav menu after tapping a nav item, so users aren't
 // left staring at the open menu after navigating on a phone.

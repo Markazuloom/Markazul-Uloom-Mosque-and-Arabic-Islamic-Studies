@@ -41,6 +41,10 @@ body {
 }
 
 /* Header - Hide-on-Scroll Implementation */
+/* Fixed in place at all times — no hide-on-scroll. That behavior required
+   a scroll listener plus a transform transition on every scroll event,
+   which was the source of visible lag/jank on scroll on both phones and
+   desktop. A plain fixed header is simpler and stays perfectly smooth. */
 .header {
     background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
     color: white;
@@ -52,38 +56,13 @@ body {
     right: 0;
     width: 100%;
     z-index: 1000;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(0);
-    will-change: transform;
 }
 
-/* Body padding - minimal since header will hide */
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #ffffff;
-    padding-top: 0; /* No padding since header will hide on scroll */
-}
-
-/* Header states */
-.header-visible {
-    transform: translateY(0);
-}
-
-.header-hidden {
-    transform: translateY(-100%);
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-    .header {
-        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .header-hidden {
-        transform: translateY(-100%);
-    }
 }
 
 /* Header container */
@@ -2796,18 +2775,20 @@ body {
 
 
 /* Fix for header covering first sections of pages */
-/* Proper padding to account for the fixed header's real height: ~96px in
-   its single-row desktop form (>=1200px, matches the header breakpoint
-   above), ~82-90px in its compact mobile-style form below that. */
+/* Generous padding to account for the fixed header's real height (~96px
+   desktop single-row, ~82-90px mobile-style form) plus real headroom on
+   top of that, since real devices (larger system fonts, browser zoom,
+   different font rendering) need more slack than a plain measurement of
+   the header does. */
 .page .hero,
 .page .section:first-child {
-    padding-top: 120px;
+    padding-top: 160px;
 }
 
 @media (max-width: 1199px) {
     .page .hero,
     .page .section:first-child {
-        padding-top: 100px;
+        padding-top: 140px;
     }
 }
 
