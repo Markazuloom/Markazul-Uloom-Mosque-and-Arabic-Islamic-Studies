@@ -55,8 +55,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=12" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=12"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=13" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=13"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -314,28 +314,36 @@
                 <div class="container">
                     <h2 class="section-title">Today's Prayer Times</h2>
                     <div class="arabic-text section-subtitle prayer-times-arabic">أوقات الصلاة اليوم</div>
+                    <p class="hijri-date-display" id="hijri-date"></p>
+
+                    <div class="next-prayer-banner">
+                        <span class="next-prayer-label">Next Prayer</span>
+                        <span class="next-prayer-name" id="next-prayer-name">—</span>
+                        <span class="next-prayer-countdown" id="next-prayer-countdown">…</span>
+                    </div>
+
                     <div class="prayer-times-grid">
-                        <div class="prayer-time-card">
+                        <div class="prayer-time-card" data-prayer-card="Fajr">
                             <div class="prayer-name">Fajr</div>
                             <div class="prayer-arabic">الفجر</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Fajr">5:13 AM</div>
                         </div>
-                        <div class="prayer-time-card">
+                        <div class="prayer-time-card" data-prayer-card="Dhuhr">
                             <div class="prayer-name">Dhuhr</div>
                             <div class="prayer-arabic">الظهر</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Dhuhr">12:47 PM</div>
                         </div>
-                        <div class="prayer-time-card">
+                        <div class="prayer-time-card" data-prayer-card="Asr">
                             <div class="prayer-name">Asr</div>
                             <div class="prayer-arabic">العصر</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Asr">4:15 PM</div>
                         </div>
-                        <div class="prayer-time-card">
+                        <div class="prayer-time-card" data-prayer-card="Maghrib">
                             <div class="prayer-name">Maghrib</div>
                             <div class="prayer-arabic">المغرب</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Maghrib">7:04 PM</div>
                         </div>
-                        <div class="prayer-time-card">
+                        <div class="prayer-time-card" data-prayer-card="Isha">
                             <div class="prayer-name">Isha</div>
                             <div class="prayer-arabic">العشاء</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Isha">8:15 PM</div>
@@ -2180,7 +2188,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=12" defer></script>
+    <script src="./js/script.min.js?v=13" defer></script>
 </body>
 </html>
 

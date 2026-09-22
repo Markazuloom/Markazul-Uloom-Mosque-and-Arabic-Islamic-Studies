@@ -645,6 +645,55 @@ body {
     margin-top: 2rem;
 }
 
+.hijri-date-display {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.next-prayer-banner {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.85rem;
+    width: fit-content;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 1.75rem;
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.next-prayer-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.next-prayer-name {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #FFD700;
+}
+
+.next-prayer-countdown {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Highlights whichever prayer-time card matches the countdown above,
+   so the "next" prayer is identifiable at a glance, not just in text. */
+.prayer-time-card.is-next {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #FFD700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.55), 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
 /* Anniversary Page */
 .anniversary-hero {
     background: linear-gradient(135deg, #0056b3 0%, #004080 50%, #002040 100%); /* Darker blue gradient */

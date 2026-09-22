@@ -121,28 +121,30 @@ class PrayerTimesManager {
         this.initializePrayerTimes();
     }
 
-    async fetchPrayerTimes() {
+    async fetchPrayerData() {
         try {
             const today = new Date();
             const year = today.getFullYear();
             const month = today.getMonth() + 1;
             const day = today.getDate();
-            
+
             // Using Aladhan API for prayer times
             const response = await fetch(
                 `https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${this.latitude}&longitude=${this.longitude}&method=${this.method}&tune=0,0,0,0,0,0,0,0,0`
             );
-            
+
             if (!response.ok) {
                 throw new Error('Failed to fetch prayer times');
             }
-            
+
             const data = await response.json();
-            return data.data.timings;
+            return { timings: data.data.timings, hijri: data.data.date.hijri };
         } catch (error) {
             console.error('Error fetching prayer times:', error);
-            // Return fallback times if API fails
-            return this.getFallbackTimes();
+            // Fall back to approximate times; there's no reasonable
+            // client-side fallback for the Hijri date, so leave it unset
+            // rather than show a guess that could be off by a day.
+            return { timings: this.getFallbackTimes(), hijri: null };
         }
     }
 
@@ -167,7 +169,8 @@ class PrayerTimesManager {
     }
 
     async updatePrayerTimesDisplay() {
-        const timings = await this.fetchPrayerTimes();
+        const { timings, hijri } = await this.fetchPrayerData();
+        this.timings = timings;
 
         // Update every prayer time display on the page (homepage + contact page)
         const prayerTimeElements = document.querySelectorAll('.prayer-time-display');
@@ -177,11 +180,89 @@ class PrayerTimesManager {
                 element.textContent = this.formatTime(timings[prayerName]);
             }
         });
+
+        this.updateHijriDate(hijri);
+        this.updateNextPrayerCountdown();
+    }
+
+    updateHijriDate(hijri) {
+        const hijriEl = document.getElementById('hijri-date');
+        if (!hijriEl || !hijri) return;
+        hijriEl.textContent = `${hijri.day} ${hijri.month.en} ${hijri.year} ${hijri.designation.abbreviated}`;
+    }
+
+    // Wall-clock time in Lagos right now, as seconds since midnight.
+    // Working in Lagos wall-clock time throughout (rather than building
+    // real Date instants) means the countdown is correct for every visitor,
+    // not just ones whose own device happens to be set to WAT.
+    getLagosNowSeconds() {
+        const parts = new Intl.DateTimeFormat('en-GB', {
+            timeZone: this.timezone,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hourCycle: 'h23'
+        }).formatToParts(new Date());
+        const get = (type) => Number(parts.find(p => p.type === type).value);
+        return get('hour') * 3600 + get('minute') * 60 + get('second');
+    }
+
+    timeStringToSeconds(time24) {
+        const [hours, minutes] = time24.split(':').map(Number);
+        return hours * 3600 + minutes * 60;
+    }
+
+    computeNextPrayer() {
+        if (!this.timings) return null;
+        const order = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
+        const nowSeconds = this.getLagosNowSeconds();
+
+        for (const name of order) {
+            const targetSeconds = this.timeStringToSeconds(this.timings[name]);
+            if (targetSeconds > nowSeconds) {
+                return { name, secondsUntil: targetSeconds - nowSeconds };
+            }
+        }
+
+        // Every prayer today has passed - count down to tomorrow's Fajr.
+        // Fajr shifts by only a minute or two day-to-day, so reusing
+        // today's time is close enough for a live countdown display.
+        const fajrSeconds = this.timeStringToSeconds(this.timings.Fajr);
+        return { name: 'Fajr', secondsUntil: (86400 - nowSeconds) + fajrSeconds };
+    }
+
+    updateNextPrayerCountdown() {
+        const nameEl = document.getElementById('next-prayer-name');
+        const countdownEl = document.getElementById('next-prayer-countdown');
+        if (!nameEl || !countdownEl) return;
+
+        const next = this.computeNextPrayer();
+        if (!next || next.secondsUntil <= 0) return; // the next tick recomputes against the following prayer
+
+        const totalSeconds = Math.floor(next.secondsUntil);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        nameEl.textContent = next.name;
+        countdownEl.textContent = hours > 0
+            ? `${hours}h ${minutes}m ${seconds}s`
+            : `${minutes}m ${seconds}s`;
+
+        if (this.highlightedPrayer !== next.name) {
+            document.querySelectorAll('[data-prayer-card]').forEach(card => {
+                card.classList.toggle('is-next', card.dataset.prayerCard === next.name);
+            });
+            this.highlightedPrayer = next.name;
+        }
     }
 
     initializePrayerTimes() {
         // Show today's times as soon as the page loads
         this.updatePrayerTimesDisplay();
+
+        // Tick the "next prayer" countdown every second
+        setInterval(() => this.updateNextPrayerCountdown(), 1000);
 
         // Then silently refresh once a day at midnight — prayer times only
         // change once per day, so there's no need for anything more frequent
