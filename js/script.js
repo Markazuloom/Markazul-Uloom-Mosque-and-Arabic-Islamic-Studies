@@ -233,18 +233,22 @@ const observer = new IntersectionObserver((entries) => {
 // Enhanced Mobile Menu Toggle
 function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
+    const backdrop = document.querySelector('.nav-backdrop');
     const toggleBtn = document.querySelector('.mobile-menu-toggle');
     const isOpen = nav.classList.contains('mobile-open');
 
     if (isOpen) {
         nav.classList.remove('mobile-open');
+        if (backdrop) backdrop.classList.remove('mobile-open');
         if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     } else {
         nav.classList.add('mobile-open');
+        if (backdrop) backdrop.classList.add('mobile-open');
         if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
-        // The menu is a full-screen overlay now, so lock background scroll
-        // while it's open rather than letting the page scroll behind it.
+        // The menu is a side drawer over a dimmed backdrop, so lock
+        // background scroll while it's open rather than letting the page
+        // scroll behind it.
         document.body.style.overflow = 'hidden';
     }
 }

@@ -4556,36 +4556,55 @@ img {
         flex-shrink: 0;
     }
 
-    /* Full-screen takeover menu instead of a dropdown panel: the header
-       (logo + toggle button, z-index 1000) stays visible on top of it,
-       since the overlay itself sits at z-index 999. Opacity/transform
-       (not max-height) drive the open/close animation, so there's no need
-       to guess a content-height cap. */
+    /* Slide-in sidebar (the same pattern as Claude/ChatGPT's mobile menu)
+       instead of a full-screen takeover: a fixed-width panel slides in
+       from the right, where the toggle button lives, over a dimmed
+       backdrop — so the page underneath stays visible and in context
+       instead of being fully replaced. The header (logo + toggle button,
+       z-index 1000) stays on top of both the panel and the backdrop. */
+    .nav-backdrop {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease, visibility 0.35s;
+    }
+
+    .nav-backdrop.mobile-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
     .nav {
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
         position: fixed;
-        inset: 0;
-        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: min(300px, 82vw);
         height: 100vh;
         max-height: none;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         gap: 0.3rem;
         background: linear-gradient(160deg, #001b3d 0%, #003d82 55%, #0056b3 100%);
-        padding: 6rem 1.75rem 3rem;
+        padding: 6rem 1.5rem 2rem;
         z-index: 999;
-        opacity: 0;
+        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.35);
         visibility: hidden;
-        transform: translateY(-16px);
-        transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+        transform: translateX(100%);
+        transition: transform 0.35s ease, visibility 0.35s;
     }
 
     .nav.mobile-open {
-        opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 
     .header-content {
