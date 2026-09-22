@@ -55,8 +55,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=10"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=11" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=11"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -1708,7 +1708,7 @@
                     
                     <div class="grid grid-2">
                         <div class="card">
-                            <h2>Get in Touch</h2>
+                            <h2>Contact Information</h2>
                             <div class="contact-info">
                                 <div class="contact-item">
                                     <div class="contact-icon">📍</div>
@@ -1765,80 +1765,16 @@
                                     <span>10:00 AM - 5:00 PM</span>
                                 </div>
                             </div>
-                            
-                            <h3>Prayer Times</h3>
-                            <div class="arabic-text">أوقات الصلاة</div>
-                            <p>Daily prayers are held five times according to the Islamic schedule. Friday prayers (Jumu'ah) are held at 2:00 PM.</p>
-                            <div class="prayer-times-display" style="margin-top: 1rem; padding: 1rem; background: rgba(0,86,179,0.1); border-radius: 8px;">
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem;">
-                                    <div><strong>Fajr:</strong> <span class="prayer-time-display" data-prayer="Fajr">5:13 AM</span></div>
-                                    <div><strong>Dhuhr:</strong> <span class="prayer-time-display" data-prayer="Dhuhr">12:47 PM</span></div>
-                                    <div><strong>Asr:</strong> <span class="prayer-time-display" data-prayer="Asr">4:15 PM</span></div>
-                                    <div><strong>Maghrib:</strong> <span class="prayer-time-display" data-prayer="Maghrib">7:04 PM</span></div>
-                                    <div><strong>Isha:</strong> <span class="prayer-time-display" data-prayer="Isha">8:15 PM</span></div>
-                                    <div style="grid-column: 1 / -1; text-align: center; font-size: 0.8rem; color: #666; margin-top: 0.5rem;">
-                                        <em>Times automatically updated daily for Lagos, Nigeria</em>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    
+
                     <!-- Messaging Section -->
                     <section class="messaging-section">
                         <div class="container">
-                            <h2 class="section-title">Get in Touch Instantly</h2>
+                            <h2 class="section-title">Reach Us Instantly</h2>
                             <div class="arabic-text section-subtitle">تواصل معنا فوراً</div>
                             <p class="section-subtitle">Choose your preferred way to reach us</p>
-                            
-                            <!-- Enhanced Contact Form -->
-                            <div class="contact-form-section" style="margin-bottom: 3rem;">
-                                <h3 style="text-align: center; margin-bottom: 2rem; color: #0056b3;">Send us a Message</h3>
-                                <div class="arabic-text" style="text-align: center; margin-bottom: 2rem;">أرسل لنا رسالة</div>
-                                
-                                <form class="contact-form" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 86, 179, 0.1);" onsubmit="handleContactForm(event)">
-                                    <div class="form-group">
-                                        <input type="text" class="form-input" id="name" name="name" required placeholder=" ">
-                                        <label class="form-label" for="name">Full Name *</label>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <input type="email" class="form-input" id="email" name="email" required placeholder=" ">
-                                        <label class="form-label" for="email">Email Address *</label>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <input type="tel" class="form-input" id="phone" name="phone" placeholder=" ">
-                                        <label class="form-label" for="phone">Phone Number</label>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <select class="form-input" id="subject" name="subject" required>
-                                            <option value="">Select Subject *</option>
-                                            <option value="admissions">Admissions Inquiry</option>
-                                            <option value="programs">Program Information</option>
-                                            <option value="donation">Donation Inquiry</option>
-                                            <option value="events">Events & Activities</option>
-                                            <option value="general">General Information</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <textarea class="form-input" id="message" name="message" rows="5" required placeholder=" " style="resize: vertical; min-height: 120px;"></textarea>
-                                        <label class="form-label" for="message">Your Message *</label>
-                                    </div>
-                                    
-                                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1rem;">
-                                        Send Message
-                                    </button>
-                                    
-                                    <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                                        We'll respond to your message within 24 hours during business days.
-                                    </p>
-                                </form>
-                            </div>
-                            
+
                             <div class="messaging-cards">
                                 <div class="messaging-card whatsapp-card">
                                     <svg class="messaging-icon" viewBox="0 0 24 24" fill="#25D366" style="width: 48px; height: 48px;">
@@ -1850,6 +1786,7 @@
                                     <a href="https://wa.me/2348145318366?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20Markazul-Uloom." target="_blank" class="messaging-btn whatsapp-btn">
                                         Chat on WhatsApp
                                     </a>
+                                    <p class="response-time"><strong>Response time:</strong> Within 1 hour during office hours</p>
                                 </div>
                                 
                                 <div class="messaging-card email-card">
@@ -1862,6 +1799,7 @@
                                     <a href="mailto:markazululoomalagbado40@gmail.com?subject=Inquiry%20about%20Markazul-Uloom&body=Assalamu%20Alaikum.%20I%20would%20like%20to%20know%20more%20about%20your%20programs%20and%20services." class="messaging-btn email-btn">
                                         Send Email
                                     </a>
+                                    <p class="response-time"><strong>Response time:</strong> Within 24 hours</p>
                                 </div>
                                 
                                 <div class="messaging-card phone-card">
@@ -1874,22 +1812,7 @@
                                     <a href="tel:+2348145318366" class="messaging-btn phone-btn">
                                         Call Now
                                     </a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-hours" style="margin-top: 2rem; text-align: center;">
-                                <h3>Response Times</h3>
-                                <div class="arabic-text">أوقات الاستجابة</div>
-                                <div class="grid grid-3" style="margin-top: 1rem;">
-                                    <div class="response-time">
-                                        <strong>WhatsApp:</strong> Within 1 hour during office hours
-                                    </div>
-                                    <div class="response-time">
-                                        <strong>Email:</strong> Within 24 hours
-                                    </div>
-                                    <div class="response-time">
-                                        <strong>Phone:</strong> Immediate during office hours
-                                    </div>
+                                    <p class="response-time"><strong>Response time:</strong> Immediate during office hours</p>
                                 </div>
                             </div>
                         </div>
@@ -2256,7 +2179,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=10" defer></script>
+    <script src="./js/script.min.js?v=11" defer></script>
 </body>
 </html>
 

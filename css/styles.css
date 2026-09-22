@@ -1332,6 +1332,13 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
+.messaging-card .response-time {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: #888;
+}
+
 /* Responsive Design for Social Media */
 @media (max-width: 768px) {
     .social-link {
@@ -4059,70 +4066,6 @@ img {
     0% { left: -100%; }
     100% { left: 100%; }
 }
-
-/* Enhanced form styles (for future contact forms) */
-.form-group {
-    position: relative;
-    margin-bottom: 1.5rem;
-}
-
-.form-input {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.form-input:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
-    outline: none;
-}
-
-.form-label {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    color: #666;
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-    top: -0.5rem;
-    left: 0.5rem;
-    font-size: 0.8rem;
-    color: #0056b3;
-    background: white;
-    padding: 0 0.5rem;
-}
-
-/* Enhanced error states */
-.form-input.error {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
-}
-
-.error-message {
-    color: #dc3545;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
-    opacity: 0;
-    transform: translateY(-10px);
-    animation: slideDown 0.3s ease forwards;
-}
-
-@keyframes slideDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 
 /* 40th Anniversary Popup Modal Styles */
 
