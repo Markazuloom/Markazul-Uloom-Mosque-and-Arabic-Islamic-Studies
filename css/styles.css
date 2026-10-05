@@ -18,10 +18,41 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Improved focus styles for accessibility */
-*:focus {
+/* Keyboard focus ring. Two-tone (white gap + blue ring) so it stays visible
+   on light sections AND on the blue header/footer, where a plain blue
+   outline used to disappear. :focus-visible means mouse clicks don't leave
+   a ring behind, only keyboard navigation does. */
+:focus-visible {
     outline: 2px solid #0056b3;
     outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+/* Elements we focus from script (page heading / <main> after navigating)
+   are focus targets for screen readers, not controls - no ring on those. */
+[tabindex="-1"]:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Skip link: hidden until a keyboard user tabs to it. */
+.skip-link {
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    z-index: 2000;
+    padding: 0.75rem 1.25rem;
+    background: #fff;
+    color: #0056b3;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-120%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
 }
 
 .arabic-text {
@@ -839,7 +870,7 @@ body {
 .achievement-number {
     font-size: 3.5rem;
     font-weight: 900;
-    color: #FFD700; /* Gold accent */
+    color: #9a7200; /* Gold accent */
     margin-bottom: 1rem;
     line-height: 1;
 }
@@ -1361,11 +1392,11 @@ body {
 }
 
 .messaging-btn.whatsapp-btn {
-    background: #25D366;
+    background: #0f7b3f;
 }
 
 .messaging-btn.email-btn {
-    background: #EA4335;
+    background: #c5221f;
 }
 
 .messaging-btn.phone-btn {
@@ -1381,7 +1412,7 @@ body {
     margin-top: 1rem;
     margin-bottom: 0;
     font-size: 0.85rem;
-    color: #888;
+    color: #666;
 }
 
 /* Responsive Design for Social Media */
@@ -2335,7 +2366,7 @@ body {
 }
 
 .whatsapp-btn:hover {
-    background: #25d366;
+    background: #0a6a35;
     color: white;
 }
 
@@ -2752,7 +2783,7 @@ body {
 }
 
 .programme-card h3 {
-    color: #FFD700;
+    color: #8a6500;
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 600;
@@ -2790,7 +2821,7 @@ body {
 }
 
 .staff-card h3 {
-    color: #FFD700;
+    color: #8a6500;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     font-weight: 600;
@@ -2832,7 +2863,7 @@ body {
 }
 
 .student-info-card h3 {
-    color: #FFD700;
+    color: #8a6500;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     font-weight: 600;
@@ -2855,7 +2886,7 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: #FFD700;
+    color: #9a7200;
     margin-bottom: 0.5rem;
 }
 
@@ -2919,7 +2950,7 @@ body {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #FFD700;
+    color: #9a7200;
     margin-bottom: 0.5rem;
 }
 
@@ -2945,7 +2976,7 @@ body {
 }
 
 .alumni-card h3 {
-    color: #FFD700;
+    color: #8a6500;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     font-weight: 600;
@@ -2990,6 +3021,11 @@ body {
 
 .contact-info strong {
     color: #FFD700;
+}
+
+/* Gold is for dark backgrounds; the alumni cards are light */
+.alumni-card .contact-info strong {
+    color: #8a6500;
 }
 
 /* Mobile Responsive for New Pages */
@@ -3646,7 +3682,7 @@ body {
 }
 
 .mobile-payment-card .detail-value {
-    color: #28a745;
+    color: #1e7e34;
 }
 
 .important-notice {
@@ -4452,10 +4488,13 @@ img {
 
     .nav-dropdown .dropdown-menu {
         /* Hover doesn't work reliably on touch, so keep the dropdown items
-           always visible and reachable rather than making them unreachable. */
+           always shown inside the drawer rather than making them unreachable.
+           `inherit` (not `visible`) so they follow the drawer: forcing
+           `visible` kept these links focusable while the drawer was closed
+           and off-screen, trapping keyboard users on invisible items. */
         position: static;
         opacity: 1;
-        visibility: visible;
+        visibility: inherit;
         transform: none;
         display: block;
         box-shadow: none;
@@ -4473,4 +4512,86 @@ img {
         padding: 0.65rem 1rem 0.65rem 2rem;
         font-size: 0.92rem;
     }
+}
+
+/* ---- FAQ accordion (Admissions page) ----
+   Built on native <details>/<summary>, so keyboard (Enter/Space) and screen
+   reader support come for free with no JavaScript. */
+.faq-list {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid rgba(0, 86, 179, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 86, 179, 0.08);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+    border-color: #FFD700; /* Gold accent, same as card hover */
+    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 48px; /* comfortable touch target */
+    padding: 0.9rem 1.25rem;
+    font-weight: 600;
+    color: #0056b3;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 12px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item[open] summary {
+    border-radius: 12px 12px 0 0;
+}
+
+.faq-item summary:hover {
+    background: rgba(0, 86, 179, 0.05);
+}
+
+/* Chevron drawn with borders, rotates when the item is open */
+.faq-item summary::after {
+    content: '';
+    flex-shrink: 0;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: translateY(2px) rotate(-135deg);
+}
+
+.faq-answer {
+    padding: 0 1.25rem 1.1rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+.faq-answer p + p {
+    margin-top: 0.6rem;
+}
+
+.faq-answer a {
+    color: #0056b3;
+    font-weight: 600;
+    text-decoration: underline;
 }

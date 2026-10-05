@@ -14,7 +14,9 @@ const PAGE_TITLES = {
     donate: "Donate | Markaz-ul-Uloom"
 };
 
-function showPage(pageId) {
+// moveFocus is false only for the very first render on page load, so we
+// don't steal focus (or jump the scroll) before the visitor has done anything.
+function showPage(pageId, moveFocus = true) {
     // Hide all pages
     document.querySelectorAll(".page").forEach(page => {
         page.style.display = "none";
@@ -24,6 +26,9 @@ function showPage(pageId) {
     // Deactivate all navigation buttons
     document.querySelectorAll(".nav-btn").forEach(button => {
         button.classList.remove("active");
+    });
+    document.querySelectorAll(".nav-btn, .dropdown-item").forEach(button => {
+        button.removeAttribute("aria-current");
     });
 
     // Show the selected page and activate its button
@@ -36,6 +41,7 @@ function showPage(pageId) {
     }
     if (selectedButton) {
         selectedButton.classList.add("active");
+        selectedButton.setAttribute("aria-current", "page");
     }
 
     // Update tab title so bookmarks/history show the actual section
@@ -48,10 +54,22 @@ function showPage(pageId) {
 
     // Scroll to top
     window.scrollTo(0, 0);
+
+    // This is a single-page app, so the browser never announces a "new page".
+    // Move focus to the new page's heading so screen reader users hear where
+    // they landed and keyboard users continue from the top of the new content
+    // instead of from the nav button they just pressed.
+    if (moveFocus && selectedPage) {
+        const heading = selectedPage.querySelector("h1, h2");
+        if (heading) {
+            heading.setAttribute("tabindex", "-1");
+            heading.focus({ preventScroll: true });
+        }
+    }
 }
 
 // Handle hash-based navigation
-function handleHashNavigation() {
+function handleHashNavigation(moveFocus = true) {
     const hash = window.location.hash.substring(1); // Remove the # symbol
     const pageId = hash && hash !== '' ? hash : 'home';
 
@@ -62,12 +80,12 @@ function handleHashNavigation() {
         return;
     }
 
-    showPage(pageId);
+    showPage(pageId, moveFocus);
 }
 
 // Handle initial page load
 window.addEventListener("DOMContentLoaded", () => {
-    handleHashNavigation();
+    handleHashNavigation(false);
 });
 
 // Keep the footer copyright year current without manual edits every year
@@ -344,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Initialize navigation
-    handleHashNavigation();
+    handleHashNavigation(false);
 
     // Initialize loading animations for images
     document.querySelectorAll('img').forEach(img => {
@@ -393,7 +411,34 @@ document.addEventListener('keydown', (e) => {
         const nav = document.querySelector('.nav');
         if (nav.classList.contains('mobile-open')) {
             toggleMobileMenu();
+            // Hand focus back to the button that opened the menu
+            const toggleBtn = document.querySelector('.mobile-menu-toggle');
+            if (toggleBtn) toggleBtn.focus();
         }
+    }
+});
+
+// Skip link: the site uses hash routing, so a normal "#main-content" anchor
+// would be treated as a page name and blank the site. Focus <main> directly.
+document.addEventListener('DOMContentLoaded', () => {
+    const skipLink = document.querySelector('.skip-link');
+    const main = document.getElementById('main-content');
+    if (skipLink && main) {
+        skipLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            main.focus();
+        });
+    }
+
+    // The logo is a div with a click handler; make it work from the keyboard too.
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                showPage('home');
+            }
+        });
     }
 });
 
