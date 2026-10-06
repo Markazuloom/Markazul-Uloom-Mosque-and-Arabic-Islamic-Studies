@@ -284,7 +284,9 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #0056b3 0%, #007bff 50%, #e0f2ff 100%); /* Darker blue gradient */
+    /* Deep blue throughout (the old gradient faded to near-white on the right,
+       which hurt contrast for the white text sitting there) */
+    background: linear-gradient(160deg, #003a78 0%, #0056b3 55%, #1a6fcf 100%);
     color: white;
     padding: 3.5rem 0;
     text-align: center;
@@ -320,7 +322,8 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
 }
 
 .hero-subtitle {
@@ -400,10 +403,11 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Outlined partner to the solid white primary button */
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
     color: white;
-    border: 2px solid #FFD700; /* Gold accent */
+    border: 2px solid rgba(255, 255, 255, 0.85);
 }
 
 .btn-secondary:hover {
@@ -530,29 +534,37 @@ body {
 
 /* Service Cards */
 .services-overview {
-    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    background: #f5f8fc;
 }
 
 .service-card {
     background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
+    padding: 2.25rem 2rem;
+    border-radius: 14px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* Darker blue shadow */
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+    box-shadow: 0 1px 3px rgba(0, 40, 90, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid #dde6f1;
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.25); /* Darker blue shadow */
-    border-color: #FFD700; /* Gold accent */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 64, 128, 0.12);
+    border-color: rgba(0, 86, 179, 0.35);
 }
 
+/* Emoji sits in a soft circle, like an icon badge */
 .service-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    color: #FFD700; /* Gold accent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background: #eaf2fc;
+    font-size: 1.9rem;
+    line-height: 1;
 }
 
 .service-card h3 {
@@ -575,23 +587,25 @@ body {
 
 .service-detail-card {
     background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15); /* Darker blue shadow */
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 86, 179, 0.2); /* Darker blue border */
+    padding: 2.25rem 2rem;
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0, 40, 90, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border: 1px solid #dde6f1;
 }
 
 .service-detail-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 86, 179, 0.25); /* Darker blue shadow */
-    border-color: #FFD700; /* Gold accent */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 64, 128, 0.12);
+    border-color: rgba(0, 86, 179, 0.35);
 }
 
+/* These cards are left-aligned, so the icon badge is too */
 .service-detail-card .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #FFD700; /* Gold accent */
+    width: 56px;
+    height: 56px;
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
 }
 
 .service-detail-card h3 {
@@ -957,9 +971,16 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    gap: 3rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 .footer-section h3 {
@@ -1008,6 +1029,12 @@ body {
     margin-bottom: 0.5rem;
 }
 
+/* Contact lines are plain text (address) or links (phone, email) */
+.footer-contact li {
+    color: #e0f2ff;
+    line-height: 1.5;
+}
+
 .footer-section ul li a {
     color: #e0f2ff; /* Lighter blue for contrast */
     text-decoration: none;
@@ -1019,21 +1046,58 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(0, 86, 179, 0.3); /* Darker blue with transparency */
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
     padding-top: 1.25rem;
     text-align: center;
 }
 
-.footer-bottom .arabic-text {
+.footer-bottom .footer-dua {
     color: #FFD700; /* Gold accent */
     font-size: 1.1rem;
-    margin-bottom: 0.6rem;
+    margin: 0 0 1rem;
     text-align: center;
 }
 
-.footer-bottom p {
+/* Copyright on the left, social icons on the right */
+.footer-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-copyright p {
     color: #e0f2ff; /* Lighter blue for contrast */
-    margin: 0.35rem 0;
+    margin: 0 0 0.25rem;
+    font-size: 0.9rem;
+}
+
+.footer-copyright .arabic-text {
+    color: #cfe3f7;
+    font-size: 0.95rem;
+    margin: 0;
+    text-align: left;
+}
+
+/* The floating contact buttons are pinned to the bottom-right of the screen
+   and would sit on top of the last social icon at the end of the page */
+@media (min-width: 701px) {
+    .footer-bottom-row {
+        padding-right: 5.5rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer-bottom-row {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .footer-copyright .arabic-text {
+        text-align: center;
+    }
 }
 
 /* Responsive Design */
@@ -1205,7 +1269,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: 0.6rem;
 }
 
 .footer-social-link {
@@ -3725,24 +3788,32 @@ body {
 /* Mobile responsive styles for service icons */
 @media (max-width: 768px) {
     .service-icon {
-        font-size: 2.5rem;
+        width: 56px;
+        height: 56px;
+        font-size: 1.7rem;
         margin-bottom: 1rem;
     }
-    
+
     .service-detail-card .service-icon {
-        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.45rem;
         margin-bottom: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
     .service-icon {
-        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
         margin-bottom: 0.8rem;
     }
-    
+
     .service-detail-card .service-icon {
-        font-size: 1.5rem;
+        width: 46px;
+        height: 46px;
+        font-size: 1.3rem;
         margin-bottom: 0.6rem;
     }
 }
@@ -4516,26 +4587,27 @@ img {
 
 /* ---- FAQ accordion (Admissions page) ----
    Built on native <details>/<summary>, so keyboard (Enter/Space) and screen
-   reader support come for free with no JavaScript. */
+   reader support come for free with no JavaScript. Styled as plain rows
+   separated by hairlines rather than boxed cards. */
+.faq-intro {
+    text-align: center;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+.faq-intro a {
+    color: #0056b3;
+    font-weight: 600;
+}
+
 .faq-list {
-    max-width: 800px;
+    max-width: 760px;
     margin: 2rem auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    border-top: 1px solid #d9e2ee;
 }
 
 .faq-item {
-    background: #fff;
-    border: 1px solid rgba(0, 86, 179, 0.2);
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 86, 179, 0.08);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.faq-item[open] {
-    border-color: #FFD700; /* Gold accent, same as card hover */
-    box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
+    border-bottom: 1px solid #d9e2ee;
 }
 
 .faq-item summary {
@@ -4543,25 +4615,23 @@ img {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    min-height: 48px; /* comfortable touch target */
-    padding: 0.9rem 1.25rem;
+    min-height: 56px; /* comfortable touch target */
+    padding: 1rem 0.25rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    color: #0056b3;
+    color: #003a78;
     cursor: pointer;
     list-style: none;
-    border-radius: 12px;
+    transition: color 0.2s ease;
 }
 
 .faq-item summary::-webkit-details-marker {
     display: none;
 }
 
+.faq-item summary:hover,
 .faq-item[open] summary {
-    border-radius: 12px 12px 0 0;
-}
-
-.faq-item summary:hover {
-    background: rgba(0, 86, 179, 0.05);
+    color: #0056b3;
 }
 
 /* Chevron drawn with borders, rotates when the item is open */
@@ -4581,9 +4651,10 @@ img {
 }
 
 .faq-answer {
-    padding: 0 1.25rem 1.1rem;
+    padding: 0 0.25rem 1.25rem;
     color: #444;
     line-height: 1.7;
+    max-width: 680px;
 }
 
 .faq-answer p + p {
