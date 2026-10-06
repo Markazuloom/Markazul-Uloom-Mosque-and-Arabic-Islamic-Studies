@@ -58,8 +58,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=17" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=17"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=18" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=18"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -169,19 +169,110 @@
     <!-- Page Content Containers -->
     <main id="main-content" tabindex="-1">
     <div id="home-page" class="page active">
-            <!-- Hero Section -->
+            <!-- Hero -->
             <section class="hero">
                 <div class="container">
                     <div class="hero-content">
                         <div lang="ar" class="bismillah arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
-                        <h1 class="hero-title">Welcome to Markaz-ul-Uloom</h1>
-                        <h2 class="hero-subtitle">School of Arabic & Islamic Studies</h2>
+                        <p class="hero-eyebrow">Serving Alagbado &amp; Otubu, Lagos since 1985</p>
+                        <h1 class="hero-title">Worship. Learn. <span class="hl">Serve.</span></h1>
                         <div lang="ar" class="arabic-text hero-arabic">نرحب بكم إلى صفحة مركز العلوم للدراسات العربية والإسلامية</div>
-                        <p class="hero-description">Serving the Muslim community in Otubu/Alagbado, Lagos, Nigeria since 1985</p>
+                        <p class="hero-description">Markaz-ul-Uloom is a masjid, a school of Arabic and Islamic studies, and a home for charity, serving the Muslim community of Otubu/Alagbado, Lagos, Nigeria.</p>
                         <div class="hero-buttons">
-                            <button class="btn btn-primary" onclick="showPage('about')">Learn More</button>
-                            <button class="btn btn-secondary" onclick="showPage('anniversary')">40th Anniversary</button>
+                            <button class="btn btn-gold" onclick="showPage('donate')">Donate</button>
+                            <button class="btn btn-secondary" onclick="showPage('programmes')">Explore Programmes</button>
                         </div>
+                        <p class="hero-note">Bank transfer and mobile payment details are on our Donate page.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prayer times panel (live data: ids, classes and data-attributes are used by js/script.js) -->
+            <section class="prayer-panel-wrap" aria-labelledby="prayer-heading">
+                <div class="container">
+                    <div class="prayer-panel">
+                        <div class="prayer-panel-head">
+                            <div>
+                                <h2 class="prayer-panel-title" id="prayer-heading">Today's Prayer Times</h2>
+                                <div lang="ar" class="arabic-text prayer-times-arabic">أوقات الصلاة اليوم</div>
+                                <p class="hijri-date-display" id="hijri-date"></p>
+                            </div>
+                            <div class="next-prayer-banner">
+                                <span class="next-prayer-label">Next Prayer</span>
+                                <span class="next-prayer-name" id="next-prayer-name">—</span>
+                                <span class="next-prayer-countdown" id="next-prayer-countdown">…</span>
+                            </div>
+                        </div>
+                        <div class="prayer-times-grid">
+                        <div class="prayer-time-card" data-prayer-card="Fajr">
+                            <div class="prayer-name">Fajr</div>
+                            <div lang="ar" class="prayer-arabic">الفجر</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Fajr">5:13 AM</div>
+                        </div>
+                        <div class="prayer-time-card" data-prayer-card="Dhuhr">
+                            <div class="prayer-name">Dhuhr</div>
+                            <div lang="ar" class="prayer-arabic">الظهر</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Dhuhr">12:47 PM</div>
+                        </div>
+                        <div class="prayer-time-card" data-prayer-card="Asr">
+                            <div class="prayer-name">Asr</div>
+                            <div lang="ar" class="prayer-arabic">العصر</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Asr">4:15 PM</div>
+                        </div>
+                        <div class="prayer-time-card" data-prayer-card="Maghrib">
+                            <div class="prayer-name">Maghrib</div>
+                            <div lang="ar" class="prayer-arabic">المغرب</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Maghrib">7:04 PM</div>
+                        </div>
+                        <div class="prayer-time-card" data-prayer-card="Isha">
+                            <div class="prayer-name">Isha</div>
+                            <div lang="ar" class="prayer-arabic">العشاء</div>
+                            <div class="prayer-time prayer-time-display" data-prayer="Isha">8:15 PM</div>
+                        </div>
+                    </div>
+                        <p class="prayer-location">Prayer times for Alagbado, Lagos, Nigeria</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- At a glance (figures are the ones already published on the Students page) -->
+            <section class="hstats" aria-label="Markaz-ul-Uloom at a glance">
+                <div class="container">
+                    <div class="hstats-grid">
+                        <div class="hstat"><span class="hstat-number">1985</span><span class="hstat-label">Serving since</span></div>
+                        <div class="hstat"><span class="hstat-number">350+</span><span class="hstat-label">Active students</span></div>
+                        <div class="hstat"><span class="hstat-number">15</span><span class="hstat-label">Programmes</span></div>
+                        <div class="hstat"><span class="hstat-number">12</span><span class="hstat-label">Countries represented</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Three pillars -->
+            <section id="pillars" class="section pillars-section">
+                <div class="container">
+                    <h2 class="section-title">One Home for Worship, Learning &amp; Service</h2>
+                    <div class="pillars">
+                        <article class="pillar">
+                            <div class="service-icon" aria-hidden="true">🕌</div>
+                            <h3>Daily Prayers</h3>
+                            <div lang="ar" class="arabic-text">الصلوات اليومية</div>
+                            <p>Five daily congregational prayers led by qualified Imams, creating a strong personal community.</p>
+                            <a class="pillar-link" href="#contact">Visit us <span aria-hidden="true">→</span></a>
+                        </article>
+                        <article class="pillar">
+                            <div class="service-icon" aria-hidden="true">📖</div>
+                            <h3>Islamic Education</h3>
+                            <div lang="ar" class="arabic-text">التعليم الإسلامي</div>
+                            <p>Comprehensive Islamic studies including Quran, Hadith, Fiqh, and Arabic language courses for all levels.</p>
+                            <a class="pillar-link" href="#programmes">Explore programmes <span aria-hidden="true">→</span></a>
+                        </article>
+                        <article class="pillar">
+                            <div class="service-icon" aria-hidden="true">👥</div>
+                            <h3>Community Programs</h3>
+                            <div lang="ar" class="arabic-text">البرامج المجتمعية</div>
+                            <p>Various community outreach programs, youth development, and social services for the local community.</p>
+                            <a class="pillar-link" href="#donate">Give &amp; support <span aria-hidden="true">→</span></a>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -250,73 +341,18 @@
                 </div>
             </section>
 
-            <!-- Our Admissions Section -->
-            <section id="services" class="section services-overview">         <div class="container">
-                    <h2 class="section-title">Our Admissions</h2>
-                    <div class="grid grid-3">
-                        <div class="service-card">
-                            <div class="service-icon">📖</div>
-                            <h3>Islamic Education</h3>
-                            <div lang="ar" class="arabic-text">التعليم الإسلامي</div>
-                            <p>Comprehensive Islamic studies including Quran, Hadith, Fiqh, and Arabic language courses for all levels.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">🕌</div>
-                            <h3>Daily Prayers</h3>
-                            <div lang="ar" class="arabic-text">الصلوات اليومية</div>
-                            <p>Five daily congregational prayers led by qualified Imams, creating a strong personal community.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">👥</div>
-                            <h3>Community Programs</h3>
-                            <div lang="ar" class="arabic-text">البرامج المجتمعية</div>
-                            <p>Various community outreach programs, youth development, and social services for the local community.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Prayer Times -->
-            <section class="section prayer-times-section">
+            <!-- Donate band -->
+            <section class="section cta-section">
                 <div class="container">
-                    <h2 class="section-title">Today's Prayer Times</h2>
-                    <div lang="ar" class="arabic-text section-subtitle prayer-times-arabic">أوقات الصلاة اليوم</div>
-                    <p class="hijri-date-display" id="hijri-date"></p>
-
-                    <div class="next-prayer-banner">
-                        <span class="next-prayer-label">Next Prayer</span>
-                        <span class="next-prayer-name" id="next-prayer-name">—</span>
-                        <span class="next-prayer-countdown" id="next-prayer-countdown">…</span>
-                    </div>
-
-                    <div class="prayer-times-grid">
-                        <div class="prayer-time-card" data-prayer-card="Fajr">
-                            <div class="prayer-name">Fajr</div>
-                            <div lang="ar" class="prayer-arabic">الفجر</div>
-                            <div class="prayer-time prayer-time-display" data-prayer="Fajr">5:13 AM</div>
-                        </div>
-                        <div class="prayer-time-card" data-prayer-card="Dhuhr">
-                            <div class="prayer-name">Dhuhr</div>
-                            <div lang="ar" class="prayer-arabic">الظهر</div>
-                            <div class="prayer-time prayer-time-display" data-prayer="Dhuhr">12:47 PM</div>
-                        </div>
-                        <div class="prayer-time-card" data-prayer-card="Asr">
-                            <div class="prayer-name">Asr</div>
-                            <div lang="ar" class="prayer-arabic">العصر</div>
-                            <div class="prayer-time prayer-time-display" data-prayer="Asr">4:15 PM</div>
-                        </div>
-                        <div class="prayer-time-card" data-prayer-card="Maghrib">
-                            <div class="prayer-name">Maghrib</div>
-                            <div lang="ar" class="prayer-arabic">المغرب</div>
-                            <div class="prayer-time prayer-time-display" data-prayer="Maghrib">7:04 PM</div>
-                        </div>
-                        <div class="prayer-time-card" data-prayer-card="Isha">
-                            <div class="prayer-name">Isha</div>
-                            <div lang="ar" class="prayer-arabic">العشاء</div>
-                            <div class="prayer-time prayer-time-display" data-prayer="Isha">8:15 PM</div>
+                    <div class="cta-band">
+                        <h2>Help Us Keep Serving</h2>
+                        <div lang="ar" class="arabic-text">ساهم معنا</div>
+                        <p>Your support helps sustain the masjid, our students, and our community programs.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-gold" onclick="showPage('donate')">Donate</button>
+                            <button class="btn btn-secondary" onclick="showPage('masjid-project')">Al-Uloom Central Mosque project</button>
                         </div>
                     </div>
-                    <p class="prayer-location">Prayer times for Alagbado, Lagos, Nigeria</p>
                 </div>
             </section>
         </div>
@@ -2034,7 +2070,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=17" defer></script>
+    <script src="./js/script.min.js?v=18" defer></script>
 </body>
 </html>
 

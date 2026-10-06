@@ -4666,3 +4666,579 @@ img {
     font-weight: 600;
     text-decoration: underline;
 }
+
+/* =====================================================================
+   DARK THEME - modern masjid look (header, home page, footer)
+   Inspired by the deep-navy + single warm accent + floating pill nav
+   approach of modern Islamic education sites. Inner pages keep their
+   light bodies for readability of long text.
+   ===================================================================== */
+:root {
+    --navy-950: #060e1a;
+    --navy-900: #0a1525;
+    --navy-850: #0e1c31;
+    --navy-800: #132540;
+    --line: rgba(255, 255, 255, 0.10);
+    --line-strong: rgba(255, 255, 255, 0.18);
+    --text: #e8eef8;
+    --muted: #a4b4cc;
+    --gold: #e9b949;
+    --gold-soft: rgba(233, 185, 74, 0.14);
+}
+
+/* ---- Header: dark bar on phones/tablets ----
+   No backdrop-filter here on purpose: it would make the fixed slide-in
+   menu position itself relative to the header instead of the screen. */
+@media (max-width: 1199px) {
+    .header {
+        background: rgba(8, 18, 32, 0.96);
+        box-shadow: none;
+        border-bottom: 1px solid var(--line);
+    }
+}
+
+/* ---- Header: floating pill on desktop ---- */
+@media (min-width: 1200px) {
+    .header {
+        background: transparent;
+        box-shadow: none;
+        padding: 16px 0;
+    }
+
+    .header .container {
+        max-width: 1380px;
+    }
+
+    .header-content {
+        flex-wrap: nowrap;
+        gap: 1rem;
+        padding: 0.4rem 0.5rem 0.4rem 1.1rem;
+        background: rgba(9, 20, 36, 0.88);
+        -webkit-backdrop-filter: blur(18px) saturate(140%);
+        backdrop-filter: blur(18px) saturate(140%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .logo-img {
+        height: 42px;
+        box-shadow: none;
+    }
+
+    /* The pill is compact: the full Arabic name and subtitle live in the hero and footer */
+    .logo-text .header-arabic-text,
+    .logo-text .logo-subtitle {
+        display: none;
+    }
+
+    .logo-text h1 {
+        font-size: 1.05rem;
+        white-space: nowrap;
+    }
+
+    .nav {
+        flex-wrap: nowrap;
+        gap: 0.1rem;
+    }
+
+    .nav-btn {
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.84rem;
+        color: #d7e2f3;
+        white-space: nowrap;
+        box-shadow: none;
+    }
+
+    .nav-btn:hover {
+        background: rgba(255, 255, 255, 0.09);
+        color: #fff;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .nav-btn.active {
+        background: rgba(255, 255, 255, 0.14);
+        color: #fff;
+    }
+
+    /* Donate is the one warm accent in the bar */
+    #donate-btn {
+        background: var(--gold);
+        color: var(--navy-900);
+        font-weight: 700;
+        margin-left: 0.25rem;
+    }
+
+    #donate-btn:hover,
+    #donate-btn.active {
+        background: #f2c862;
+        color: var(--navy-900);
+    }
+
+    .dropdown-menu {
+        background: var(--navy-850);
+        border: 1px solid var(--line-strong);
+        border-radius: 16px;
+        top: calc(100% + 6px);
+    }
+
+    .dropdown-item {
+        color: #d7e2f3;
+    }
+
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+    }
+}
+
+/* ---- Footer ---- */
+.footer {
+    background: linear-gradient(180deg, #08121f 0%, #050b14 100%);
+    border-top: 1px solid var(--line);
+}
+
+/* ---- Shared button ---- */
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy-900);
+    box-shadow: 0 6px 22px rgba(233, 185, 74, 0.28);
+}
+
+.btn-gold:hover {
+    background: #f2c862;
+    transform: translateY(-2px);
+}
+
+/* ---- Home page ---- */
+#home-page {
+    background: var(--navy-900);
+    color: var(--text);
+}
+
+#home-page .hero {
+    background:
+        radial-gradient(60% 55% at 85% 0%, rgba(233, 185, 74, 0.14), transparent 70%),
+        radial-gradient(55% 60% at 8% 25%, rgba(26, 111, 207, 0.30), transparent 70%),
+        linear-gradient(180deg, #0b1a30 0%, var(--navy-900) 100%);
+    padding: 9.5rem 0 8rem;
+}
+
+#home-page .hero::before {
+    opacity: 0.3;
+}
+
+#home-page .bismillah {
+    font-size: 2.2rem;
+    margin-bottom: 1.25rem;
+    color: var(--gold);
+    text-shadow: none;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 1.5rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.hero-eyebrow::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+#home-page .hero-title {
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.25rem;
+    color: #fff;
+    text-shadow: none;
+}
+
+.hero-title .hl {
+    color: var(--gold);
+}
+
+#home-page .hero-arabic {
+    color: var(--muted) !important;
+    font-size: 1.5rem !important;
+    text-shadow: none;
+    margin: 0 0 1.25rem !important;
+}
+
+#home-page .hero-description {
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 2.25rem;
+}
+
+.hero-note {
+    margin-top: 1.1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Prayer panel: glass card overlapping the bottom of the hero */
+.prayer-panel-wrap {
+    position: relative;
+    z-index: 3;
+    margin-top: -4.5rem;
+}
+
+.prayer-panel {
+    background: rgba(19, 37, 64, 0.78);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--line-strong);
+    border-radius: 24px;
+    padding: 1.75rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.prayer-panel-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+
+.prayer-panel-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+}
+
+.prayer-panel .prayer-times-arabic {
+    color: var(--gold) !important;
+    font-size: 1.15rem !important;
+    text-align: left;
+    text-shadow: none;
+    margin: 0.2rem 0 0;
+}
+
+.prayer-panel .hijri-date-display {
+    text-align: left;
+    color: var(--muted);
+    margin-top: 0.15rem;
+}
+
+.prayer-panel .next-prayer-banner {
+    margin: 0;
+    padding: 0.7rem 1.4rem;
+    background: var(--gold-soft);
+    border-color: rgba(233, 185, 74, 0.5);
+}
+
+.prayer-panel .next-prayer-name {
+    color: var(--gold);
+}
+
+.prayer-panel .prayer-times-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.9rem;
+    margin: 1.5rem 0 0;
+}
+
+.prayer-panel .prayer-time-card,
+.prayer-panel .prayer-time-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1.1rem 0.5rem;
+    color: var(--text);
+    transform: none;
+}
+
+.prayer-panel .prayer-time-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.prayer-panel .prayer-time-card.is-next {
+    background: var(--gold-soft);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold);
+}
+
+.prayer-panel .prayer-name {
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+    color: #fff;
+}
+
+.prayer-panel .prayer-arabic {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+}
+
+.prayer-panel .prayer-time {
+    font-size: 1.4rem;
+    color: var(--gold);
+}
+
+.prayer-panel .prayer-location {
+    margin: 1.1rem 0 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+/* At a glance */
+.hstats {
+    margin-top: 3.5rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.hstats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.hstat {
+    padding: 1.75rem 1rem;
+    text-align: center;
+    border-right: 1px solid var(--line);
+}
+
+.hstat:last-child {
+    border-right: none;
+}
+
+.hstat-number {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.hstat-label {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+/* Section text on dark */
+#home-page .section-title {
+    color: #fff;
+}
+
+#home-page .section-subtitle {
+    color: var(--muted);
+}
+
+#home-page .arabic-text {
+    color: var(--gold);
+}
+
+/* Pillars */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.pillar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.pillar:hover {
+    transform: translateY(-3px);
+    border-color: rgba(233, 185, 74, 0.45);
+}
+
+.pillar .service-icon {
+    margin: 0 0 1.25rem;
+    background: var(--gold-soft);
+}
+
+.pillar h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.pillar .arabic-text {
+    text-align: left;
+    margin: 0 0 0.9rem;
+}
+
+.pillar p {
+    color: var(--muted);
+    flex: 1;
+}
+
+.pillar-link {
+    margin-top: 1.25rem;
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pillar-link:hover {
+    text-decoration: underline;
+}
+
+/* Existing sections, restyled for dark */
+#home-page .card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+    box-shadow: none;
+    color: var(--text);
+}
+
+#home-page .card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(233, 185, 74, 0.45);
+    box-shadow: none;
+}
+
+#home-page .card h3 {
+    color: #fff;
+}
+
+#home-page .card p {
+    color: var(--muted);
+}
+
+#home-page .imam-section {
+    background: var(--navy-850);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+#home-page .imam-image {
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+#home-page .imam-content p {
+    color: var(--muted);
+}
+
+#home-page .imam-content .section-subtitle {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+#home-page .campus-section {
+    background: transparent;
+}
+
+/* Donate band */
+.cta-band {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 3.5rem 2rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 28px;
+    background:
+        radial-gradient(60% 90% at 50% 0%, rgba(233, 185, 74, 0.16), transparent 70%),
+        linear-gradient(135deg, #143055, var(--navy-850));
+}
+
+.cta-band h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.cta-band .arabic-text {
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+.cta-band p {
+    max-width: 560px;
+    margin: 0 auto 2rem;
+    color: var(--muted);
+}
+
+/* ---- Home page: smaller screens ---- */
+@media (max-width: 1199px) {
+    #home-page .hero {
+        padding: 7.5rem 0 7rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .prayer-panel .prayer-times-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pillars {
+        grid-template-columns: 1fr;
+    }
+
+    .hstats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hstat:nth-child(2) {
+        border-right: none;
+    }
+
+    .hstat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+    }
+}
+
+@media (max-width: 600px) {
+    #home-page .hero {
+        padding: 6.5rem 0 6rem;
+    }
+
+    #home-page .bismillah {
+        font-size: 1.8rem;
+    }
+
+    .prayer-panel {
+        padding: 1.25rem;
+        border-radius: 20px;
+    }
+
+    .prayer-panel .prayer-times-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 5 cards in 2 columns: let the last one span the row instead of sitting alone */
+    .prayer-panel .prayer-time-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .prayer-panel-wrap {
+        margin-top: -3.5rem;
+    }
+
+    .cta-band {
+        padding: 2.5rem 1.25rem;
+    }
+}
