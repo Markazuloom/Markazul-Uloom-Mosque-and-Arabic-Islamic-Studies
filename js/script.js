@@ -446,6 +446,18 @@ document.addEventListener('mousedown', () => {
     document.body.classList.remove('keyboard-navigation');
 });
 
+// The footer already offers every way to get in touch, so tuck the floating
+// contact buttons away once the footer scrolls into view. Otherwise they sit
+// on top of its last lines (most noticeable on phones).
+document.addEventListener('DOMContentLoaded', () => {
+    const footer = document.querySelector('.footer');
+    const floating = document.querySelector('.floating-actions');
+    if (!footer || !floating || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(([entry]) => {
+        floating.classList.toggle('is-hidden', entry.isIntersecting);
+    }, { threshold: 0.15 }).observe(footer);
+});
+
 // Service Worker Registration - enables offline access and installing
 // the site as an app on phones/desktop.
 if ('serviceWorker' in navigator) {

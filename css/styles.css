@@ -5242,3 +5242,442 @@ img {
         padding: 2.5rem 1.25rem;
     }
 }
+
+/* =====================================================================
+   COMPACT SIZING (home page + footer)
+   Tuned sizes so the dark home page isn't over-tall, especially on phones.
+   Kept as one block that overrides the DARK THEME block above.
+   ===================================================================== */
+#home-page .hero {
+    padding: 7.5rem 0 6.25rem;
+}
+
+.prayer-panel-wrap {
+    margin-top: -3.75rem;
+}
+
+.prayer-panel {
+    padding: 1.25rem 1.5rem;
+    border-radius: 20px;
+}
+
+.prayer-panel-title {
+    font-size: 1.3rem;
+}
+
+.prayer-panel .prayer-times-grid {
+    margin-top: 1rem;
+    gap: 0.7rem;
+}
+
+.prayer-panel .prayer-time-card,
+.prayer-panel .prayer-time-card:hover {
+    padding: 0.75rem 0.4rem;
+    border-radius: 14px;
+}
+
+.prayer-panel .prayer-arabic {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.prayer-panel .prayer-time {
+    font-size: 1.25rem;
+}
+
+.prayer-panel .prayer-location {
+    margin-top: 0.8rem;
+}
+
+.hstats {
+    margin-top: 2.5rem;
+}
+
+.hstat {
+    padding: 1.1rem 0.75rem;
+}
+
+.hstat-number {
+    font-size: 2rem;
+}
+
+#home-page .section {
+    padding: 3rem 0;
+}
+
+#home-page .section-title {
+    font-size: 2.4rem;
+}
+
+.pillars {
+    margin-top: 2rem;
+    gap: 1.25rem;
+}
+
+.pillar {
+    padding: 1.5rem;
+}
+
+.pillar .service-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#home-page .card {
+    padding: 1.75rem;
+}
+
+#home-page .imam-image {
+    max-width: 340px;
+}
+
+#home-page .campus-image {
+    height: 260px;
+    margin-bottom: 1rem;
+}
+
+.cta-band {
+    padding: 2.75rem 2rem;
+}
+
+@media (max-width: 600px) {
+    /* Hero */
+    #home-page .hero {
+        padding: 5.5rem 0 4.75rem;
+    }
+
+    #home-page .bismillah {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.78rem;
+        padding: 0.3rem 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    #home-page .hero-title {
+        font-size: 2.3rem;
+        margin-bottom: 0.75rem;
+    }
+
+    #home-page .hero-arabic {
+        font-size: 1.15rem !important;
+        margin: 0 0 0.75rem !important;
+    }
+
+    #home-page .hero-description {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-buttons {
+        gap: 0.6rem;
+    }
+
+    .hero-buttons .btn {
+        padding: 0.75rem 1.4rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-note {
+        font-size: 0.78rem;
+        margin-top: 0.8rem;
+    }
+
+    /* Prayer times: one compact row per prayer instead of big square cards */
+    .prayer-panel-wrap {
+        margin-top: -3rem;
+    }
+
+    .prayer-panel {
+        padding: 1rem;
+    }
+
+    .prayer-panel-head {
+        gap: 0.75rem;
+    }
+
+    .prayer-panel-title {
+        font-size: 1.15rem;
+    }
+
+    .prayer-panel .prayer-times-arabic {
+        font-size: 1rem !important;
+    }
+
+    .prayer-panel .hijri-date-display {
+        font-size: 0.85rem;
+    }
+
+    .prayer-panel .next-prayer-banner {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        gap: 0.3rem 0.6rem;
+    }
+
+    .prayer-panel .next-prayer-label {
+        font-size: 0.7rem;
+    }
+
+    .prayer-panel .next-prayer-name,
+    .prayer-panel .next-prayer-countdown {
+        font-size: 1rem;
+    }
+
+    .prayer-panel .prayer-times-grid {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+        margin-top: 0.9rem;
+    }
+
+    .prayer-panel .prayer-time-card,
+    .prayer-panel .prayer-time-card:hover {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.55rem 0.85rem;
+        text-align: left;
+        border-radius: 12px;
+    }
+
+    .prayer-panel .prayer-time-card:last-child {
+        grid-column: auto;
+    }
+
+    .prayer-panel .prayer-name {
+        margin: 0;
+        flex: 0 0 4.8rem;
+        font-size: 0.95rem;
+    }
+
+    .prayer-panel .prayer-arabic {
+        margin: 0;
+        flex: 1;
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .prayer-panel .prayer-time {
+        font-size: 1.1rem;
+    }
+
+    .prayer-panel .prayer-location {
+        margin-top: 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    /* Stats */
+    .hstats {
+        margin-top: 1.75rem;
+    }
+
+    .hstat {
+        padding: 0.85rem 0.4rem;
+    }
+
+    .hstat-number {
+        font-size: 1.55rem;
+    }
+
+    .hstat-label {
+        font-size: 0.75rem;
+        margin-top: 0.15rem;
+    }
+
+    /* Sections */
+    #home-page .section {
+        padding: 2.25rem 0;
+    }
+
+    #home-page .section-title {
+        font-size: 1.65rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #home-page .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    #home-page .grid {
+        gap: 1rem;
+    }
+
+    .pillars {
+        margin-top: 1.25rem;
+        gap: 0.8rem;
+    }
+
+    .pillar {
+        padding: 1.1rem 1.15rem;
+        border-radius: 16px;
+    }
+
+    .pillar .service-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.15rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .pillar h3 {
+        font-size: 1.15rem;
+    }
+
+    .pillar .arabic-text {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .pillar p {
+        font-size: 0.92rem;
+        line-height: 1.55;
+    }
+
+    .pillar-link {
+        margin-top: 0.7rem;
+        font-size: 0.92rem;
+    }
+
+    #home-page .card {
+        padding: 1.15rem;
+    }
+
+    #home-page .card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.4rem;
+    }
+
+    #home-page .card p {
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    #home-page .imam-image {
+        max-width: 190px;
+    }
+
+    #home-page .imam-content p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        margin-bottom: 0.75rem;
+    }
+
+    #home-page .campus-image {
+        height: 170px;
+        margin-bottom: 0.75rem;
+    }
+
+    .cta-band {
+        padding: 1.75rem 1.1rem;
+        border-radius: 20px;
+    }
+
+    .cta-band h2 {
+        font-size: 1.45rem;
+    }
+
+    .cta-band p {
+        font-size: 0.92rem;
+        margin-bottom: 1.1rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1.75rem 0 1.25rem;
+    }
+
+    .footer-content {
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 0.3rem;
+    }
+
+    .footer-content .footer-section:nth-child(2) ul {
+        columns: 2;
+        column-gap: 1rem;
+    }
+
+    .footer-brand p {
+        font-size: 0.9rem;
+    }
+
+    .footer-contact li {
+        font-size: 0.92rem;
+    }
+}
+
+/* ---- Phone: second compaction pass ---- */
+@media (max-width: 600px) {
+    /* Hero buttons side by side instead of two full-width rows */
+    #home-page .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #home-page .hero-buttons .btn {
+        width: auto;
+        flex: 0 1 auto;
+    }
+
+    /* Pillars become a swipeable row; the next card peeks in to show there is more */
+    .pillars {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 1rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 0.8rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 0.25rem 1rem 0.75rem;
+    }
+
+    .pillars::-webkit-scrollbar {
+        display: none;
+    }
+
+    .pillar {
+        flex: 0 0 82%;
+        scroll-snap-align: start;
+    }
+
+    #home-page .imam-image {
+        max-width: 160px;
+    }
+
+    #home-page .imam-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    #home-page .campus-image {
+        height: 150px;
+    }
+}
+
+/* Floating contact buttons step aside when the footer is on screen.
+   visibility (not just opacity) so the hidden buttons also leave the tab order. */
+.floating-actions {
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.floating-actions.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+}
