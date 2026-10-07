@@ -6913,3 +6913,158 @@ body::before {
         scroll-snap-align: start;
     }
 }
+
+/* =====================================================================
+   FIXES: leftover bright-blue blocks and boxes that overflowed their cards
+   ===================================================================== */
+.page .admin-mission-card,
+.page .donation-contact {
+    background: linear-gradient(135deg, #0f3d73 0%, #0b2747 100%);
+    border: 1px solid var(--line-strong);
+    border-radius: 24px;
+    color: var(--text);
+}
+
+.page .admin-mission-card {
+    margin-top: 0;
+    padding: 2rem 2rem 2.25rem;
+}
+
+.page .admin-mission-card .arabic-text {
+    text-align: center;
+}
+
+.page .admin-mission-card .mission-text {
+    color: var(--text);
+    opacity: 1;
+}
+
+.page .value-item {
+    background: rgba(150, 205, 245, 0.07);
+    border: 1px solid var(--line-strong);
+}
+
+.page .value-item p {
+    color: var(--muted);
+}
+
+.page .donation-contact {
+    margin-bottom: 1.25rem;
+    padding: 2rem 2rem 1.5rem;
+}
+
+.page .donation-contact .contact-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1rem 0 0;
+    padding: 0;
+    background: none;
+    border: 0;
+}
+
+.page .donation-contact .contact-info p {
+    min-width: 0;
+    margin: 0 0 0.5rem;
+    overflow-wrap: anywhere;
+}
+
+/* Students: three stat tiles that fit their card */
+.page .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+}
+
+.page .stats-grid .stat-item {
+    min-width: 0;
+    padding: 0.8rem 0.35rem;
+}
+
+.page .stats-grid .stat-number {
+    font-size: 1.5rem;
+}
+
+.page .stats-grid .stat-label {
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+}
+
+/* Contact: the two-column items must stay inside the card, with no extra box behind them */
+#contact-page .contact-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+}
+
+#contact-page .contact-item {
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+#contact-page .contact-item > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* The small "Alumni Relations" box: a quiet gold tint instead of the old olive-grey */
+.page .alumni-card .contact-info {
+    padding: 1rem;
+    background: rgba(233, 185, 74, 0.08);
+    border: 1px solid rgba(233, 185, 74, 0.25);
+    border-radius: 12px;
+}
+
+/* Anniversary: the translation of the verse was a light box */
+.page .verse-translation {
+    background: rgba(150, 205, 245, 0.08);
+    color: var(--text);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--gold);
+}
+
+@media (max-width: 700px) {
+    .page .donation-contact .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    #contact-page .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .page .admin-mission-card {
+        padding: 1.25rem;
+    }
+
+    .page .donation-contact {
+        padding: 1.25rem;
+    }
+}
+
+#contact-page .contact-icon {
+    flex: 0 0 auto;
+    min-width: 2rem;
+}
+
+/* A grid column that holds a swipe row must be allowed to shrink below its content,
+   otherwise it grows to fit every card and the row never scrolls */
+.admin-leadership,
+.anniversary-donation .grid-2 {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.admin-leadership > .card,
+.anniversary-donation .grid-2 > .card {
+    min-width: 0;
+}
+
+/* Contact: give the details card more room than the office-hours card so the email fits on one line */
+@media (min-width: 901px) {
+    #contact-page .grid-2 {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    }
+}
+
+#contact-page .contact-item > div {
+    overflow-wrap: break-word;
+}
