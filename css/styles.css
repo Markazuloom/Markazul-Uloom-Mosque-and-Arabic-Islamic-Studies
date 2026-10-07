@@ -7316,3 +7316,307 @@ body::before {
         transition: none !important;
     }
 }
+
+
+/* =====================================================================
+   GIVE PICKER, NEXT-PRAYER CHIP, VISIT US + DIRECTIONS
+   ===================================================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---- Donate: choose an amount, then tell us on WhatsApp ---- */
+.give-picker {
+    margin: 0 0 1.25rem;
+}
+
+.give-label {
+    margin: 0 0 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.give-label span {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.give-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.give-chip,
+.give-other {
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.95rem;
+}
+
+.give-chip {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.give-chip:hover {
+    border-color: rgba(233, 185, 74, 0.7);
+}
+
+.give-chip[aria-pressed="true"] {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy-950);
+}
+
+.give-other {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0 0.9rem;
+    color: var(--muted);
+}
+
+.give-other:focus-within {
+    border-color: var(--gold);
+}
+
+.give-other input {
+    width: 6rem;
+    padding: 0.5rem 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    font-size: 0.95rem;
+}
+
+.give-other input::placeholder {
+    color: var(--muted);
+}
+
+.give-chip:focus-visible,
+.give-other input:focus-visible,
+.dir-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.give-other input:focus-visible {
+    outline-offset: 6px;
+    border-radius: 999px;
+}
+
+.give-summary {
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.give-notify {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* ---- Next prayer, inside the header menu ----
+   Wide screens: a quiet line at the end of the pill. Phones: the first row of the
+   menu drawer. (A floating chip covered page content, so it lives in the header.) */
+.nav-prayer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.nav-prayer[hidden] {
+    display: none;
+}
+
+.nav-prayer strong {
+    color: var(--gold);
+}
+
+.nav-prayer .pc-label {
+    color: var(--muted);
+}
+
+.pc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.nav-prayer:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+@media (min-width: 1200px) {
+    .nav-prayer {
+        margin-left: 0.5rem;
+        padding: 0.3rem 0 0.3rem 0.85rem;
+        border-left: 1px solid var(--line-strong);
+        border-radius: 0;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .nav-prayer .pc-label {
+        display: none;
+    }
+
+    .nav-prayer:hover strong {
+        text-decoration: underline;
+    }
+}
+
+/* Not enough room in the pill on smaller laptops */
+@media (min-width: 1200px) and (max-width: 1359px) {
+    .nav-prayer {
+        display: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .nav-prayer {
+        order: -1;
+        width: 100%;
+        margin: 0 0 0.4rem;
+        padding: 0.75rem 1rem;
+        border-radius: 14px;
+        background: rgba(233, 185, 74, 0.1);
+        font-size: 0.95rem;
+    }
+
+    .nav > .nav-prayer {
+        opacity: 0;
+        transform: translateX(16px);
+        transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .nav.mobile-open > .nav-prayer {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.02s;
+    }
+}
+
+/* ---- Directions links, Visit us strip, Contact addresses ---- */
+.dir-link {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.dir-link:hover {
+    text-decoration: underline;
+}
+
+.visit-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.7fr);
+    align-items: center;
+    gap: 1rem 2rem;
+    padding: 1.25rem 1.75rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(150, 205, 245, 0.08), rgba(150, 205, 245, 0.03));
+}
+
+.visit-head h2 {
+    margin: 0 0 0.3rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.visit-head p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.visit-places {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.visit-place {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.visit-place strong {
+    display: block;
+    color: #fff;
+}
+
+.visit-place span {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .visit-card {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 1.1rem;
+    }
+
+    .visit-places {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem;
+    }
+}
+
+.place + .place {
+    margin-top: 0.85rem;
+}
+
+.place p {
+    margin: 0 0 0.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .give-chip,
+    .nav > .nav-prayer {
+        transition: none;
+    }
+}
+
+/* Scrolling to the prayer panel (from the header's prayer line) must stop below the fixed header */
+.prayer-panel {
+    scroll-margin-top: 96px;
+}

@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');
     if (!nav) return;
     nav.addEventListener('click', (e) => {
-        if (e.target.closest('.nav-btn, .dropdown-item') && nav.classList.contains('mobile-open')) {
+        if (e.target.closest('.nav-btn, .dropdown-item, .nav-prayer') && nav.classList.contains('mobile-open')) {
             toggleMobileMenu();
         }
     });
@@ -192,6 +192,9 @@ class PrayerTimesManager {
     async updatePrayerTimesDisplay() {
         const { timings, hijri } = await this.fetchPrayerData();
         this.timings = timings;
+        // The Hijri date only comes from the live API; if it is missing the times are
+        // the built-in approximations, which the small chip should not present as fact.
+        this.live = !!hijri;
 
         // Update every prayer time display on the page (homepage + contact page)
         const prayerTimeElements = document.querySelectorAll('.prayer-time-display');
@@ -252,6 +255,22 @@ class PrayerTimesManager {
         return { name: 'Fajr', secondsUntil: (86400 - nowSeconds) + fajrSeconds };
     }
 
+    // Small "next prayer" line in the header menu (every page); it opens the full panel on Home
+    updateChip(next) {
+        const chip = document.getElementById('prayer-chip');
+        if (!chip) return;
+        if (!this.live) { chip.hidden = true; return; }
+        const total = Math.floor(next.secondsUntil);
+        const h = Math.floor(total / 3600);
+        const m = Math.floor((total % 3600) / 60);
+        const when = h > 0 ? `in ${h}h ${m}m` : (m > 0 ? `in ${m}m` : 'in under 1m');
+        const nameEl = document.getElementById('pc-name');
+        const timeEl = document.getElementById('pc-time');
+        if (nameEl.textContent !== next.name) nameEl.textContent = next.name;
+        if (timeEl.textContent !== when) timeEl.textContent = when;
+        chip.hidden = false;
+    }
+
     updateNextPrayerCountdown() {
         const nameEl = document.getElementById('next-prayer-name');
         const countdownEl = document.getElementById('next-prayer-countdown');
@@ -259,6 +278,7 @@ class PrayerTimesManager {
 
         const next = this.computeNextPrayer();
         if (!next || next.secondsUntil <= 0) return; // the next tick recomputes against the following prayer
+        this.updateChip(next);
 
         const totalSeconds = Math.floor(next.secondsUntil);
         const hours = Math.floor(totalSeconds / 3600);
@@ -603,6 +623,58 @@ function updateSwipeRows() {
 window.addEventListener('resize', updateSwipeRows);
 window.addEventListener('hashchange', () => setTimeout(updateSwipeRows, 0));
 document.addEventListener('DOMContentLoaded', () => setTimeout(updateSwipeRows, 0));
+
+// The prayer chip opens the full prayer-times panel on the home page.
+function goToPrayerTimes() {
+    showPage('home', false);
+    const panel = document.querySelector('.prayer-panel');
+    if (panel) panel.scrollIntoView({ block: 'start' });
+}
+
+// Donate page: pick an amount (optional); it fills in the WhatsApp message that
+// tells the school a gift was sent. Nothing is processed here; the gift itself is
+// a normal bank transfer to the account shown on the page.
+(function initGivePicker() {
+    const picker = document.querySelector('.give-picker');
+    const notify = document.getElementById('give-notify');
+    if (!picker || !notify) return;
+    const chips = Array.from(picker.querySelectorAll('.give-chip'));
+    const other = document.getElementById('give-other');
+    const summary = document.getElementById('give-summary');
+    const copyBtn = document.querySelector('.copy-btn[data-copy]');
+    const account = copyBtn ? copyBtn.getAttribute('data-copy') : '';
+    const naira = (n) => '\u20A6' + n.toLocaleString('en-NG');
+    let amount = 0;
+
+    function render() {
+        chips.forEach((chip) => {
+            chip.setAttribute('aria-pressed', String(Number(chip.dataset.amount) === amount && document.activeElement !== other));
+        });
+        summary.textContent = amount
+            ? `Your gift: ${naira(amount)}. Send it to the account below, then let us know.`
+            : 'Send your gift to the account below, then let us know.';
+        const what = amount ? `sent ${naira(amount)}` : 'made a donation';
+        const acct = account ? ` (account ${account})` : '';
+        const text = `Assalamu Alaikum. I have ${what} to Markaz-ul-Uloom${acct}. Here is my proof of payment.`;
+        notify.href = 'https://wa.me/2348145318366?text=' + encodeURIComponent(text);
+    }
+
+    chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+            const value = Number(chip.dataset.amount);
+            amount = amount === value ? 0 : value;
+            other.value = '';
+            render();
+        });
+    });
+    other.addEventListener('input', () => {
+        other.value = other.value.replace(/\D/g, '');
+        amount = other.value ? parseInt(other.value, 10) : 0;
+        render();
+    });
+    other.addEventListener('blur', render);
+    render();
+})();
 
 // "Copy" buttons (e.g. the bank account number on the Donate page).
 document.addEventListener('click', (e) => {

@@ -58,8 +58,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=38" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=38"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=39" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=39"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -162,6 +162,12 @@
                     <button onclick="showPage('anniversary')" class="nav-btn" id="anniversary-btn">40th Anniversary</button>
                     <button onclick="showPage('donate')" class="nav-btn" id="donate-btn">Donate</button>
                     <button onclick="showPage('contact')" class="nav-btn" id="contact-btn">Contact</button>
+                    <button type="button" class="nav-prayer" id="prayer-chip" onclick="goToPrayerTimes()" hidden>
+                        <span class="pc-dot" aria-hidden="true"></span>
+                        <span class="pc-label">Next prayer</span>
+                        <strong id="pc-name"></strong>
+                        <span id="pc-time"></span>
+                    </button>
                 </nav>            </div>
         </div>
     </header>
@@ -336,6 +342,28 @@
                                 <img src="images/masjid-project.jpg" alt="Mosque" class="campus-image" loading="lazy" width="1536" height="1024">
                             </picture>
                             <p>The heart of our institution, with a beautiful blue dome, separate prayer areas for men and women, modern ablution facilities, and peaceful courtyards for reflection.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Visit us -->
+            <section class="section visit-section" aria-labelledby="visit-title">
+                <div class="container">
+                    <div class="visit-card">
+                        <div class="visit-head">
+                            <h2 id="visit-title">Visit us</h2>
+                            <p>Office hours: Friday 8 AM &ndash; 5 PM &middot; Saturday &amp; Sunday 10 AM &ndash; 5 PM</p>
+                        </div>
+                        <div class="visit-places">
+                            <div class="visit-place">
+                                <div><strong>Alagbado</strong><span>1 Buyide Avenue, Alagbado, Lagos State</span></div>
+                                <a class="dir-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=1+Buyide+Avenue+Alagbado+Lagos+State+Nigeria" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&#8599;</span><span class="sr-only"> to Alagbado (opens Google Maps)</span></a>
+                            </div>
+                            <div class="visit-place">
+                                <div><strong>Otubu, Agege</strong><span>64B, Otubu bus stop, off Ogba road</span></div>
+                                <a class="dir-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=64B+Otubu+bus+stop+off+Ogba+road+Agege+Lagos+Nigeria" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&#8599;</span><span class="sr-only"> to Otubu, Agege (opens Google Maps)</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1638,7 +1666,16 @@
                                     <div>
                                         <h3>Address</h3>
                                         <div lang="ar" class="arabic-text">العنوان</div>
-                                        <p>1 Buyide Avenue<br>Alagbado, Lagos State<br>Nigeria<br><br>64B, Otubu bus stop, off Ogba road<br>Agege, Lagos</p>
+                                        <div class="place-list">
+                                            <div class="place">
+                                                <p>1 Buyide Avenue<br>Alagbado, Lagos State<br>Nigeria</p>
+                                                <a class="dir-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=1+Buyide+Avenue+Alagbado+Lagos+State+Nigeria" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&#8599;</span><span class="sr-only"> to 1 Buyide Avenue, Alagbado (opens Google Maps)</span></a>
+                                            </div>
+                                            <div class="place">
+                                                <p>64B, Otubu bus stop, off Ogba road<br>Agege, Lagos</p>
+                                                <a class="dir-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=64B+Otubu+bus+stop+off+Ogba+road+Agege+Lagos+Nigeria" target="_blank" rel="noopener">Get directions <span aria-hidden="true">&#8599;</span><span class="sr-only"> to Otubu bus stop, Agege (opens Google Maps)</span></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -1922,6 +1959,21 @@
                         <div class="bank-account-card">
                             <div class="bank-icon">🏦</div>
                             <h3>Official Bank Account</h3>
+                            <div class="give-picker">
+                                <p class="give-label" id="give-label">Choose an amount <span>(optional)</span></p>
+                                <div class="give-amounts" role="group" aria-labelledby="give-label">
+                                    <button type="button" class="give-chip" data-amount="5000" aria-pressed="false">&#8358;5,000</button>
+                                    <button type="button" class="give-chip" data-amount="10000" aria-pressed="false">&#8358;10,000</button>
+                                    <button type="button" class="give-chip" data-amount="25000" aria-pressed="false">&#8358;25,000</button>
+                                    <button type="button" class="give-chip" data-amount="50000" aria-pressed="false">&#8358;50,000</button>
+                                    <label class="give-other">
+                                        <span class="sr-only">Other amount in naira</span>
+                                        <span class="give-naira" aria-hidden="true">&#8358;</span>
+                                        <input type="text" id="give-other" inputmode="numeric" autocomplete="off" placeholder="Other" maxlength="10">
+                                    </label>
+                                </div>
+                                <p class="give-summary" id="give-summary" aria-live="polite">Send your gift to the account below, then let us know.</p>
+                            </div>
                             <div class="bank-details">
                                 <div class="detail-row">
                                     <span class="detail-label">Account Name:</span>
@@ -1945,6 +1997,7 @@
                                 <a href="mailto:markazululoomalagbado40@gmail.com">markazululoomalagbado40@gmail.com</a> 
                                 or WhatsApp <a href="tel:+2348145318366">+234 814 531 8366</a> for acknowledgment and receipt.
                             </div>
+                            <a class="btn btn-gold give-notify" id="give-notify" href="https://wa.me/2348145318366" target="_blank" rel="noopener">I&rsquo;ve sent my gift &mdash; tell us on WhatsApp</a>
                         </div>
                         
                         <div class="mobile-payment-card">
@@ -2000,8 +2053,8 @@
 
                 <div class="fc-contact">
                     <ul class="fc-contact-list">
-                        <li>📍 1 Buyide Avenue, Alagbado, Lagos State, Nigeria</li>
-                        <li>📍 64B, Otubu bus stop, off Ogba road, Agege, Lagos</li>
+                        <li>📍 <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1+Buyide+Avenue+Alagbado+Lagos+State+Nigeria" target="_blank" rel="noopener" title="Get directions in Google Maps">1 Buyide Avenue, Alagbado, Lagos State, Nigeria</a></li>
+                        <li>📍 <a href="https://www.google.com/maps/dir/?api=1&amp;destination=64B+Otubu+bus+stop+off+Ogba+road+Agege+Lagos+Nigeria" target="_blank" rel="noopener" title="Get directions in Google Maps">64B, Otubu bus stop, off Ogba road, Agege, Lagos</a></li>
                         <li>📞 <a href="tel:+2348145318366">+234 814 531 8366</a></li>
                         <li>📧 <a href="mailto:markazululoomalagbado40@gmail.com">markazululoomalagbado40@gmail.com</a></li>
                     </ul>
@@ -2071,7 +2124,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=38" defer></script>
+    <script src="./js/script.min.js?v=39" defer></script>
 </body>
 </html>
 
