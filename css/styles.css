@@ -5686,10 +5686,10 @@ img {
 /* =====================================================================
    CALLIGRAPHY WATERMARK
    "مركز العلوم" (Markaz-ul-Uloom) in Aref Ruqaa, converted to vector
-   outlines (images/calligraphy-markaz.svg, ~7 KB, so no font download).
-   A sticky full-screen layer: it stays in view while the page scrolls,
-   sits behind the content, and ends where the home page ends (so it never
-   paints over the footer).
+   outlines (images/calligraphy-tile.svg, ~17 KB, so no font download).
+   The tile repeats seamlessly over the WHOLE home page, in rows of
+   different sizes that run from the right edge toward the left (the
+   direction Arabic is read). It sits behind the content.
    ===================================================================== */
 #home-page {
     position: relative;
@@ -5698,21 +5698,15 @@ img {
 
 #home-page::before {
     content: '';
-    display: block;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    height: 100dvh;
-    margin-bottom: -100vh;
-    margin-bottom: -100dvh;
+    position: absolute;
+    inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: url("../images/calligraphy-markaz.svg?v=1") center / cover no-repeat;
-    opacity: 0.065;
+    background: url("../images/calligraphy-tile.svg?v=1") right top / clamp(760px, 125vw, 2000px) auto repeat;
+    opacity: 0.085;
 }
 
-/* The sticky layer's margin box ends with the page, but its painted box can still
-   reach past it near the bottom, so keep the footer above it. */
+/* Keep the footer above the home page's background layer. */
 .footer {
     position: relative;
     z-index: 2;
