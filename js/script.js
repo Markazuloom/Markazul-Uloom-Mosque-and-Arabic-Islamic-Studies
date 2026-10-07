@@ -44,6 +44,9 @@ function showPage(pageId, moveFocus = true) {
         selectedButton.setAttribute("aria-current", "page");
     }
 
+    // Let the sliding nav highlight follow the new current page
+    if (window.updateNavGlider) window.updateNavGlider();
+
     // Update tab title so bookmarks/history show the actual section
     if (PAGE_TITLES[pageId]) {
         document.title = PAGE_TITLES[pageId];
@@ -340,17 +343,135 @@ function toggleMobileMenu() {
         nav.classList.remove('mobile-open');
         if (backdrop) backdrop.classList.remove('mobile-open');
         if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
         document.body.style.overflow = '';
     } else {
         nav.classList.add('mobile-open');
         if (backdrop) backdrop.classList.add('mobile-open');
         if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('menu-open');
         // The menu is a side drawer over a dimmed backdrop, so lock
         // background scroll while it's open rather than letting the page
         // scroll behind it.
         document.body.style.overflow = 'hidden';
     }
 }
+
+// Header polish.
+// 1) Scrolling down shrinks the header; scrolling back up (or reaching the top)
+//    restores it. Only a class toggle, throttled with requestAnimationFrame, so it
+//    stays smooth (the old hide-on-scroll header was removed for jank).
+// 2) On desktop a single highlight glides between the menu buttons: it follows
+//    the pointer or keyboard focus and settles back on the current page.
+(function initHeaderPolish() {
+    const header = document.querySelector('.header');
+    const nav = document.getElementById('main-nav');
+    if (!header || !nav) return;
+
+    let lastY = window.scrollY;
+    let compact = false;
+    let ticking = false;
+
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            ticking = false;
+            const y = Math.max(0, window.scrollY);
+            if (nav.classList.contains('mobile-open')) { lastY = y; return; }
+            let next = compact;
+            if (y < 40) {
+                next = false;
+            } else if (y - lastY > 6) {
+                next = true;
+            } else if (lastY - y > 6) {
+                next = false;
+            } else {
+                return; // too small a move to count; keep lastY so slow scrolls still add up
+            }
+            lastY = y;
+            if (next !== compact) {
+                compact = next;
+                header.classList.toggle('is-compact', compact);
+            }
+        });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const glider = document.createElement('span');
+    glider.className = 'nav-glider';
+    glider.setAttribute('aria-hidden', 'true');
+    nav.insertBefore(glider, nav.firstChild); // first child so the buttons paint above it
+
+    const desktop = window.matchMedia('(min-width: 1200px)');
+    const skip = (btn) => !btn || btn.id === 'donate-btn'; // Donate keeps its own gold pill
+
+    function currentButton() {
+        let btn = nav.querySelector('.nav-btn.active');
+        // On a sub-page (Staff, Programmes...) highlight its parent, Admissions
+        if (!btn && nav.querySelector('.dropdown-item[aria-current]')) {
+            btn = document.getElementById('services-btn');
+        }
+        return skip(btn) ? null : btn;
+    }
+
+    let target = null;
+    function place(btn) {
+        target = btn;
+        if (!btn || !desktop.matches) {
+            glider.classList.remove('is-on');
+            return;
+        }
+        const n = nav.getBoundingClientRect();
+        const b = btn.getBoundingClientRect();
+        if (!b.width) return;
+        glider.style.setProperty('--x', (b.left - n.left) + 'px');
+        glider.style.setProperty('--y', (b.top - n.top) + 'px');
+        glider.style.setProperty('--w', b.width + 'px');
+        glider.style.setProperty('--h', b.height + 'px');
+        if (!glider.classList.contains('is-on')) {
+            // First appearance: drop into place without sliding in from the corner
+            glider.classList.add('is-tracking');
+            glider.getBoundingClientRect();
+            glider.classList.add('is-on');
+            requestAnimationFrame(() => glider.classList.remove('is-tracking'));
+        }
+    }
+
+    function settle() { place(currentButton()); }
+    window.updateNavGlider = settle;
+
+    nav.addEventListener('pointerover', (e) => {
+        if (e.pointerType === 'touch') return;
+        const btn = e.target.closest('.nav-btn');
+        if (!skip(btn)) place(btn);
+    });
+    nav.addEventListener('pointerleave', settle);
+    nav.addEventListener('focusin', (e) => {
+        const btn = e.target.closest('.nav-btn');
+        if (!skip(btn)) place(btn);
+    });
+    nav.addEventListener('focusout', (e) => {
+        if (!nav.contains(e.relatedTarget)) settle();
+    });
+
+    // The bar changes size while it shrinks and when fonts load; keep the
+    // highlight glued to its button without sliding during those changes.
+    if (window.ResizeObserver) {
+        let release = 0;
+        new ResizeObserver(() => {
+            glider.classList.add('is-tracking');
+            place(target);
+            cancelAnimationFrame(release);
+            release = requestAnimationFrame(() => {
+                release = requestAnimationFrame(() => glider.classList.remove('is-tracking'));
+            });
+        }).observe(nav);
+    }
+    desktop.addEventListener('change', settle);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
+    settle();
+})();
 
 // Enhanced Page Initialization
 document.addEventListener("DOMContentLoaded", () => {

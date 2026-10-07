@@ -7045,3 +7045,316 @@ body::before {
 .page .anniversary-quote .arabic-text {
     text-align: center;
 }
+
+
+/* =====================================================================
+   HEADER: SHRINKS WHILE SCROLLING + SLIDING MENU HIGHLIGHT
+   Ideas: 21st.dev "Morphing Scroll Navbar" (compacts on scroll down,
+   restores on scroll up), and the gliding highlight of 21st.dev "Slide Tabs"
+   and the mymind / Superpower pill menus on Mobbin.
+   js/script.js toggles .header.is-compact and positions .nav-glider.
+   ===================================================================== */
+
+/* Phones and tablets: the dark bar gets a little shorter.
+   Sizes only: never backdrop-filter or transform on .header here, it would
+   become the containing block of the fixed slide-in menu. */
+@media (max-width: 1199px) {
+    .header {
+        transition: padding 0.25s ease;
+    }
+
+    .header .logo-img,
+    .header .logo-text h1 {
+        transition: height 0.25s ease, font-size 0.25s ease;
+    }
+
+    .header.is-compact {
+        padding: 0.25rem 0;
+    }
+
+    .header.is-compact .logo-img {
+        height: 28px;
+    }
+
+    .header.is-compact .logo-text h1 {
+        font-size: 0.9rem;
+    }
+
+    .nav-glider {
+        display: none;
+    }
+}
+
+/* Desktop pill */
+@media (min-width: 1200px) {
+    .header-content {
+        --logo-h: 42px;
+        --pill-pad-y: 0.4rem;
+        --pill-pad-l: 1.1rem;
+        --pill-pad-r: 0.5rem;
+        --pill-gap: 2.25rem;
+        --btn-pad-y: 0.5rem;
+        --btn-pad-x: 0.8rem;
+        --btn-size: 0.84rem;
+        --brand-w: 12rem;
+        --brand-o: 1;
+        padding: var(--pill-pad-y) var(--pill-pad-r) var(--pill-pad-y) var(--pill-pad-l);
+        gap: var(--pill-gap);
+        transition: padding 0.3s ease, gap 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Scrolled down: shorter pill, logo mark only, tighter buttons. Every link
+       stays visible; scrolling back up (or reaching the top) restores it. */
+    .header.is-compact .header-content {
+        --logo-h: 32px;
+        --pill-pad-y: 0.28rem;
+        --pill-pad-l: 0.65rem;
+        --pill-pad-r: 0.3rem;
+        --pill-gap: 0.9rem;
+        --btn-pad-y: 0.36rem;
+        --btn-pad-x: 0.66rem;
+        --btn-size: 0.8rem;
+        --brand-w: 0rem;
+        --brand-o: 0;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-img {
+        height: var(--logo-h);
+        transition: height 0.3s ease;
+    }
+
+    .logo-text {
+        max-width: var(--brand-w);
+        opacity: var(--brand-o);
+        overflow: hidden;
+        transition: max-width 0.3s ease, opacity 0.2s ease;
+    }
+
+    .nav {
+        position: relative;
+    }
+
+    .nav-btn {
+        padding: var(--btn-pad-y) var(--btn-pad-x);
+        font-size: var(--btn-size);
+        transition: background-color 0.2s ease, color 0.2s ease, padding 0.3s ease, font-size 0.3s ease;
+    }
+
+    /* The old shimmer sweep is replaced by the gliding highlight */
+    .nav-btn::before {
+        display: none;
+    }
+
+    .nav-glider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--w, 0);
+        height: var(--h, 0);
+        transform: translate(var(--x, 0), var(--y, 0));
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    opacity 0.2s ease;
+    }
+
+    .nav-glider.is-on {
+        opacity: 1;
+    }
+
+    .nav-glider.is-tracking {
+        transition: none;
+    }
+
+    /* With the highlight running, the buttons themselves stay transparent */
+    .nav-btn:not(#donate-btn):hover,
+    .nav-btn.active:not(#donate-btn) {
+        background: transparent;
+    }
+
+    .nav-btn.active:not(#donate-btn) {
+        font-weight: 600;
+    }
+
+    /* The old gold ring on the current page is replaced by the highlight */
+    .nav-btn:not(#donate-btn):hover,
+    .nav-btn.active:not(#donate-btn) {
+        border-color: transparent;
+    }
+
+    .nav-btn:not(#donate-btn):hover {
+        color: #fff;
+    }
+}
+
+/* ---- Phones and tablets: shorter bar when scrolled, dark menu drawer ---- */
+@media (max-width: 1199px) {
+    /* On scroll the Arabic line and subtitle fold away, leaving logo + name */
+    .header .header-arabic-text,
+    .header .logo-subtitle {
+        max-height: 2rem;
+        overflow: hidden;
+        transition: max-height 0.25s ease, opacity 0.2s ease, margin 0.25s ease;
+    }
+
+    .header.is-compact .header-arabic-text,
+    .header.is-compact .logo-subtitle {
+        max-height: 0;
+        opacity: 0;
+        margin: 0 !important;
+    }
+
+    /* The close (X) button now sits above the drawer instead of under it */
+    .mobile-menu-toggle {
+        position: relative;
+        z-index: 1001;
+    }
+
+    .nav {
+        background: linear-gradient(180deg, var(--navy-850) 0%, var(--navy-950) 100%);
+        border-left: 1px solid var(--line-strong);
+        box-shadow: -18px 0 50px rgba(0, 0, 0, 0.5);
+        padding: 4.75rem 1rem 2rem;
+        gap: 0.2rem;
+    }
+
+    .nav-btn,
+    .nav-dropdown .dropdown-btn {
+        border: none;
+        border-radius: 14px;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #d7e2f3;
+        background: transparent;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-btn::before {
+        display: none;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        border: none;
+        box-shadow: none;
+    }
+
+    /* Current page: soft fill plus a gold marker on the left */
+    .nav-btn.active:not(#donate-btn) {
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: inset 3px 0 0 var(--gold);
+        font-weight: 600;
+    }
+
+    .nav-dropdown .dropdown-btn {
+        border-bottom: none;
+    }
+
+    /* Sub-pages indented under Admissions on a thin guide line */
+    .nav-dropdown .dropdown-menu {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        margin: 0.1rem 0 0.3rem 1.35rem;
+        padding: 0 0 0 0.6rem;
+        width: auto;
+        border-left: 1px solid var(--line-strong);
+    }
+
+    .dropdown-item {
+        border-radius: 10px;
+        padding: 0.55rem 0.85rem;
+        font-size: 0.93rem;
+        color: #b9c9de;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: #fff;
+    }
+
+    .dropdown-item[aria-current="page"] {
+        color: var(--gold);
+        font-weight: 600;
+    }
+
+    /* Donate: the one gold button */
+    #donate-btn,
+    #donate-btn.active,
+    #donate-btn:hover {
+        background: var(--gold);
+        color: var(--navy-900);
+        font-weight: 700;
+        text-align: center;
+        margin: 0.5rem 0;
+        box-shadow: none;
+    }
+
+    /* Rows glide in one after another when the drawer opens */
+    .nav > .nav-btn,
+    .nav > .nav-dropdown {
+        opacity: 0;
+        transform: translateX(16px);
+        transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                    background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .nav.mobile-open > .nav-btn,
+    .nav.mobile-open > .nav-dropdown {
+        opacity: 1;
+        transform: none;
+    }
+
+    .nav.mobile-open > :nth-child(2) { transition-delay: 0.06s; }
+    .nav.mobile-open > :nth-child(3) { transition-delay: 0.10s; }
+    .nav.mobile-open > :nth-child(4) { transition-delay: 0.14s; }
+    .nav.mobile-open > :nth-child(5) { transition-delay: 0.18s; }
+    .nav.mobile-open > :nth-child(6) { transition-delay: 0.22s; }
+    .nav.mobile-open > :nth-child(7) { transition-delay: 0.26s; }
+    .nav.mobile-open > :nth-child(8) { transition-delay: 0.30s; }
+    .nav.mobile-open > :nth-child(9) { transition-delay: 0.34s; }
+
+    /* The round contact buttons would sit on top of the drawer */
+    .menu-open .floating-actions {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Dropdown: mark the page you are on */
+@media (min-width: 1200px) {
+    .dropdown-item[aria-current="page"] {
+        color: var(--gold);
+        font-weight: 600;
+    }
+}
+
+/* Keyboard focus on the dark header and menu: a plain white ring */
+.header :focus-visible,
+.nav :focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header,
+    .header-content,
+    .header .logo-img,
+    .header .logo-text,
+    .header .logo-text h1,
+    .nav-btn,
+    .nav-glider {
+        transition: none !important;
+    }
+}
