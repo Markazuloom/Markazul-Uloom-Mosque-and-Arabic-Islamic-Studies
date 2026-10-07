@@ -4823,13 +4823,13 @@ img {
 #home-page .hero {
     background:
         radial-gradient(60% 55% at 85% 0%, rgba(233, 185, 74, 0.14), transparent 70%),
-        radial-gradient(55% 60% at 8% 25%, rgba(26, 111, 207, 0.30), transparent 70%),
-        linear-gradient(180deg, #0b1a30 0%, var(--navy-900) 100%);
+        radial-gradient(55% 60% at 8% 25%, rgba(26, 111, 207, 0.30), transparent 70%);
     padding: 9.5rem 0 8rem;
 }
 
+/* The calligraphy watermark below replaces the old diamond lattice */
 #home-page .hero::before {
-    opacity: 0.3;
+    display: none;
 }
 
 #home-page .bismillah {
@@ -5129,7 +5129,7 @@ img {
 }
 
 #home-page .imam-section {
-    background: var(--navy-850);
+    background: rgba(14, 28, 49, 0.82);
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 }
@@ -5680,4 +5680,40 @@ img {
     opacity: 0;
     visibility: hidden;
     transform: translateY(8px);
+}
+
+
+/* =====================================================================
+   CALLIGRAPHY WATERMARK
+   "مركز العلوم" (Markaz-ul-Uloom) in Aref Ruqaa, converted to vector
+   outlines (images/calligraphy-markaz.svg, ~7 KB, so no font download).
+   A sticky full-screen layer: it stays in view while the page scrolls,
+   sits behind the content, and ends where the home page ends (so it never
+   paints over the footer).
+   ===================================================================== */
+#home-page {
+    position: relative;
+    isolation: isolate;
+}
+
+#home-page::before {
+    content: '';
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    margin-bottom: -100vh;
+    margin-bottom: -100dvh;
+    z-index: -1;
+    pointer-events: none;
+    background: url("../images/calligraphy-markaz.svg?v=1") center / cover no-repeat;
+    opacity: 0.065;
+}
+
+/* The sticky layer's margin box ends with the page, but its painted box can still
+   reach past it near the bottom, so keep the footer above it. */
+.footer {
+    position: relative;
+    z-index: 2;
 }
