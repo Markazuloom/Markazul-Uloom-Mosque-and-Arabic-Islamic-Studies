@@ -458,6 +458,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 }).observe(footer);
 });
 
+// "Copy" buttons (e.g. the bank account number on the Donate page).
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+    const text = btn.getAttribute('data-copy');
+    const original = btn.textContent;
+    const done = () => {
+        btn.textContent = 'Copied';
+        btn.classList.add('is-copied');
+        setTimeout(() => {
+            btn.textContent = original;
+            btn.classList.remove('is-copied');
+        }, 1800);
+    };
+    const fallback = () => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { if (document.execCommand('copy')) done(); } catch (err) { /* nothing more to try */ }
+        document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+        fallback();
+    }
+});
+
 // Service Worker Registration - enables offline access and installing
 // the site as an app on phones/desktop.
 if ('serviceWorker' in navigator) {

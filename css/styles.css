@@ -4670,7 +4670,6 @@ img {
 
 /* ---- Home page ---- */
 #home-page {
-    background: var(--navy-900);
     color: var(--text);
 }
 
@@ -5513,20 +5512,6 @@ img {
    different sizes that run from the right edge toward the left (the
    direction Arabic is read). It sits behind the content.
    ===================================================================== */
-#home-page {
-    position: relative;
-    isolation: isolate;
-}
-
-#home-page::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background: url("../images/calligraphy-tile.svg?v=2") right top / clamp(760px, 125vw, 2000px) auto repeat;
-    opacity: 0.085;
-}
 
 
 /* =====================================================================
@@ -5538,20 +5523,9 @@ img {
 .footer {
     position: relative;
     z-index: 2;
-    overflow: hidden;
-    background: var(--navy-950);
-    border-top: 1px solid var(--line);
-    padding: 3rem 0 2.75rem;
+    background: transparent;
+    padding: 2.5rem 0 2.75rem;
     color: var(--text);
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: url("../images/calligraphy-tile.svg?v=2") right top / clamp(760px, 125vw, 2000px) auto repeat;
-    opacity: 0.05;
 }
 
 .footer .container {
@@ -5756,4 +5730,671 @@ img {
     .footer .fc-dua {
         text-align: left;
     }
+}
+
+
+/* =====================================================================
+   DARK INNER PAGES
+   The dark look on every page. One background for the whole site: the
+   navy base and the calligraphy tile live on <body>, so there is no seam
+   between page content and the footer.
+   ===================================================================== */
+body {
+    position: relative;
+    background: var(--navy-900);
+    color: var(--text);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("../images/calligraphy-tile.svg?v=2") right top / clamp(760px, 125vw, 2000px) auto repeat;
+    opacity: 0.085;
+}
+
+/* Text */
+.page .page-title,
+.page .section-title {
+    color: #fff;
+}
+
+.page h2, .page h3, .page h4, .page h5 {
+    color: #fff;
+}
+
+.page p, .page li, .page td, .page dd, .page address {
+    color: var(--muted);
+}
+
+.page strong, .page b {
+    color: var(--text);
+}
+
+.page .section-subtitle,
+.page .intro-text {
+    color: var(--muted);
+}
+
+.page .arabic-text {
+    color: var(--gold);
+}
+
+.page a:not(.btn):not(.pillar-link):not(.contact-btn):not(.messaging-btn) {
+    color: var(--sky);
+}
+
+.page a:not(.btn):not(.pillar-link):hover {
+    color: var(--gold);
+}
+
+/* Inline colours left in the markup for the old white pages */
+.page [style*="color: #0056b3"],
+.page [style*="color:#0056b3"] {
+    color: var(--sky) !important;
+}
+
+.page [style*="color: #666"],
+.page [style*="color:#666"] {
+    color: var(--muted) !important;
+}
+
+.page [style*="color: #333"] {
+    color: var(--text) !important;
+}
+
+.page [style*="background: white"],
+.page [style*="background-color: #f8f9fa"] {
+    background: rgba(150, 205, 245, 0.05) !important;
+}
+
+/* Sections that used light bands */
+.page .bg-light,
+.page .campus-section,
+.page .achievements-section,
+.page .anniversary-inspiration,
+.page .admin-intro,
+.page .support-section,
+.page .bank-account-section,
+.page .bank-info-section,
+.page .messaging-section,
+.page .donation-categories-section,
+.page .services-overview,
+.page .donation-section {
+    background: transparent;
+}
+
+/* Cards: the same glass everywhere */
+.page .card,
+.page .service-detail-card,
+.page .programme-card,
+.page .staff-card,
+.page .student-info-card,
+.page .alumni-card,
+.page .leader-card,
+.page .department-card,
+.page .contact-card,
+.page .contact-item,
+.page .event-card,
+.page .event-registration,
+.page .donation-card,
+.page .donation-category,
+.page .impact-card,
+.page .achievement-card,
+.page .stat-card,
+.page .stat-item,
+.page .messaging-card,
+.page .bank-account-card,
+.page .mobile-payment-card,
+.page .bank-details-card,
+.page .bank-details,
+.page .location-details,
+.page .staff-member,
+.page .bot-member,
+.page .alumni-member,
+.page .calendar-month,
+.page .important-notice,
+.page .bank-note,
+.page .hours-item,
+.page .quote-box,
+.page .timeline-content {
+    background: linear-gradient(180deg, rgba(150, 205, 245, 0.08), rgba(150, 205, 245, 0.03));
+    border: 1px solid var(--line-strong);
+    box-shadow: none;
+    color: var(--text);
+}
+
+.page .card:hover,
+.page .service-detail-card:hover,
+.page .programme-card:hover,
+.page .staff-card:hover,
+.page .student-info-card:hover,
+.page .alumni-card:hover,
+.page .event-card:hover,
+.page .achievement-card:hover,
+.page .stat-card:hover,
+.page .messaging-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(233, 185, 74, 0.5);
+    box-shadow: none;
+}
+
+/* Brighter gold again (it was darkened for the old white cards) */
+.page .programme-card h3,
+.page .staff-card h3,
+.page .student-info-card h3,
+.page .alumni-card h3,
+.page .alumni-card .contact-info strong {
+    color: var(--gold);
+}
+
+.page .stat-number,
+.page .achievement-number,
+.page .stat-card .stat-number {
+    color: var(--gold);
+}
+
+.page .service-icon {
+    background: var(--gold-soft);
+}
+
+.page .pillar-card {
+    background: linear-gradient(180deg, rgba(150, 205, 245, 0.08), rgba(150, 205, 245, 0.03));
+    border: 1px solid var(--line-strong);
+    box-shadow: none;
+}
+
+/* ---- Retinting leftovers of the old bright-blue design ---- */
+.events-hero {
+    background:
+        radial-gradient(55% 90% at 85% 0%, rgba(233, 185, 74, 0.13), transparent 70%),
+        radial-gradient(55% 90% at 10% 20%, rgba(16, 147, 216, 0.28), transparent 70%);
+    color: var(--text);
+}
+
+.events-hero::before {
+    display: none;
+}
+
+.page .events-hero h1,
+.page .events-hero .page-title {
+    color: #fff;
+}
+
+.page .event-date {
+    background: linear-gradient(135deg, #0f3d73, #0b2747);
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+}
+
+.page .event-day {
+    color: var(--gold);
+}
+
+.page .event-card.upcoming {
+    border-left: 4px solid var(--gold);
+}
+
+.anniversary-hero {
+    background:
+        radial-gradient(60% 80% at 80% 0%, rgba(233, 185, 74, 0.14), transparent 70%),
+        linear-gradient(135deg, #0f3d73 0%, #0b2747 55%, #071b36 100%);
+}
+
+.timeline::before {
+    background: linear-gradient(to bottom, var(--gold), var(--azure));
+}
+
+.timeline-year {
+    background: linear-gradient(135deg, var(--gold), var(--azure));
+    color: var(--navy-950);
+    box-shadow: none;
+}
+
+.page .stat-label,
+.page .stat-card .stat-label {
+    color: var(--muted);
+}
+
+.page .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.page .stats-grid .stat-number {
+    font-size: 1.7rem;
+}
+
+.programmes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.page .contact-item {
+    background: rgba(150, 205, 245, 0.05);
+    border: 1px solid var(--line);
+}
+
+.page .contact-icon {
+    color: var(--gold);
+}
+
+.page .detail-label {
+    color: var(--muted);
+}
+
+.page .detail-value {
+    color: var(--sky);
+}
+
+.page .mobile-payment-card .detail-value {
+    color: #7ddba7;
+}
+
+.page .bank-account-card,
+.page .bank-details-card {
+    border-top: 3px solid var(--azure);
+}
+
+.page .mobile-payment-card {
+    border-top: 3px solid #7ddba7;
+}
+
+/* =====================================================================
+   CREATIVE PAGES
+   ===================================================================== */
+.svg-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.about-cards {
+    align-items: start;
+}
+
+.page .about-cards .card h2 {
+    margin-bottom: 0.4rem;
+}
+
+/* ---- Masjid page: pointed-arch frame, hadith, build progress ---- */
+.masjid-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.masjid-hero-copy .page-title,
+.masjid-hero-copy .page-subtitle,
+.masjid-hero-copy .section-subtitle {
+    text-align: left;
+}
+
+.masjid-hero-copy .page-title {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+}
+
+.masjid-hero-copy .hero-buttons {
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+.hadith {
+    margin: 1.75rem 0 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 16px 16px 0;
+    background: linear-gradient(90deg, rgba(233, 185, 74, 0.12), transparent);
+}
+
+.hadith blockquote {
+    margin: 0;
+}
+
+.page .hadith .hadith-ar {
+    margin: 0 0 0.75rem;
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+    color: var(--gold);
+}
+
+.page .hadith .hadith-en {
+    margin: 0 0 0.4rem;
+    font-style: italic;
+    color: var(--text);
+}
+
+.page .hadith figcaption {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* The rendering sits in a pointed arch (the shape of a mihrab or a mosque window) */
+.masjid-arch {
+    position: relative;
+    margin: 0 auto 2.5rem;
+    width: min(100%, 430px);
+    aspect-ratio: 3 / 4;
+    filter: drop-shadow(0 30px 60px rgba(16, 147, 216, 0.28));
+}
+
+.masjid-arch::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, var(--gold), var(--azure));
+    -webkit-clip-path: url(#masjid-arch);
+    clip-path: url(#masjid-arch);
+}
+
+.masjid-arch picture {
+    position: absolute;
+    inset: 5px;
+    display: block;
+    -webkit-clip-path: url(#masjid-arch);
+    clip-path: url(#masjid-arch);
+}
+
+.masjid-arch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 45%;
+    display: block;
+}
+
+.page .masjid-arch figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* Build progress: four phases along a rail; the gold-to-azure line shows how far the work has come */
+.phases {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.phases::before,
+.phases::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 12.5%;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.phases::before {
+    right: 12.5%;
+    background: var(--line-strong);
+}
+
+.phases::after {
+    width: 25%;
+    background: linear-gradient(90deg, var(--gold), var(--azure));
+}
+
+.phase {
+    position: relative;
+    padding: 0 0.5rem;
+    text-align: center;
+}
+
+.phase-node {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    border: 3px solid var(--line-strong);
+    background: var(--navy-900);
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.phase.is-done .phase-node {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy-950);
+}
+
+.phase.is-current .phase-node {
+    border-color: var(--azure);
+    color: #fff;
+    box-shadow: 0 0 0 6px rgba(16, 147, 216, 0.22);
+    animation: phase-pulse 2.4s ease-in-out infinite;
+}
+
+.phase.is-future .phase-node {
+    border-style: dashed;
+}
+
+@keyframes phase-pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(16, 147, 216, 0.22); }
+    50% { box-shadow: 0 0 0 10px rgba(16, 147, 216, 0.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .phase.is-current .phase-node {
+        animation: none;
+    }
+}
+
+.page .phase-step {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.page .phase h3 {
+    margin: 0.2rem 0 0.5rem;
+    font-size: 1.15rem;
+}
+
+.phase-status {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    padding: 0.15rem 0.7rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.phase.is-done .phase-status {
+    background: var(--gold-soft);
+    border-color: rgba(233, 185, 74, 0.5);
+    color: var(--gold);
+}
+
+.phase.is-current .phase-status {
+    background: rgba(16, 147, 216, 0.16);
+    border-color: rgba(16, 147, 216, 0.6);
+    color: var(--sky);
+}
+
+.page .phase p {
+    max-width: 22rem;
+    margin: 0 auto;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .masjid-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .masjid-arch {
+        order: -1;
+        width: min(78%, 340px);
+    }
+
+    .masjid-hero-copy .page-title,
+    .masjid-hero-copy .page-subtitle,
+    .masjid-hero-copy .section-subtitle {
+        text-align: center;
+    }
+
+    .masjid-hero-copy .hero-buttons {
+        justify-content: center;
+    }
+
+    .phases {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+
+    .phases::before,
+    .phases::after {
+        top: 22px;
+        left: 21px;
+        width: 3px;
+    }
+
+    .phases::before {
+        right: auto;
+        bottom: 22px;
+        height: auto;
+    }
+
+    .phases::after {
+        height: calc((100% - 44px) / 3);
+        background: linear-gradient(180deg, var(--gold), var(--azure));
+    }
+
+    .phase {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        column-gap: 1rem;
+        padding: 0;
+        text-align: left;
+    }
+
+    .phase-node {
+        grid-row: 1 / span 4;
+        margin: 0;
+    }
+
+    .page .phase p {
+        margin: 0;
+        max-width: none;
+    }
+
+    .phase-status {
+        justify-self: start;
+    }
+}
+
+/* ---- Donate: copy button ---- */
+.copy-btn {
+    margin-left: 0.6rem;
+    padding: 0.2rem 0.75rem;
+    border: 1px solid rgba(233, 185, 74, 0.6);
+    border-radius: 999px;
+    background: var(--gold-soft);
+    color: var(--gold);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.copy-btn:hover,
+.copy-btn.is-copied {
+    background: var(--gold);
+    color: var(--navy-950);
+}
+
+/* ---- Donation tiers and impact (Masjid page) ---- */
+.page .donation-impact {
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 24px;
+    background: linear-gradient(135deg, #0f3d73 0%, #0b2747 100%);
+    text-align: center;
+}
+
+.page .donation-impact h3 {
+    margin-bottom: 0.25rem;
+    font-size: 1.8rem;
+}
+
+.page .donation-impact > .arabic-text {
+    margin: 0 0 1.5rem;
+    text-align: center;
+}
+
+.page .impact-card {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.impact-icon {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: var(--gold-soft);
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.donation-options h4 {
+    margin: 1.25rem 0 0.5rem;
+}
+
+.donation-tier {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.donation-tier:last-child {
+    border-bottom: none;
+}
+
+.tier-name {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.tier-amount {
+    color: var(--gold);
+    font-weight: 700;
+    white-space: nowrap;
 }
