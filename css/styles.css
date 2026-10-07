@@ -5567,34 +5567,6 @@ img {
     color: var(--gold);
 }
 
-.fc-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.3rem 0;
-}
-
-.fc-links a {
-    padding: 0.2rem 1rem;
-    border-left: 1px solid var(--line-strong);
-    color: var(--text);
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.fc-links a:first-child {
-    border-left: none;
-}
-
-.fc-links a:last-child {
-    padding-right: 0;
-}
-
-.fc-links a:hover {
-    color: var(--gold);
-}
-
 .fc-contact {
     display: flex;
     flex-wrap: wrap;
@@ -5680,20 +5652,6 @@ img {
 
     .fc-logo {
         height: 46px;
-    }
-
-    .fc-links {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        justify-content: stretch;
-        width: 100%;
-        gap: 0.35rem 1rem;
-    }
-
-    .fc-links a,
-    .fc-links a:last-child {
-        padding: 0.2rem 0;
-        border-left: none;
     }
 
     .fc-contact {
