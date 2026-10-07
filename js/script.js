@@ -458,6 +458,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 }).observe(footer);
 });
 
+// On phones some long card lists are swipeable rows. A row that scrolls must be
+// reachable from the keyboard and announced, but only when it really overflows.
+const SWIPE_ROW_SELECTOR = '.bot-list, .departments-grid, .admin-contact-grid, .anniversary-tiers, .events-grid';
+
+function updateSwipeRows() {
+    document.querySelectorAll(SWIPE_ROW_SELECTOR).forEach((row) => {
+        const overflows = row.scrollWidth > row.clientWidth + 1;
+        if (overflows) {
+            row.setAttribute('tabindex', '0');
+            row.setAttribute('role', 'group');
+            if (!row.hasAttribute('aria-label')) {
+                row.setAttribute('aria-label', 'Swipe sideways to see more');
+            }
+        } else {
+            row.removeAttribute('tabindex');
+            row.removeAttribute('role');
+            row.removeAttribute('aria-label');
+        }
+    });
+}
+
+window.addEventListener('resize', updateSwipeRows);
+window.addEventListener('hashchange', () => setTimeout(updateSwipeRows, 0));
+document.addEventListener('DOMContentLoaded', () => setTimeout(updateSwipeRows, 0));
+
 // "Copy" buttons (e.g. the bank account number on the Donate page).
 document.addEventListener('click', (e) => {
     const btn = e.target.closest('.copy-btn');
