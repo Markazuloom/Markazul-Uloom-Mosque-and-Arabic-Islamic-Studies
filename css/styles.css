@@ -962,144 +962,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Footer */
-.footer {
-    background: linear-gradient(135deg, #004080 0%, #002040 100%); /* Even darker blue gradient */
-    color: white;
-    padding: 2.5rem 0 1.5rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1.3fr;
-    gap: 3rem;
-    margin-bottom: 2rem;
-}
-
-@media (max-width: 900px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-
-.footer-section h3 {
-    color: #FFD700; /* Gold accent */
-    margin-bottom: 0.9rem;
-    font-size: 1.15rem;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-}
-
-.footer-logo-img {
-    height: 46px;
-    width: auto;
-    border-radius: 8px;
-}
-
-.footer-logo h3 {
-    margin: 0;
-    color: white;
-    font-size: 1.4rem;
-}
-
-.footer-logo p {
-    margin: 0;
-    color: #e0f2ff; /* Lighter blue for contrast */
-    font-size: 0.9rem;
-}
-
-.footer-section .arabic-text {
-    color: #FFD700; /* Gold accent */
-    margin: 0.6rem 0;
-    text-align: left;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Contact lines are plain text (address) or links (phone, email) */
-.footer-contact li {
-    color: #e0f2ff;
-    line-height: 1.5;
-}
-
-.footer-section ul li a {
-    color: #e0f2ff; /* Lighter blue for contrast */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #FFD700; /* Gold accent */
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
-    padding-top: 1.25rem;
-    text-align: center;
-}
-
-.footer-bottom .footer-dua {
-    color: #FFD700; /* Gold accent */
-    font-size: 1.1rem;
-    margin: 0 0 1rem;
-    text-align: center;
-}
-
-/* Copyright on the left, social icons on the right */
-.footer-bottom-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem 2rem;
-    flex-wrap: wrap;
-    text-align: left;
-}
-
-.footer-copyright p {
-    color: #e0f2ff; /* Lighter blue for contrast */
-    margin: 0 0 0.25rem;
-    font-size: 0.9rem;
-}
-
-.footer-copyright .arabic-text {
-    color: #cfe3f7;
-    font-size: 0.95rem;
-    margin: 0;
-    text-align: left;
-}
-
-/* The floating contact buttons are pinned to the bottom-right of the screen
-   and would sit on top of the last social icon at the end of the page */
-@media (min-width: 701px) {
-    .footer-bottom-row {
-        padding-right: 5.5rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .footer-bottom-row {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .footer-copyright .arabic-text {
-        text-align: center;
-    }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -1207,10 +1069,6 @@ body {
     
     .achievement-card {
         padding: 2rem 1rem;
-    }
-    
-    .footer {
-        padding: 2rem 0 1.25rem;
     }
 }
 
@@ -4674,14 +4532,16 @@ img {
    light bodies for readability of long text.
    ===================================================================== */
 :root {
-    --navy-950: #060e1a;
-    --navy-900: #0a1525;
-    --navy-850: #0e1c31;
-    --navy-800: #132540;
-    --line: rgba(255, 255, 255, 0.10);
-    --line-strong: rgba(255, 255, 255, 0.18);
-    --text: #e8eef8;
-    --muted: #a4b4cc;
+    --navy-950: #041225;
+    --navy-900: #071b36;
+    --navy-850: #0b2747;
+    --navy-800: #11365f;
+    --azure: #1093d8;          /* the blue in the Markaz logo */
+    --sky: #6ec6f5;            /* lighter azure for small text on dark */
+    --line: rgba(150, 205, 245, 0.13);
+    --line-strong: rgba(150, 205, 245, 0.24);
+    --text: #e8f0fa;
+    --muted: #a9bdd6;
     --gold: #e9b949;
     --gold-soft: rgba(233, 185, 74, 0.14);
 }
@@ -4691,7 +4551,7 @@ img {
    menu position itself relative to the header instead of the screen. */
 @media (max-width: 1199px) {
     .header {
-        background: rgba(8, 18, 32, 0.96);
+        background: rgba(4, 18, 37, 0.97);
         box-shadow: none;
         border-bottom: 1px solid var(--line);
     }
@@ -4713,10 +4573,10 @@ img {
         flex-wrap: nowrap;
         gap: 1rem;
         padding: 0.4rem 0.5rem 0.4rem 1.1rem;
-        background: rgba(9, 20, 36, 0.88);
+        background: rgba(4, 18, 37, 0.88);
         -webkit-backdrop-filter: blur(18px) saturate(140%);
         backdrop-filter: blur(18px) saturate(140%);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(150, 205, 245, 0.22);
         border-radius: 999px;
         box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
     }
@@ -4796,12 +4656,6 @@ img {
     }
 }
 
-/* ---- Footer ---- */
-.footer {
-    background: linear-gradient(180deg, #08121f 0%, #050b14 100%);
-    border-top: 1px solid var(--line);
-}
-
 /* ---- Shared button ---- */
 .btn-gold {
     background: var(--gold);
@@ -4823,7 +4677,7 @@ img {
 #home-page .hero {
     background:
         radial-gradient(60% 55% at 85% 0%, rgba(233, 185, 74, 0.14), transparent 70%),
-        radial-gradient(55% 60% at 8% 25%, rgba(26, 111, 207, 0.30), transparent 70%);
+        radial-gradient(55% 60% at 8% 25%, rgba(16, 147, 216, 0.30), transparent 70%);
     padding: 9.5rem 0 8rem;
 }
 
@@ -4902,7 +4756,7 @@ img {
 }
 
 .prayer-panel {
-    background: rgba(19, 37, 64, 0.78);
+    background: rgba(11, 39, 71, 0.74);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     border: 1px solid var(--line-strong);
@@ -5129,7 +4983,7 @@ img {
 }
 
 #home-page .imam-section {
-    background: rgba(14, 28, 49, 0.82);
+    background: rgba(11, 39, 71, 0.8);
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 }
@@ -5162,7 +5016,7 @@ img {
     border-radius: 28px;
     background:
         radial-gradient(60% 90% at 50% 0%, rgba(233, 185, 74, 0.16), transparent 70%),
-        linear-gradient(135deg, #143055, var(--navy-850));
+        linear-gradient(135deg, #0f3d73, var(--navy-850));
 }
 
 .cta-band h2 {
@@ -5586,38 +5440,6 @@ img {
         font-size: 0.92rem;
         margin-bottom: 1.1rem;
     }
-
-    /* Footer */
-    .footer {
-        padding: 1.75rem 0 1.25rem;
-    }
-
-    .footer-content {
-        gap: 1.25rem;
-        margin-bottom: 1.25rem;
-    }
-
-    .footer-section h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.05rem;
-    }
-
-    .footer-section ul li {
-        margin-bottom: 0.3rem;
-    }
-
-    .footer-content .footer-section:nth-child(2) ul {
-        columns: 2;
-        column-gap: 1rem;
-    }
-
-    .footer-brand p {
-        font-size: 0.9rem;
-    }
-
-    .footer-contact li {
-        font-size: 0.92rem;
-    }
 }
 
 /* ---- Phone: second compaction pass ---- */
@@ -5702,12 +5524,236 @@ img {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background: url("../images/calligraphy-tile.svg?v=1") right top / clamp(760px, 125vw, 2000px) auto repeat;
+    background: url("../images/calligraphy-tile.svg?v=2") right top / clamp(760px, 125vw, 2000px) auto repeat;
     opacity: 0.085;
 }
 
-/* Keep the footer above the home page's background layer. */
+
+/* =====================================================================
+   FLOATING FOOTER
+   A rounded glass card floating on a dark strip, with the calligraphy
+   pattern faintly behind it. Contact details and social icons keep the
+   real information; the layout stays calm.
+   ===================================================================== */
 .footer {
     position: relative;
     z-index: 2;
+    overflow: hidden;
+    background: var(--navy-950);
+    border-top: 1px solid var(--line);
+    padding: 3rem 0 2.75rem;
+    color: var(--text);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: url("../images/calligraphy-tile.svg?v=2") right top / clamp(760px, 125vw, 2000px) auto repeat;
+    opacity: 0.05;
+}
+
+.footer .container {
+    position: relative;
+}
+
+.footer-card {
+    padding: 2rem 2.5rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(150, 205, 245, 0.07), rgba(150, 205, 245, 0.02));
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.fc-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+}
+
+.fc-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.fc-logo {
+    height: 54px;
+    width: auto;
+    border-radius: 10px;
+}
+
+.fc-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.fc-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.footer .fc-ar {
+    margin: 0.25rem 0 0;
+    font-size: 1rem;
+    text-align: left;
+    color: var(--gold);
+}
+
+.fc-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.3rem 0;
+}
+
+.fc-links a {
+    padding: 0.2rem 1rem;
+    border-left: 1px solid var(--line-strong);
+    color: var(--text);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.fc-links a:first-child {
+    border-left: none;
+}
+
+.fc-links a:last-child {
+    padding-right: 0;
+}
+
+.fc-links a:hover {
+    color: var(--gold);
+}
+
+.fc-contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.fc-contact-list {
+    flex: 1 1 32rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 0.6rem 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fc-contact-list li {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.fc-contact-list a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.fc-contact-list a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+.fc-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+}
+
+.fc-copy p {
+    margin: 0 0 0.2rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.footer .fc-copy-ar {
+    margin: 0;
+    font-size: 0.95rem;
+    text-align: left;
+    color: var(--muted);
+}
+
+.footer .fc-dua {
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: right;
+    color: var(--gold);
+}
+
+@media (max-width: 700px) {
+    .footer {
+        padding: 1.75rem 0 2rem;
+    }
+
+    .footer-card {
+        padding: 1.25rem;
+        border-radius: 22px;
+    }
+
+    .fc-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fc-logo {
+        height: 46px;
+    }
+
+    .fc-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: stretch;
+        width: 100%;
+        gap: 0.35rem 1rem;
+    }
+
+    .fc-links a,
+    .fc-links a:last-child {
+        padding: 0.2rem 0;
+        border-left: none;
+    }
+
+    .fc-contact {
+        margin-top: 1.1rem;
+        padding-top: 1.1rem;
+    }
+
+    .fc-contact-list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .fc-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1.1rem;
+        padding-top: 1rem;
+    }
+
+    .footer .fc-dua {
+        text-align: left;
+    }
 }
