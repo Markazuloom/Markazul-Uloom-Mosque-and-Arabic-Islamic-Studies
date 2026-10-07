@@ -2223,13 +2223,6 @@ body {
     line-height: 1.8;
 }
 
-/* Donation Contact */
-.donation-contact {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #004494 0%, #0056b3 100%);
-    color: white;
-}
-
 .contact-card {
     text-align: center;
     max-width: 600px;
@@ -2365,13 +2358,6 @@ body {
 
 /* White title for blue background sections */
 .white-title {
-    color: white !important;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Ensure "Need Help with Your Donation?" text is white */
-.donation-contact h2 {
     color: white !important;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -6700,12 +6686,6 @@ body::before {
     align-items: start;
 }
 
-.donation-contact .contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 0.4rem 2rem;
-}
-
 .anniversary-donation .grid-2 {
     grid-template-columns: 1fr;
 }
@@ -6917,8 +6897,7 @@ body::before {
 /* =====================================================================
    FIXES: leftover bright-blue blocks and boxes that overflowed their cards
    ===================================================================== */
-.page .admin-mission-card,
-.page .donation-contact {
+.page .admin-mission-card {
     background: linear-gradient(135deg, #0f3d73 0%, #0b2747 100%);
     border: 1px solid var(--line-strong);
     border-radius: 24px;
@@ -6946,25 +6925,6 @@ body::before {
 
 .page .value-item p {
     color: var(--muted);
-}
-
-.page .donation-contact {
-    margin-bottom: 1.25rem;
-    padding: 2rem 2rem 1.5rem;
-}
-
-.page .donation-contact .contact-info {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin: 1rem 0 0;
-    padding: 0;
-    background: none;
-    border: 0;
-}
-
-.page .donation-contact .contact-info p {
-    min-width: 0;
-    margin: 0 0 0.5rem;
-    overflow-wrap: anywhere;
 }
 
 /* Students: three stat tiles that fit their card */
@@ -7024,19 +6984,12 @@ body::before {
 }
 
 @media (max-width: 700px) {
-    .page .donation-contact .contact-info {
-        grid-template-columns: 1fr;
-    }
 
     #contact-page .contact-info {
         grid-template-columns: 1fr;
     }
 
     .page .admin-mission-card {
-        padding: 1.25rem;
-    }
-
-    .page .donation-contact {
         padding: 1.25rem;
     }
 }
