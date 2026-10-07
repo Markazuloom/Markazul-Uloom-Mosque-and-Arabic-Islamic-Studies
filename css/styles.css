@@ -7021,3 +7021,27 @@ body::before {
 #contact-page .contact-item > div {
     overflow-wrap: break-word;
 }
+
+/* ---- Long Arabic sentences should fill their box, not sit at one edge ---- */
+.page .donation-intro .arabic-text {
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba(233, 185, 74, 0.35);
+    border-radius: 16px;
+    background: linear-gradient(90deg, rgba(233, 185, 74, 0.06), rgba(233, 185, 74, 0.14), rgba(233, 185, 74, 0.06));
+    color: var(--gold);
+    /* sized from the box width so the sentence fills one line on wide screens */
+    font-size: clamp(1.33rem, calc((min(100vw - 4rem, 71rem) - 3rem) * 0.0335), 2.4rem);
+    font-weight: 700;
+    line-height: 1.8;
+    word-spacing: 0.12em;
+    text-align: center;
+    text-wrap: balance;
+    text-shadow: none;
+}
+
+/* Other long Arabic sentences that were right-aligned in wide boxes: centre them */
+.page .admin-intro .arabic-text,
+.page .anniversary-arabic,
+.page .anniversary-quote .arabic-text {
+    text-align: center;
+}
