@@ -7932,3 +7932,57 @@ body::before {
     font-weight: 600;
     color: var(--gold);
 }
+
+
+/* Events: yearly highlights show the month (or Ramadan), not a dated day */
+.event-day.is-word {
+    font-size: 1.9rem;
+    letter-spacing: 0.01em;
+}
+
+.events-note {
+    margin: 1.25rem 0 0;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* Events: time and place were the old royal blue, too dim on the dark cards */
+.page .event-time,
+.page .event-location {
+    color: var(--sky);
+}
+
+/* FAQ on the dark theme (the questions were dark blue on dark navy) */
+.faq-intro {
+    color: var(--muted);
+}
+
+.faq-list {
+    border-top: 1px solid var(--line-strong);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.faq-item summary {
+    color: #fff;
+}
+
+.faq-item summary:hover,
+.faq-item[open] summary {
+    color: var(--gold);
+}
+
+.faq-answer {
+    color: var(--muted);
+}
+
+.faq-answer a {
+    color: var(--sky);
+}
+
+/* Events calendar labels were royal blue on dark cards */
+.page .event-list strong {
+    color: var(--gold);
+}

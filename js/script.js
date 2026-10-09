@@ -1,17 +1,17 @@
 const PAGE_TITLES = {
-    home: "Markaz-ul-Uloom School of Arabic & Islamic Studies",
-    about: "About Us | Markaz-ul-Uloom",
-    services: "Admissions | Markaz-ul-Uloom",
-    programmes: "Programmes | Markaz-ul-Uloom",
-    staff: "Staff | Markaz-ul-Uloom",
-    students: "Students | Markaz-ul-Uloom",
-    alumni: "Alumni | Markaz-ul-Uloom",
-    administration: "Administration | Markaz-ul-Uloom",
-    anniversary: "40th Anniversary | Markaz-ul-Uloom",
-    "masjid-project": "Al-Uloom Central Mosque | Markaz-ul-Uloom",
-    contact: "Contact Us | Markaz-ul-Uloom",
-    events: "Events | Markaz-ul-Uloom",
-    donate: "Donate | Markaz-ul-Uloom"
+    home: "Markazul Uloom School of Arabic & Islamic Studies",
+    about: "About Us | Markazul Uloom",
+    services: "Admissions | Markazul Uloom",
+    programmes: "Programmes | Markazul Uloom",
+    staff: "Staff | Markazul Uloom",
+    students: "Students | Markazul Uloom",
+    alumni: "Alumni | Markazul Uloom",
+    administration: "Administration | Markazul Uloom",
+    anniversary: "40th Anniversary | Markazul Uloom",
+    "masjid-project": "Al-Uloom Central Mosque | Markazul Uloom",
+    contact: "Contact Us | Markazul Uloom",
+    events: "Events | Markazul Uloom",
+    donate: "Donate | Markazul Uloom"
 };
 
 // moveFocus is false only for the very first render on page load, so we
@@ -523,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     
-    console.log('Enhanced Markazul-Uloom website loaded successfully!');
+    console.log('Enhanced Markazul Uloom website loaded successfully!');
 });
 
 // Enhanced Error Handling
@@ -655,7 +655,7 @@ function goToPrayerTimes() {
             : 'Send your gift to the account below, then let us know.';
         const what = amount ? `sent ${naira(amount)}` : 'made a donation';
         const acct = account ? ` (account ${account})` : '';
-        const text = `Assalamu Alaikum. I have ${what} to Markaz-ul-Uloom${acct}. Here is my proof of payment.`;
+        const text = `Assalamu Alaikum. I have ${what} to Markazul Uloom${acct}. Here is my proof of payment.`;
         notify.href = 'https://wa.me/2348145318366?text=' + encodeURIComponent(text);
     }
 
