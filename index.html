@@ -61,8 +61,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=40" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=40"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=41" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=41"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -286,6 +286,33 @@
                 </div>
             </section>
 
+
+            <!-- Life at Markaz (real photos) -->
+            <section class="section life-section" aria-labelledby="life-title">
+                <div class="container">
+                    <h2 class="section-title" id="life-title">Life at Markaz</h2>
+                    <p class="section-subtitle">Prayer, study and a new masjid taking shape</p>
+                    <div class="life-grid">
+                        <figure class="photo photo-worship">
+                            <picture><source type="image/webp" srcset="images/photos/worship-prayer-640.webp 640w, images/photos/worship-prayer-1200.webp 1200w" sizes="(max-width: 600px) 82vw, (max-width: 1000px) 50vw, 560px"><img src="images/photos/worship-prayer-1200.jpg" alt="Worshippers seated in rows inside the masjid during prayer, seen from behind" width="1200" height="675" loading="lazy" decoding="async"></picture>
+                            <figcaption>Prayer in the masjid</figcaption>
+                        </figure>
+                        <figure class="photo photo-class">
+                            <picture><source type="image/webp" srcset="images/photos/class-teacher-640.webp 640w, images/photos/class-teacher-848.webp 848w" sizes="(max-width: 600px) 82vw, (max-width: 1000px) 50vw, 280px"><img src="images/photos/class-teacher-848.jpg" alt="A teacher guiding a class of students in blue uniforms at their desks" width="848" height="480" loading="lazy" decoding="async"></picture>
+                            <figcaption>In the classroom</figcaption>
+                        </figure>
+                        <figure class="photo photo-school">
+                            <picture><source type="image/webp" srcset="images/photos/school-painted-640.webp 640w, images/photos/school-painted-1200.webp 1200w" sizes="(max-width: 600px) 82vw, (max-width: 1000px) 50vw, 280px"><img src="images/photos/school-painted-1200.jpg" alt="The Markaz-ul-Uloom school building, freshly painted bright blue" width="1200" height="675" loading="lazy" decoding="async"></picture>
+                            <figcaption>Our school, freshly painted</figcaption>
+                        </figure>
+                        <figure class="photo photo-masjid">
+                            <picture><source type="image/webp" srcset="images/photos/masjid-rising-640.webp 640w, images/photos/masjid-rising-1200.webp 1200w" sizes="(max-width: 600px) 82vw, (max-width: 1000px) 100vw, 560px"><img src="images/photos/masjid-rising-1200.jpg" alt="The new masjid structure rising, with worshippers gathered at its base" width="1200" height="675" loading="lazy" decoding="async"></picture>
+                            <figcaption>The new masjid, taking shape</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
             <!-- About Section -->
             <section class="section">
                 <div class="container">
@@ -332,10 +359,7 @@
                     <div class="grid grid-2">
                         <div class="card">
                             <h3>The School Building</h3>
-                            <picture>
-                                <source srcset="images/optimized/school-building.webp" type="image/webp">
-                                <img src="images/school-building.jpg" alt="School Building" class="campus-image" loading="lazy" width="467" height="350">
-                            </picture>
+                            <picture><source type="image/webp" srcset="images/photos/school-front-640.webp 640w, images/photos/school-front-1200.webp 1200w" sizes="(max-width: 700px) 92vw, 560px"><img src="images/photos/school-front-1200.jpg" alt="The Markaz-ul-Uloom school building with its Arabic and English name along the balconies" width="1200" height="464" loading="lazy" decoding="async" class="campus-image"></picture>
                             <p>Stunning Islamic architecture in baby blue and white, blending traditional elements with modern educational facilities: audio-visual classrooms, Arabic language labs, a computer center, and a comprehensive Islamic library.</p>
                         </div>
                         <div class="card">
@@ -625,7 +649,10 @@
                 <div class="container">
                     <h2 class="section-title">Academic Programmes</h2>
                     <p class="section-subtitle">Comprehensive Islamic and Arabic Studies Curriculum</p>
-                    
+                    <figure class="photo photo-banner">
+                        <picture><source type="image/webp" srcset="images/photos/class-recitation-640.webp 640w, images/photos/class-recitation-848.webp 848w" sizes="(max-width: 700px) 92vw, 1000px"><img src="images/photos/class-recitation-848.jpg" alt="Students in blue uniforms reciting from their books while their teacher listens" width="848" height="480" loading="lazy" decoding="async"></picture>
+                        <figcaption>Qur'an recitation in class</figcaption>
+                    </figure>
                     <div class="programmes-grid">
                         <div class="programme-card">
                             <h3>Primary Stage (<span lang="ar">المرحلة الابتدائية</span>)</h3>
@@ -770,7 +797,10 @@
                 <div class="container">
                     <h2 class="section-title">Student Life</h2>
                     <p class="section-subtitle">Nurturing the Next Generation of Islamic Scholars</p>
-                    
+                    <figure class="photo photo-banner">
+                        <picture><source type="image/webp" srcset="images/photos/class-teacher-640.webp 640w, images/photos/class-teacher-848.webp 848w" sizes="(max-width: 700px) 92vw, 1000px"><img src="images/photos/class-teacher-848.jpg" alt="A teacher guiding a class of students in blue uniforms at their desks" width="848" height="480" loading="lazy" decoding="async"></picture>
+                        <figcaption>Students at their desks</figcaption>
+                    </figure>
                     <div class="students-content">
                         <div class="student-info-card">
                             <h3>Current Enrollment</h3>
@@ -1615,6 +1645,23 @@
                 </div>
             </section>
 
+            <section class="section masjid-today" aria-labelledby="masjid-today-title">
+                <div class="container">
+                    <h2 class="section-title" id="masjid-today-title">The Masjid Today</h2>
+                    <p class="section-subtitle">Photos from the site. The prayer hall is already in use while building continues.</p>
+                    <div class="today-grid">
+                        <figure class="photo">
+                            <picture><source type="image/webp" srcset="images/photos/masjid-rising-640.webp 640w, images/photos/masjid-rising-1200.webp 1200w" sizes="(max-width: 700px) 92vw, 560px"><img src="images/photos/masjid-rising-1200.jpg" alt="The new masjid structure rising, with worshippers gathered at its base" width="1200" height="675" loading="lazy" decoding="async"></picture>
+                            <figcaption>The structure, from outside</figcaption>
+                        </figure>
+                        <figure class="photo">
+                            <picture><source type="image/webp" srcset="images/photos/masjid-khutbah-640.webp 640w, images/photos/masjid-khutbah-1200.webp 1200w" sizes="(max-width: 700px) 92vw, 560px"><img src="images/photos/masjid-khutbah-1200.jpg" alt="The imam delivering the khutbah from the minbar to a seated congregation inside the unfinished hall" width="1200" height="675" loading="lazy" decoding="async"></picture>
+                            <figcaption>The khutbah, inside the hall</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
             <!-- Donation Section for Masjid Project -->
                     <section class="donation-section">
                         <div class="container">
@@ -2127,7 +2174,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=40" defer></script>
+    <script src="./js/script.min.js?v=41" defer></script>
 </body>
 </html>
 

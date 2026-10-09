@@ -7620,3 +7620,147 @@ body::before {
 .prayer-panel {
     scroll-margin-top: 96px;
 }
+
+
+/* =====================================================================
+   REAL PHOTOS: "Life at Markaz" strip, The Masjid Today, page banners
+   (images/photos/*, made from the school's own photos and video frames)
+   ===================================================================== */
+.photo {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: 22px;
+    background: var(--navy-850);
+}
+
+.photo picture {
+    display: block;
+    height: 100%;
+}
+
+.photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 2.2rem 1rem 0.8rem;
+    background: linear-gradient(180deg, transparent, rgba(4, 18, 37, 0.85));
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Home: a mosaic - one large photo and three smaller ones */
+.life-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 200px);
+    gap: 14px;
+    margin-top: 1.5rem;
+}
+
+.photo-worship {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.photo-class {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.photo-school {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.photo-masjid {
+    grid-column: 3 / span 2;
+    grid-row: 2;
+}
+
+@media (max-width: 1000px) {
+    .life-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+        grid-auto-rows: 210px;
+    }
+
+    .photo-worship,
+    .photo-masjid {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .photo-class,
+    .photo-school {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+/* Phones: a swipeable row, the next photo peeking in */
+@media (max-width: 600px) {
+    .life-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 1rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 0.8rem;
+        margin-inline: -1rem;
+        padding: 0.25rem 1rem 0.5rem;
+    }
+
+    .life-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .life-grid > .photo {
+        flex: 0 0 82%;
+        aspect-ratio: 4 / 3;
+        scroll-snap-align: start;
+    }
+}
+
+/* Masjid page: two photos side by side */
+.today-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 1.25rem;
+}
+
+.today-grid .photo {
+    aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 700px) {
+    .today-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Students / Programmes: one wide classroom photo under the heading */
+.photo-banner {
+    max-width: 760px;
+    aspect-ratio: 2.4 / 1;
+    margin: 1.25rem auto 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .photo-banner {
+        aspect-ratio: 16 / 10;
+        margin: 1rem 0 1.1rem;
+        border-radius: 18px;
+    }
+}

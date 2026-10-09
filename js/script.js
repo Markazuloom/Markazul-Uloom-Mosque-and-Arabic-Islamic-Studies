@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // On phones some long card lists are swipeable rows. A row that scrolls must be
 // reachable from the keyboard and announced, but only when it really overflows.
-const SWIPE_ROW_SELECTOR = '.bot-list, .departments-grid, .admin-contact-grid, .anniversary-tiers, .events-grid';
+const SWIPE_ROW_SELECTOR = '.bot-list, .departments-grid, .admin-contact-grid, .anniversary-tiers, .events-grid, .life-grid';
 
 function updateSwipeRows() {
     document.querySelectorAll(SWIPE_ROW_SELECTOR).forEach((row) => {
