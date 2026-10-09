@@ -8092,3 +8092,69 @@ body::before {
 .prayer-iqamah-spacer {
     display: none;
 }
+
+
+/* ---- Video cards (classroom videos): poster + play button, caption stays out of the controls ---- */
+.photo video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+}
+
+.photo-video figcaption {
+    inset: 0 0 auto 0;
+    padding: 0.8rem 1rem 2rem;
+    background: linear-gradient(0deg, transparent, rgba(4, 18, 37, 0.8));
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.play-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    background: rgba(4, 18, 37, 0.55);
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.play-badge::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -11px 0 0 -7px;
+    border-style: solid;
+    border-width: 11px 0 11px 19px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.photo-video.is-playing figcaption,
+.photo-video.is-playing .play-badge {
+    opacity: 0;
+}
+
+/* A 16:9 video must not be cropped to the old wide banner shape */
+.photo-banner.photo-video {
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 600px) {
+    .photo-banner.photo-video {
+        aspect-ratio: 16 / 9;
+    }
+
+    .play-badge {
+        width: 52px;
+        height: 52px;
+        margin: -26px 0 0 -26px;
+    }
+}

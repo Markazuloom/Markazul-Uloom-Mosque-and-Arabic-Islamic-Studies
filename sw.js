@@ -1,13 +1,13 @@
 // Bump this whenever the cached app shell (below) needs to change, so
 // activate() below drops the old cache and everyone picks up the new one.
-const CACHE_VERSION = 'v48';
+const CACHE_VERSION = 'v49';
 const CACHE_NAME = `markaz-uloom-${CACHE_VERSION}`;
 
 const APP_SHELL = [
     '/',
     '/index.html',
-    '/css/styles.min.css?v=48',
-    '/js/script.min.js?v=48',
+    '/css/styles.min.css?v=49',
+    '/js/script.min.js?v=49',
     '/manifest.json',
     '/images/icon-192.png',
     '/images/icon-512.png',
@@ -40,6 +40,12 @@ self.addEventListener('fetch', (event) => {
     const { request } = event;
 
     if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) {
+        return;
+    }
+
+    // Videos are big and are fetched in byte ranges (needed for seeking, and Safari
+    // refuses to play from a cache that ignores them): never cache them, let the browser fetch.
+    if (request.destination === 'video' || request.destination === 'audio' || request.headers.has('range')) {
         return;
     }
 

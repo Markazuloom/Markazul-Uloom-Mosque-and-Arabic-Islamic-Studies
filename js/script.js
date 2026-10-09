@@ -17,6 +17,9 @@ const PAGE_TITLES = {
 // moveFocus is false only for the very first render on page load, so we
 // don't steal focus (or jump the scroll) before the visitor has done anything.
 function showPage(pageId, moveFocus = true) {
+    // Pages are only hidden, so a playing video would keep playing its sound
+    document.querySelectorAll('video').forEach(v => v.pause());
+
     // Hide all pages
     document.querySelectorAll(".page").forEach(page => {
         page.style.display = "none";
@@ -517,6 +520,17 @@ function toggleMobileMenu() {
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
     settle();
 })();
+
+// Classroom videos: only one plays at a time, and the card hides its caption and
+// play button while it plays (see .photo-video in the stylesheet).
+document.querySelectorAll('.photo-video video').forEach((video) => {
+    const card = video.closest('.photo-video');
+    video.addEventListener('play', () => {
+        document.querySelectorAll('video').forEach((other) => { if (other !== video) other.pause(); });
+        card.classList.add('is-playing');
+    });
+    ['pause', 'ended'].forEach((type) => video.addEventListener(type, () => card.classList.remove('is-playing')));
+});
 
 // Enhanced Page Initialization
 document.addEventListener("DOMContentLoaded", () => {
