@@ -7893,3 +7893,42 @@ body::before {
         padding: 1.1rem;
     }
 }
+
+
+/* About page: the founder, beside the history */
+.founder-figure {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin: 1.1rem 0 0;
+    padding: 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.founder-figure img {
+    display: block;
+    flex: none;
+    width: 104px;
+    height: 104px;
+    object-fit: cover;
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+}
+
+.founder-figure figcaption {
+    display: grid;
+    gap: 0.2rem;
+}
+
+.founder-figure strong {
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+.founder-figure span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gold);
+}
