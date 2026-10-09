@@ -7986,3 +7986,109 @@ body::before {
 .page .event-list strong {
     color: var(--gold);
 }
+
+
+/* ---- Iqamah (start of the congregation) in the prayer panel ---- */
+.prayer-panel .prayer-iqamah {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.prayer-panel .prayer-iqamah[hidden] {
+    display: none;
+}
+
+.prayer-panel .iq-time {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.prayer-panel .prayer-iqamah-note {
+    margin: 0.35rem 0 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.prayer-panel .prayer-cols {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    /* One compact row per prayer: name (Arabic underneath) | adhan | iqamah, with headings */
+    .prayer-panel.has-iqamah .prayer-cols {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 5.2rem 5.2rem;
+        column-gap: 0.4rem;
+        margin: 0.8rem 0.85rem -0.2rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+
+    .prayer-panel.has-iqamah .prayer-cols span {
+        text-align: right;
+    }
+
+    .prayer-panel.has-iqamah .prayer-cols span:first-child {
+        grid-column: 2;
+    }
+
+    .prayer-panel.has-iqamah .prayer-time-card,
+    .prayer-panel.has-iqamah .prayer-time-card:hover {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 5.2rem 5.2rem;
+        grid-template-rows: auto auto;
+        column-gap: 0.4rem;
+        align-items: center;
+    }
+
+    .prayer-panel.has-iqamah .prayer-name {
+        grid-column: 1;
+        grid-row: 1;
+        flex: none;
+    }
+
+    .prayer-panel.has-iqamah .prayer-arabic {
+        grid-column: 1;
+        grid-row: 2;
+        flex: none;
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .prayer-panel.has-iqamah .prayer-time {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        flex: none;
+        font-size: 1.05rem;
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    .prayer-panel.has-iqamah .prayer-iqamah {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        margin: 0;
+        font-size: 1.05rem;
+        white-space: nowrap;
+        text-align: right;
+    }
+
+    /* The words "Iqamah" stay for screen readers; the column heading shows them */
+    .prayer-panel .iq-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+}
+
+.prayer-iqamah-spacer {
+    display: none;
+}

@@ -61,8 +61,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=45" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=45"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=46" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=46"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -212,34 +212,41 @@
                                 <span class="next-prayer-countdown" id="next-prayer-countdown">…</span>
                             </div>
                         </div>
+                        <div class="prayer-cols" aria-hidden="true"><span>Adhan</span><span>Iqamah</span></div>
                         <div class="prayer-times-grid">
                         <div class="prayer-time-card" data-prayer-card="Fajr">
                             <div class="prayer-name">Fajr</div>
                             <div lang="ar" class="prayer-arabic">الفجر</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Fajr">5:13 AM</div>
+                            <div class="prayer-iqamah" data-iqamah="Fajr" data-offset="30" hidden><span class="iq-label">Iqamah </span><span class="iq-time"></span></div>
                         </div>
                         <div class="prayer-time-card" data-prayer-card="Dhuhr">
                             <div class="prayer-name">Dhuhr</div>
                             <div lang="ar" class="prayer-arabic">الظهر</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Dhuhr">12:47 PM</div>
+                            <div class="prayer-iqamah" data-iqamah="Dhuhr" data-offset="15" hidden><span class="iq-label">Iqamah </span><span class="iq-time"></span></div>
                         </div>
                         <div class="prayer-time-card" data-prayer-card="Asr">
                             <div class="prayer-name">Asr</div>
                             <div lang="ar" class="prayer-arabic">العصر</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Asr">4:15 PM</div>
+                            <div class="prayer-iqamah" data-iqamah="Asr" data-offset="15" hidden><span class="iq-label">Iqamah </span><span class="iq-time"></span></div>
                         </div>
                         <div class="prayer-time-card" data-prayer-card="Maghrib">
                             <div class="prayer-name">Maghrib</div>
                             <div lang="ar" class="prayer-arabic">المغرب</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Maghrib">7:04 PM</div>
+                            <div class="prayer-iqamah-spacer" aria-hidden="true"></div>
                         </div>
                         <div class="prayer-time-card" data-prayer-card="Isha">
                             <div class="prayer-name">Isha</div>
                             <div lang="ar" class="prayer-arabic">العشاء</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Isha">8:15 PM</div>
+                            <div class="prayer-iqamah" data-iqamah="Isha" data-offset="15" hidden><span class="iq-label">Iqamah </span><span class="iq-time"></span></div>
                         </div>
                     </div>
                         <p class="prayer-location">Prayer times for Alagbado, Lagos, Nigeria</p>
+                        <p class="prayer-iqamah-note">Iqamah, the start of the congregation, is 30 minutes after the adhan for Fajr and 15 minutes after for Dhuhr, Asr and Isha.</p>
                     </div>
                 </div>
             </section>
@@ -2224,7 +2231,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=45" defer></script>
+    <script src="./js/script.min.js?v=46" defer></script>
 </body>
 </html>
 

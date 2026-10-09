@@ -205,8 +205,33 @@ class PrayerTimesManager {
             }
         });
 
+        this.updateIqamah();
         this.updateHijriDate(hijri);
         this.updateNextPrayerCountdown();
+    }
+
+    // Iqamah (start of the congregation) = adhan time + a fixed gap set in the markup
+    // (data-offset minutes: Fajr 30; Dhuhr, Asr and Isha 15). Shown only for live times.
+    addMinutes(time24, minutes) {
+        const [h, m] = time24.split(':').map(Number);
+        const total = (h * 60 + m + minutes + 1440) % 1440;
+        const pad = (n) => String(n).padStart(2, '0');
+        return `${pad(Math.floor(total / 60))}:${pad(total % 60)}`;
+    }
+
+    updateIqamah() {
+        const panel = document.querySelector('.prayer-panel');
+        if (panel) panel.classList.toggle('has-iqamah', !!this.live);
+        document.querySelectorAll('.prayer-iqamah[data-iqamah]').forEach((el) => {
+            const adhan = this.timings && this.timings[el.dataset.iqamah];
+            const offset = Number(el.dataset.offset);
+            if (!this.live || !adhan || Number.isNaN(offset)) {
+                el.hidden = true;
+                return;
+            }
+            el.querySelector('.iq-time').textContent = this.formatTime(this.addMinutes(adhan, offset));
+            el.hidden = false;
+        });
     }
 
     updateHijriDate(hijri) {
