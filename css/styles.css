@@ -7764,3 +7764,132 @@ body::before {
         border-radius: 18px;
     }
 }
+
+
+/* =====================================================================
+   FEES (Admissions page)
+   ===================================================================== */
+.fees-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: start;
+    margin-top: 1.25rem;
+}
+
+.fees-side {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.page .fees-card {
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(150, 205, 245, 0.08), rgba(150, 205, 245, 0.03));
+}
+
+.fees-card h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.15rem;
+    color: #fff;
+}
+
+.fees-card p {
+    margin: 0 0 0.6rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.fees-card p:last-child {
+    margin-bottom: 0;
+}
+
+.fees-card strong {
+    color: #fff;
+}
+
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fee-table caption {
+    padding-bottom: 0.75rem;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.fee-table thead th {
+    padding: 0.4rem 0 0.5rem;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.fee-table thead th:last-child,
+.fee-table td {
+    text-align: right;
+}
+
+.fee-table tbody th,
+.fee-table td {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--line);
+    font-weight: 500;
+    color: var(--text);
+}
+
+.fee-table tbody th {
+    text-align: left;
+    padding-right: 1rem;
+}
+
+.fee-table td {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.fee-table tfoot th,
+.fee-table tfoot td {
+    padding-top: 0.85rem;
+    border: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-align: left;
+}
+
+.fee-table tfoot td {
+    text-align: right;
+}
+
+.fee-note {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.fee-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+    .fees-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page .fees-card {
+        padding: 1.1rem;
+    }
+}
