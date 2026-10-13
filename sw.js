@@ -1,13 +1,13 @@
 // Bump this whenever the cached app shell (below) needs to change, so
 // activate() below drops the old cache and everyone picks up the new one.
-const CACHE_VERSION = 'v55';
+const CACHE_VERSION = 'v56';
 const CACHE_NAME = `markaz-uloom-${CACHE_VERSION}`;
 
 const APP_SHELL = [
     '/',
     '/index.html',
-    '/css/styles.min.css?v=55',
-    '/js/script.min.js?v=55',
+    '/css/styles.min.css?v=56',
+    '/js/script.min.js?v=56',
     '/manifest.json',
     '/images/icon-192.png',
     '/images/icon-512.png',
@@ -49,6 +49,14 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // The page itself (the HTML) is fetched from the network first, so a new version of the
+    // site shows up at once and never points at files that no longer exist. The saved copy is
+    // only used when the visitor is offline or the connection takes more than 3.5 seconds.
+    if (request.mode === 'navigate' || request.destination === 'document') {
+        event.respondWith(pageResponse(request));
+        return;
+    }
+
     event.respondWith(
         caches.match(request).then((cached) => {
             if (cached) {
@@ -64,3 +72,19 @@ self.addEventListener('fetch', (event) => {
         }).catch(() => caches.match('/index.html'))
     );
 });
+
+function pageResponse(request) {
+    const network = fetch(request).then((response) => {
+        if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put('/index.html', copy));
+        }
+        return response;
+    });
+    const saved = caches.match('/index.html');
+    const patient = new Promise((resolve) => setTimeout(resolve, 3500))
+        .then(() => saved)
+        .then((cached) => cached || network);
+    return Promise.race([network, patient])
+        .catch(() => saved.then((cached) => cached || Response.error()));
+}
