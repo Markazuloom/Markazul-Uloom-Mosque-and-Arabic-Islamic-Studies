@@ -8408,3 +8408,43 @@ body::before {
         margin: 0 auto;
     }
 }
+
+
+/* Masjid hero: the proposed design (project flyer) in a plain rounded frame; the old arch frame is no longer used */
+.masjid-plan {
+    margin: 0 auto 1.5rem;
+    width: min(100%, 430px);
+}
+
+.masjid-plan a {
+    display: block;
+}
+
+.masjid-plan img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line-strong);
+    border-radius: 22px;
+    box-shadow: 0 30px 60px rgba(16, 147, 216, 0.22);
+}
+
+.page .masjid-plan figcaption {
+    margin-top: 0.7rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .masjid-plan {
+        order: -1;
+        width: min(92%, 380px);
+        margin-bottom: 0;
+    }
+}
+
+/* The share card is text and buttons only now */
+.flyer-share {
+    align-items: center;
+}
