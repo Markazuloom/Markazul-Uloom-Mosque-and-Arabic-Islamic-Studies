@@ -61,8 +61,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=49" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=49"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=50" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=50"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -218,7 +218,7 @@
                             <div class="prayer-name">Fajr</div>
                             <div lang="ar" class="prayer-arabic">الفجر</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Fajr">5:13 AM</div>
-                            <div class="prayer-iqamah" data-iqamah="Fajr" data-offset="30" hidden><span class="iq-label">Iqamah </span><span class="iq-time"></span></div>
+                            <div class="prayer-iqamah" data-iqamah="Fajr" data-offset="15" hidden><span class="iq-label">Iqamah </span><span class="iq-time"></span></div>
                         </div>
                         <div class="prayer-time-card" data-prayer-card="Dhuhr">
                             <div class="prayer-name">Dhuhr</div>
@@ -236,7 +236,7 @@
                             <div class="prayer-name">Maghrib</div>
                             <div lang="ar" class="prayer-arabic">المغرب</div>
                             <div class="prayer-time prayer-time-display" data-prayer="Maghrib">7:04 PM</div>
-                            <div class="prayer-iqamah-spacer" aria-hidden="true"></div>
+                            <div class="prayer-iqamah" data-iqamah="Maghrib" data-offset="15" hidden><span class="iq-label">Iqamah </span><span class="iq-time"></span></div>
                         </div>
                         <div class="prayer-time-card" data-prayer-card="Isha">
                             <div class="prayer-name">Isha</div>
@@ -246,7 +246,7 @@
                         </div>
                     </div>
                         <p class="prayer-location">Prayer times for Alagbado, Lagos, Nigeria</p>
-                        <p class="prayer-iqamah-note">Iqamah, the start of the congregation, is 30 minutes after the adhan for Fajr and 15 minutes after for Dhuhr, Asr and Isha.</p>
+                        <p class="prayer-iqamah-note">Iqamah, the start of the congregation, is 15 minutes after the adhan for every prayer.</p>
                     </div>
                 </div>
             </section>
@@ -846,6 +846,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <figure class="staff-feature">
+                        <a href="images/photos/staff-magazine.jpg" target="_blank" rel="noopener" aria-label="Open the staff page from the 40th Anniversary magazine in full size">
+                            <picture>
+                                <source type="image/webp" srcset="images/photos/staff-magazine.webp">
+                                <img src="images/photos/staff-magazine.jpg" alt="Page 35 of the 40th Anniversary magazine: portraits and titles of the Markazul Uloom teaching staff, with the founder and director in the centre" width="561" height="816" loading="lazy" decoding="async">
+                            </picture>
+                        </a>
+                        <figcaption>Our teaching staff, from the 40th Anniversary magazine</figcaption>
+                    </figure>
                 </div>
             </section>
         </div>
@@ -1755,6 +1765,23 @@
                                         </div>
                         </div>
                     </div>
+
+                    <div class="flyer-share">
+                        <a class="flyer-thumb" href="images/photos/masjid-flyer.jpg" target="_blank" rel="noopener" aria-label="Open the mosque project flyer in full size">
+                            <picture>
+                                <source type="image/webp" srcset="images/photos/masjid-flyer.webp">
+                                <img src="images/photos/masjid-flyer.jpg" alt="Flyer: Donate generously to the ongoing Al-Uloom Central mosque project, with a photo of the building today, the proposed designs and the bank account details" width="573" height="815" loading="lazy" decoding="async">
+                            </picture>
+                        </a>
+                        <div class="flyer-text">
+                            <h3>Share the project</h3>
+                            <p>Send this flyer to family and friends, or post it in your group, so more people can give toward the masjid.</p>
+                            <div class="flyer-actions">
+                                <a class="btn btn-gold" href="images/photos/masjid-flyer.jpg" download="Al-Uloom-Central-Mosque-flyer.jpg">Download the flyer</a>
+                                <a class="btn btn-secondary" href="https://wa.me/?text=Please%20support%20the%20Al-Uloom%20Central%20Mosque%20project%20in%20Alagbado%2C%20Lagos.%20See%20the%20progress%20and%20how%20to%20give%3A%20https%3A%2F%2Fm-uloom.org%2F%23masjid-project" target="_blank" rel="noopener">Share on WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -2231,7 +2258,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=49" defer></script>
+    <script src="./js/script.min.js?v=50" defer></script>
 </body>
 </html>
 

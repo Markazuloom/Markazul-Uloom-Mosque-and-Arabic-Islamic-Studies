@@ -1,13 +1,13 @@
 // Bump this whenever the cached app shell (below) needs to change, so
 // activate() below drops the old cache and everyone picks up the new one.
-const CACHE_VERSION = 'v49';
+const CACHE_VERSION = 'v50';
 const CACHE_NAME = `markaz-uloom-${CACHE_VERSION}`;
 
 const APP_SHELL = [
     '/',
     '/index.html',
-    '/css/styles.min.css?v=49',
-    '/js/script.min.js?v=49',
+    '/css/styles.min.css?v=50',
+    '/js/script.min.js?v=50',
     '/manifest.json',
     '/images/icon-192.png',
     '/images/icon-512.png',
