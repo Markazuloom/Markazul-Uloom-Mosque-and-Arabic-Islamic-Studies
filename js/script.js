@@ -727,6 +727,27 @@ function goToPrayerTimes() {
     render();
 })();
 
+// Masjid page: switch between the two views of the proposed design (thumbnails under the picture).
+(function initPlanGallery() {
+    const figure = document.getElementById('masjid-plan');
+    if (!figure) return;
+    const source = figure.querySelector('picture source');
+    const image = figure.querySelector('.plan-main');
+    const caption = figure.querySelector('figcaption');
+    const thumbs = Array.from(figure.querySelectorAll('.plan-thumb'));
+    thumbs.forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+            source.srcset = thumb.dataset.srcset;
+            image.src = thumb.dataset.src;
+            image.alt = thumb.dataset.alt;
+            image.width = Number(thumb.dataset.w);
+            image.height = Number(thumb.dataset.h);
+            caption.textContent = thumb.dataset.caption;
+            thumbs.forEach((other) => other.setAttribute('aria-pressed', String(other === thumb)));
+        });
+    });
+})();
+
 // "Copy" buttons (e.g. the bank account number on the Donate page).
 document.addEventListener('click', (e) => {
     const btn = e.target.closest('.copy-btn');

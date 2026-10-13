@@ -61,8 +61,8 @@
     <meta name="msapplication-TileImage" content="apple-touch-icon.png">
     <meta name="msapplication-TileColor" content="#0056b3">
     
-    <link rel="preload" href="css/styles.min.css?v=54" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/styles.min.css?v=54"></noscript>
+    <link rel="preload" href="css/styles.min.css?v=55" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/styles.min.css?v=55"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -386,8 +386,8 @@
                         <div class="card">
                             <h3>The Mosque</h3>
                             <picture>
-                                <source type="image/webp" srcset="images/photos/masjid-design-272.webp 272w, images/photos/masjid-design-545.webp 545w" sizes="(max-width: 700px) 70vw, 300px">
-                                <img src="images/photos/masjid-design-545.jpg" alt="The proposed design of the new Al-Uloom Central Mosque: a white building with arched openings and two minarets" class="campus-image is-design" loading="lazy" decoding="async" width="545" height="570">
+                                <source type="image/webp" srcset="images/photos/masjid-design-corner-480.webp 480w, images/photos/masjid-design-corner-812.webp 812w" sizes="(max-width: 700px) 70vw, 300px">
+                                <img src="images/photos/masjid-design-corner-812.jpg" alt="The proposed design of the new Al-Uloom Central Mosque, corner view: a white building with arched openings and two minarets" class="campus-image is-design" loading="lazy" decoding="async" width="812" height="848">
                             </picture>
                             <p class="design-note">Proposed design of the new masjid</p>
                             <p>The heart of our institution, with separate prayer areas for men and women, modern ablution facilities, and peaceful courtyards for reflection.</p>
@@ -1657,12 +1657,28 @@
                             <button class="btn btn-secondary" onclick="document.getElementById('masjid-progress').scrollIntoView({behavior: 'smooth'})">See the progress</button>
                         </div>
                     </div>
-                    <figure class="masjid-plan">
+                    <figure class="masjid-plan" id="masjid-plan">
                         <picture>
-                            <source type="image/webp" srcset="images/photos/masjid-design-272.webp 272w, images/photos/masjid-design-545.webp 545w" sizes="(max-width: 900px) 92vw, 430px">
-                            <img src="images/photos/masjid-design-545.jpg" alt="The proposed design of the new Al-Uloom Central Mosque: a white building with arched openings and two minarets" width="545" height="570" decoding="async">
+                            <source type="image/webp" srcset="images/photos/masjid-design-corner-480.webp 480w, images/photos/masjid-design-corner-812.webp 812w" sizes="(max-width: 900px) 92vw, 430px">
+                            <img class="plan-main" src="images/photos/masjid-design-corner-812.jpg" alt="The proposed design of the new Al-Uloom Central Mosque, corner view: a white building with arched openings and two minarets" width="812" height="848" decoding="async">
                         </picture>
-                        <figcaption>How the new masjid will look (proposed design)</figcaption>
+                        <figcaption aria-live="polite">How the new masjid will look: proposed design, corner view</figcaption>
+                        <div class="plan-thumbs" role="group" aria-label="Choose a view of the proposed design">
+                            <button type="button" class="plan-thumb" aria-pressed="true" aria-label="Corner view"
+                                data-srcset="images/photos/masjid-design-corner-480.webp 480w, images/photos/masjid-design-corner-812.webp 812w"
+                                data-src="images/photos/masjid-design-corner-812.jpg" data-w="812" data-h="848"
+                                data-alt="The proposed design of the new Al-Uloom Central Mosque, corner view: a white building with arched openings and two minarets"
+                                data-caption="How the new masjid will look: proposed design, corner view">
+                                <img src="images/photos/masjid-design-corner-480.jpg" alt="" width="480" height="501" loading="lazy" decoding="async">
+                            </button>
+                            <button type="button" class="plan-thumb" aria-pressed="false" aria-label="Front view"
+                                data-srcset="images/photos/masjid-design-front-480.webp 480w, images/photos/masjid-design-front-563.webp 563w"
+                                data-src="images/photos/masjid-design-front-563.jpg" data-w="563" data-h="411"
+                                data-alt="The proposed design of the new Al-Uloom Central Mosque, front view: a white building with five arched balconies and a patterned side wall"
+                                data-caption="How the new masjid will look: proposed design, front view">
+                                <img src="images/photos/masjid-design-front-480.jpg" alt="" width="480" height="350" loading="lazy" decoding="async">
+                            </button>
+                        </div>
                     </figure>
                 </div>
             </section>
@@ -1786,18 +1802,11 @@
                     </div>
 
                     <div class="flyer-share">
-                        <a class="flyer-thumb" href="images/photos/masjid-flyer.jpg" target="_blank" rel="noopener" aria-label="Open the mosque project flyer in full size">
-                            <picture>
-                                <source type="image/webp" srcset="images/photos/masjid-flyer.webp">
-                                <img src="images/photos/masjid-flyer.jpg" alt="Flyer: Donate generously to the ongoing Al-Uloom Central mosque project, with a photo of the building today, the proposed designs and the bank account details" width="573" height="815" loading="lazy" decoding="async">
-                            </picture>
-                        </a>
                         <div class="flyer-text">
                             <h3>Share the project</h3>
-                            <p>Send the flyer to family and friends, or post it in your group, so more people can give toward the masjid. It shows the work so far, the proposed design and how to give.</p>
+                            <p>Send the link to family and friends, or post it in your group, so more people can see the plan and give toward the masjid.</p>
                             <div class="flyer-actions">
-                                <a class="btn btn-gold" href="images/photos/masjid-flyer.jpg" download="Al-Uloom-Central-Mosque-flyer.jpg">Download the flyer</a>
-                                <a class="btn btn-secondary" href="https://wa.me/?text=Please%20support%20the%20Al-Uloom%20Central%20Mosque%20project%20in%20Alagbado%2C%20Lagos.%20See%20the%20progress%20and%20how%20to%20give%3A%20https%3A%2F%2Fm-uloom.org%2F%23masjid-project" target="_blank" rel="noopener">Share on WhatsApp</a>
+                                <a class="btn btn-gold" href="https://wa.me/?text=Please%20support%20the%20Al-Uloom%20Central%20Mosque%20project%20in%20Alagbado%2C%20Lagos.%20See%20the%20progress%20and%20how%20to%20give%3A%20https%3A%2F%2Fm-uloom.org%2F%23masjid-project" target="_blank" rel="noopener">Share on WhatsApp</a>
                             </div>
                         </div>
                     </div>
@@ -2278,7 +2287,7 @@
         </a>
     </div>
 
-    <script src="./js/script.min.js?v=54" defer></script>
+    <script src="./js/script.min.js?v=55" defer></script>
 </body>
 </html>
 
