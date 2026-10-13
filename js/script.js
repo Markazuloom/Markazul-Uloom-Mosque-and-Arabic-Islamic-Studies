@@ -209,8 +209,20 @@ class PrayerTimesManager {
         });
 
         this.updateIqamah();
+        this.markJumuahToday();
         this.updateHijriDate(hijri);
         this.updateNextPrayerCountdown();
+    }
+
+    // On Fridays (Lagos time) the Jumu'ah card is highlighted and marked "Today"
+    markJumuahToday() {
+        const card = document.getElementById('jumuah-card');
+        if (!card) return;
+        const day = new Intl.DateTimeFormat('en-US', { timeZone: this.timezone, weekday: 'long' }).format(new Date());
+        const isFriday = day === 'Friday';
+        card.classList.toggle('is-today', isFriday);
+        const badge = card.querySelector('.jumuah-today');
+        if (badge) badge.hidden = !isFriday;
     }
 
     // Iqamah (start of the congregation) = adhan time + a fixed gap set in the markup

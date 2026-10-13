@@ -8245,3 +8245,131 @@ body::before {
         font-size: 0.9rem;
     }
 }
+
+
+/* ---- Jumu'ah schedule (home prayer panel) + one line on Contact ---- */
+.prayer-panel .jumuah-card {
+    margin-top: 1rem;
+    padding: 1rem 1.1rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.prayer-panel .jumuah-card.is-today {
+    border-color: var(--gold);
+    background: var(--gold-soft);
+    box-shadow: 0 0 0 1px var(--gold);
+}
+
+.jumuah-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.jumuah-head h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.jumuah-head h3 .arabic-text {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    color: var(--gold);
+}
+
+.jumuah-day {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.jumuah-today {
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    background: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--navy-950);
+}
+
+.jumuah-today[hidden] {
+    display: none;
+}
+
+.jumuah-steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.jumuah-steps li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    text-align: center;
+}
+
+.jumuah-steps .js-time {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.jumuah-steps .js-what {
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+@media (max-width: 800px) {
+    .jumuah-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .prayer-panel .jumuah-card {
+        padding: 0.8rem;
+    }
+
+    .jumuah-steps {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.4rem;
+    }
+
+    .jumuah-steps li {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        padding: 0.5rem 0.8rem;
+        text-align: left;
+    }
+
+    .jumuah-steps .js-time {
+        order: 2;
+        font-size: 0.95rem;
+    }
+}
+
+.jumuah-note {
+    margin: 0.9rem 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.jumuah-note strong {
+    color: #fff;
+}
